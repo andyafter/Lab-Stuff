@@ -5,3 +5,18 @@ Some examples and useful resources for designing of the webpage.
 
 [[https://designschool.canva.com/blog/website-color-schemes/][Another example]] links to a website which shows you the effect of different websites. 
 
+[[http://judithamores.com/][Personal]] blogs is also a good choice to check out how people design good academic pictures.
+** Key Considerations
+Here is a list of important aspects in designing the pages.
+- Color Themes
+- Layout
+- Font
+** Some Tools
+- Google MDL
+- Metafont (Font Designing written by Donald Knuth)
+
+** Suggested
+- Helvetica
+
+
+
