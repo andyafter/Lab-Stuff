@@ -1,0 +1,7 @@
+* Designs and Materials
+Some examples and useful resources for designing of the webpage.
+** Coloring Materials and Examples
+[[http://www.dtelepathy.com/blog/inspiration/beautiful-color-palettes-for-your-next-web-project][This link]] gives some of the examples of main color themes of different websites. Also include some [[http://www.dtelepathy.com/blog/design/color-theory][color theory]] to create better color palatte.
+
+[[https://designschool.canva.com/blog/website-color-schemes/][Another example]] links to a website which shows you the effect of different websites. 
+

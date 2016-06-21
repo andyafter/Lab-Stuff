@@ -1,3 +1,5 @@
 * Repository for SiNAPSE
 
-Monitoring everything that I have done in the Lab.
+
+** About This Repo
+To integrate everything that I do during working at SiNAPSE.
