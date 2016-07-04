@@ -1,0 +1,11 @@
+* Agendas
+This folder contains information about the plans and todo lists. Each file 
+contains the schedule and other information the month.
+* Timeline
+** July
+*** TODO Better Version of Org-Mode agenda view
+*** TODO Recofigure original version of emacs init files
+*** TODO Read DTrack system documentation
+*** TODO Read MiddleVR documentation
+*** TODO Figure out what is going on after dtrack
+*** TODO Find which part of Purcell's emacs configuration is needed

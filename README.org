@@ -16,4 +16,4 @@ internet. So far I have only crawled CVPR. Will add something later if necessary
    More integration should be added in order to make the development more professional. 
 
 ** LICENCE 
-Will add licence later if necessary.
+   Will add licence later if necessary.
