@@ -2,4 +2,18 @@
 
 
 ** About This Repo
-To integrate everything that I do during working at SiNAPSE.
+   To integrate everything that I do during working at SiNAPSE.
+
+** Website
+   The website folder contains the angularjs seed project. I will be making modification 
+and designing later.
+
+** Crawler
+   Crawler folder is something that I have written to crawl all the academic papers from the 
+internet. So far I have only crawled CVPR. Will add something later if necessary.
+
+** Continuous Integration
+   More integration should be added in order to make the development more professional. 
+
+** LICENCE 
+Will add licence later if necessary.

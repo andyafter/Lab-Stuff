@@ -5,3 +5,9 @@ logs/*
 tmp
 .DS_Store
 .idea
+
+# paper for crawlers
+~/
+
+# compiled files
+*.pyc
