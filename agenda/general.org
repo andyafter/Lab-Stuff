@@ -3,6 +3,10 @@ This folder contains information about the plans and todo lists. Each file
 contains the schedule and other information the month.
 * Timeline
 ** July
+*** DONE Unity simple Test
+    CLOSED: [2016-07-04 Mon 18:21]
+    - State "DONE"       from "STARTED"    [2016-07-04 Mon 18:21]
+*** TODO Middle VR simple test
 *** TODO Better Version of Org-Mode agenda view
 *** TODO Recofigure original version of emacs init files
 *** TODO Read DTrack system documentation
