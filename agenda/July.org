@@ -8,3 +8,11 @@ system.
 ** 05.07.2016
 Reconfigured part of the emacs configuration. Did a small test of combining MiddleVR
 with Unity, on the desktop.
+
+MiddleVR seems to be simply configuring the hardware systems for the softwares.
+The only thing left for deploying a fully functioning test is to findout how to configure 
+the CAVE system. Or find out where to download the configuration file. 
+
+Tricky thing is that MiddleVR website needs VPN to log onto in Singapore, I'm not sure why 
+but next time I will have to install VPN.
+*** TODO Install VPN on all computers
