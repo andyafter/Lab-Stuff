@@ -12,6 +12,11 @@ and designing later.
    Crawler folder is something that I have written to crawl all the academic papers from the 
 internet. So far I have only crawled CVPR. Will add something later if necessary.
 
+** Setting Up Systems
+There will be a folder for main project later and I will be moving this section later. 
+
+Appropriate setup of the environment is introduced in the =Unity_MiddleVR_talk.pdf= file. 
+I will be adding more docs later.
 ** Continuous Integration
    More integration should be added in order to make the development more professional. 
 

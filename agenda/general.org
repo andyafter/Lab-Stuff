@@ -7,6 +7,10 @@ contains the schedule and other information the month.
     CLOSED: [2016-07-04 Mon 18:21]
     - State "DONE"       from "STARTED"    [2016-07-04 Mon 18:21]
 *** TODO Middle VR simple test
+*** TODO Read Purcell's Docs 
+    DEADLINE: <2016-07-05 Tue>
+*** TODO Migrate original emacs configs to purcell
+    DEADLINE: <2016-07-11 Mon>
 *** TODO Better Version of Org-Mode agenda view
 *** TODO Recofigure original version of emacs init files
 *** TODO Read DTrack system documentation
