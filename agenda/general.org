@@ -6,11 +6,15 @@ contains the schedule and other information the month.
 *** DONE Unity simple Test
     CLOSED: [2016-07-04 Mon 18:21]
     - State "DONE"       from "STARTED"    [2016-07-04 Mon 18:21]
-*** TODO Middle VR simple test
-*** TODO Read Purcell's Docs 
-    DEADLINE: <2016-07-05 Tue>
+*** DONE Middle VR simple test
+    CLOSED: [2016-07-05 Tue 17:20]
+    - State "DONE"       from "TODO"       [2016-07-05 Tue 17:20]
+*** DONE Read Purcell's Docs 
+    CLOSED: [2016-07-05 Tue 17:22] DEADLINE: <2016-07-05 Tue>
+    - State "DONE"       from "TODO"       [2016-07-05 Tue 17:22]
 *** TODO Migrate original emacs configs to purcell
     DEADLINE: <2016-07-11 Mon>
+*** TODO Integration of MiddleVR Unity and DTrack
 *** TODO Better Version of Org-Mode agenda view
 *** TODO Recofigure original version of emacs init files
 *** TODO Read DTrack system documentation

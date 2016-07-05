@@ -6,4 +6,5 @@ Getting familiar with the system, studying how to use emacs org-mode better.
 Getting the source code and start searching for information about the dtrack 
 system. 
 ** 05.07.2016
-Reconfigured part of the emacs configuration. 
+Reconfigured part of the emacs configuration. Did a small test of combining MiddleVR
+with Unity, on the desktop.
