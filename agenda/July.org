@@ -15,4 +15,10 @@ the CAVE system. Or find out where to download the configuration file.
 
 Tricky thing is that MiddleVR website needs VPN to log onto in Singapore, I'm not sure why 
 but next time I will have to install VPN.
-*** TODO Install VPN on all computers
+*** DONE Install VPN on all computers
+    CLOSED: [2016-07-12 Tue 12:32]
+    - State "DONE"       from "TODO"       [2016-07-12 Tue 12:32]
+** 12.07.2016
+Finished installing unity to the main computer of the server room. Fixed stereo imaging problems. 
+Will start doing tests on the system.
+
