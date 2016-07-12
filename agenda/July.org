@@ -1,0 +1,24 @@
+* July 
+First month at work!!
+I will arrange into list later. 
+** 04.07.2016
+Getting familiar with the system, studying how to use emacs org-mode better. 
+Getting the source code and start searching for information about the dtrack 
+system. 
+** 05.07.2016
+Reconfigured part of the emacs configuration. Did a small test of combining MiddleVR
+with Unity, on the desktop.
+
+MiddleVR seems to be simply configuring the hardware systems for the softwares.
+The only thing left for deploying a fully functioning test is to findout how to configure 
+the CAVE system. Or find out where to download the configuration file. 
+
+Tricky thing is that MiddleVR website needs VPN to log onto in Singapore, I'm not sure why 
+but next time I will have to install VPN.
+*** DONE Install VPN on all computers
+    CLOSED: [2016-07-12 Tue 12:32]
+    - State "DONE"       from "TODO"       [2016-07-12 Tue 12:32]
+** 12.07.2016
+Finished installing unity to the main computer of the server room. Fixed stereo imaging problems. 
+Will start doing tests on the system.
+

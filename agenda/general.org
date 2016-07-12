@@ -1,0 +1,29 @@
+* Agendas
+This folder contains information about the plans and todo lists. Each file 
+contains the schedule and other information the month.
+* Timeline
+** July
+*** DONE Unity simple Test
+    CLOSED: [2016-07-04 Mon 18:21]
+    - State "DONE"       from "STARTED"    [2016-07-04 Mon 18:21]
+*** DONE Middle VR simple test
+    CLOSED: [2016-07-05 Tue 17:20]
+    - State "DONE"       from "TODO"       [2016-07-05 Tue 17:20]
+*** DONE Read Purcell's Docs 
+    CLOSED: [2016-07-05 Tue 17:22] DEADLINE: <2016-07-05 Tue>
+    - State "DONE"       from "TODO"       [2016-07-05 Tue 17:22]
+*** TODO Migrate original emacs configs to purcell
+    DEADLINE: <2016-07-11 Mon>
+*** TODO Integration of MiddleVR Unity and DTrack
+*** TODO Better Version of Org-Mode agenda view
+*** TODO Recofigure original version of emacs init files
+*** DONE Read DTrack system documentation
+    CLOSED: [2016-07-12 Tue 12:36]
+    - State "DONE"       from "TODO"       [2016-07-12 Tue 12:36]
+*** DONE Read MiddleVR documentation
+    CLOSED: [2016-07-12 Tue 12:35]
+    - State "DONE"       from "TODO"       [2016-07-12 Tue 12:35]
+*** DONE Figure out what is going on after dtrack
+    CLOSED: [2016-07-12 Tue 12:36]
+    - State "DONE"       from "TODO"       [2016-07-12 Tue 12:36]
+*** TODO Find which part of Purcell's emacs configuration is needed
