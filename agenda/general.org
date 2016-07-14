@@ -27,3 +27,4 @@ contains the schedule and other information the month.
     CLOSED: [2016-07-12 Tue 12:36]
     - State "DONE"       from "TODO"       [2016-07-12 Tue 12:36]
 *** TODO Find which part of Purcell's emacs configuration is needed
+*** TODO Testing middle VR on four screen with simple tests

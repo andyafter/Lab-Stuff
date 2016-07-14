@@ -21,4 +21,8 @@ but next time I will have to install VPN.
 ** 12.07.2016
 Finished installing unity to the main computer of the server room. Fixed stereo imaging problems. 
 Will start doing tests on the system.
+** 13.07.2016
+Finished testing middleVR and unity. Simple virtual environment. 
+** 14.07.2016
+
 
