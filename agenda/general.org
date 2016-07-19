@@ -27,4 +27,10 @@ contains the schedule and other information the month.
     CLOSED: [2016-07-12 Tue 12:36]
     - State "DONE"       from "TODO"       [2016-07-12 Tue 12:36]
 *** TODO Find which part of Purcell's emacs configuration is needed
-*** TODO Testing middle VR on four screen with simple tests
+*** DONE Testing middle VR on four screen with simple tests
+    CLOSED: [2016-07-19 Tue 17:56]
+    - State "DONE"       from "TODO"       [2016-07-19 Tue 17:56]
+*** TODO Simple controlling of motions in Unity 3d
+*** TODO Simple test of collisions under Unity 
+*** TODO Simple test of kinematical movement in the arm environment
+*** TODO Try unity 3d built-in IK package
