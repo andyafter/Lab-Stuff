@@ -1,5 +1,5 @@
 * Agendas
-This folder contains information about the plans and todo lists. Each file 
+This folder contains information about the plans and todo lists. Each file
 contains the schedule and other information the month.
 * Timeline
 ** July
@@ -9,7 +9,7 @@ contains the schedule and other information the month.
 *** DONE Middle VR simple test
     CLOSED: [2016-07-05 Tue 17:20]
     - State "DONE"       from "TODO"       [2016-07-05 Tue 17:20]
-*** DONE Read Purcell's Docs 
+*** DONE Read Purcell's Docs
     CLOSED: [2016-07-05 Tue 17:22] DEADLINE: <2016-07-05 Tue>
     - State "DONE"       from "TODO"       [2016-07-05 Tue 17:22]
 *** DONE Read DTrack system documentation
@@ -24,14 +24,17 @@ contains the schedule and other information the month.
 *** DONE Testing middle VR on four screen with simple tests
     CLOSED: [2016-07-19 Tue 17:56]
     - State "DONE"       from "TODO"       [2016-07-19 Tue 17:56]
-*** TODO Configure bower folder
+*** DONE Configure bower folder
+    CLOSED: [2016-07-21 Thu 14:50]
+*** TODO Shoot photos of the lab members
+*** TODO Configure window purpose
 *** TODO Finish the presentation slides
 *** TODO Integration of MiddleVR Unity and DTrack
 *** TODO Better Version of Org-Mode agenda view
 *** TODO Recofigure original version of emacs init files
 *** TODO Find which part of Purcell's emacs configuration is needed
 *** TODO Simple controlling of motions in Unity 3d
-*** TODO Simple test of collisions under Unity 
+*** TODO Simple test of collisions under Unity
 *** TODO Simple test of kinematical movement in the arm environment
 *** TODO Try unity 3d built-in IK package
 *** TODO Migrate original emacs configs to purcell
