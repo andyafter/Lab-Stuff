@@ -12,11 +12,6 @@ contains the schedule and other information the month.
 *** DONE Read Purcell's Docs 
     CLOSED: [2016-07-05 Tue 17:22] DEADLINE: <2016-07-05 Tue>
     - State "DONE"       from "TODO"       [2016-07-05 Tue 17:22]
-*** TODO Migrate original emacs configs to purcell
-    DEADLINE: <2016-07-11 Mon>
-*** TODO Integration of MiddleVR Unity and DTrack
-*** TODO Better Version of Org-Mode agenda view
-*** TODO Recofigure original version of emacs init files
 *** DONE Read DTrack system documentation
     CLOSED: [2016-07-12 Tue 12:36]
     - State "DONE"       from "TODO"       [2016-07-12 Tue 12:36]
@@ -26,11 +21,18 @@ contains the schedule and other information the month.
 *** DONE Figure out what is going on after dtrack
     CLOSED: [2016-07-12 Tue 12:36]
     - State "DONE"       from "TODO"       [2016-07-12 Tue 12:36]
-*** TODO Find which part of Purcell's emacs configuration is needed
 *** DONE Testing middle VR on four screen with simple tests
     CLOSED: [2016-07-19 Tue 17:56]
     - State "DONE"       from "TODO"       [2016-07-19 Tue 17:56]
+*** TODO Configure bower folder
+*** TODO Finish the presentation slides
+*** TODO Integration of MiddleVR Unity and DTrack
+*** TODO Better Version of Org-Mode agenda view
+*** TODO Recofigure original version of emacs init files
+*** TODO Find which part of Purcell's emacs configuration is needed
 *** TODO Simple controlling of motions in Unity 3d
 *** TODO Simple test of collisions under Unity 
 *** TODO Simple test of kinematical movement in the arm environment
 *** TODO Try unity 3d built-in IK package
+*** TODO Migrate original emacs configs to purcell
+    DEADLINE: <2016-07-11 Mon>

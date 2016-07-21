@@ -30,4 +30,5 @@ Blender. Seems to be useful.
 
 Also I added Wangxin's UR10 arm 3d objects in the testing project. Will start testing
 arm controlling in local environment.
+** 21.07.2016
 
