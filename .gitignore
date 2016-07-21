@@ -6,6 +6,8 @@ tmp
 .DS_Store
 .idea
 
+# temp files for text editors
+*~
 # paper for crawlers
 ~/
 
