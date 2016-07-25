@@ -32,3 +32,5 @@ Also I added Wangxin's UR10 arm 3d objects in the testing project. Will start te
 arm controlling in local environment.
 ** 21.07.2016
 Finished basic layouts of the website. Moved back to emacs prelude configuration.
+** 25.07.2016
+Trying to finish the website.
