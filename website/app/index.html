@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>My AngularJS App</title>
+        <title>SiNAPSE</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -50,14 +50,9 @@
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
 
         <style>
-          body{
-              background-color: #00031a;
-              background-image: url(assets/img/batthern.png);
-          }
+         .container{
 
-          .container{
-          
-          }
+         }
 
          .demo-layout-transparent {
              background: url('../assets/demos/transparent.jpg') center / cover;
@@ -68,11 +63,49 @@
                 your background is light. */
              color: white;
          }
+
         </style>
 
-        <body>
+        <body class="">
 
-          <p> Something here </p>
+            <div class ="container">
+                <div class="sideBar">
+                    <!-- This section gets pushed to the top-->
+                    <div class="sideBar__section">
+                        <div class="sideBar__item mdl-navigation__link">
+                            Inbox
+                        </div>
+                        <div class="sideBar__item mdl-navigation__link">
+                            Contacts
+                        </div>
+                        <div class="sideBar__item mdl-navigation__link">
+                            Account
+                        </div>
+                    </div>
+                    <!-- This section gets pushed to the bottom-->
+                    <div class="sideBar__section">
+                        <div class="sideBar__item">Change theme</div>
+                        <div class="sideBar__item">Legal</div>
+                    </div>
+                </div>
+
+                <div class="mdl-layout mdl-js-layout">
+                    <header class="mdl-layout__header">
+                        <div class="mdl-layout-icon"></div>
+                        <div class="mdl-layout__header-row">
+                            <span class="mdl-layout__title">Neuromorphic Robitcs</span>
+                            <div class="mdl-layout-spacer"></div>
+                            <nav class="mdl-navigation">
+                                <a class="mdl-navigation__link" href="#">Nav link 1</a>
+                                <a class="mdl-navigation__link" href="#">Nav link 2</a>
+                                <a class="mdl-navigation__link" href="#">Nav link 3</a>
+                            </nav>
+                        </div>
+                    </header>
+                </div>
+            </div>
+
+
 
             <!-- main jQuery -->
             <script src="assets/js/vendor/jquery-1.11.1.min.js"></script>

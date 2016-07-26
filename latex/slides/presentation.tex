@@ -1,0 +1,133 @@
+% Created 2016-07-26 Tue 13:51
+\documentclass[bigger]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Pan An}
+\date{\textit{[2016-07-26 Tue]}}
+\title{Remote access}
+\hypersetup{
+ pdfauthor={Pan An},
+ pdftitle={Remote access},
+ pdfkeywords={beamer org orgmode},
+ pdfsubject={Example of using org to create presentations using the beamer exporter},
+ pdfcreator={Emacs 24.5.1 (Org mode 8.3.4)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Introduction}
+\label{sec:orgheadline2}
+\subsection{Overview}
+\label{sec:orgheadline1}
+This presentation provides an illustration of some of the capabilities of the \textbf{Beamer} export in \texttt{org} mode:
+
+\begin{enumerate}
+\item simple slides (this one),
+\item slides with special blocks,
+\item multi-column slides and
+\item the use of \textbf{Babel} for literate programming.
+\end{enumerate}
+
+This file should be exported using \texttt{M-x org-export-dispatch} specifying \texttt{l} for \LaTeX{} and then \texttt{P}, for instance, to generate the PDF.
+
+\section{Methodology}
+\label{sec:orgheadline12}
+
+\subsection{A simple slide}
+\label{sec:orgheadline3}
+This slide consists of some text with a number of bullet points:
+
+\begin{itemize}
+\item the first, very \textbf{important}, point!
+\item the previous point shows the use of \textbf{bold} emphasis which is translated to a \texttt{\textbackslash{}alert\{\}} directive in \LaTeX.
+\end{itemize}
+
+The above list could be numbered or any other type of list and may include sub-lists.
+
+\subsection{A more complex slide}
+\label{sec:orgheadline5}
+This slide illustrates the use of Beamer blocks.  The following text,
+with its own headline, is displayed in a block:
+\begin{enumerate}
+\item Org mode increases productivity\hfill{}\textsc{B\_theorem}
+\label{sec:orgheadline4}
+\begin{itemize}
+\item org mode means not having to remember \LaTeX commands.
+\item it is based on ASCII text which is inherently portable.
+\item Emacs!
+\end{itemize}
+
+\hfill \(\qed\)
+\end{enumerate}
+
+\subsection{Two columns}
+\label{sec:orgheadline8}
+
+\begin{enumerate}
+\item A block\hfill{}\textsc{BMCOL}
+\label{sec:orgheadline6}
+\begin{itemize}
+\item this slide consists of two columns
+\item the first (left) column has no heading and consists of text
+\item the second (right) column has an image and is enclosed in an \textbf{example} block
+\end{itemize}
+
+\item A screenshot\hfill{}\textsc{B\_example:BMCOL}
+\label{sec:orgheadline7}
+\includegraphics[width=.9\linewidth]{../../images/org-beamer/a-simple-slide.png}
+\end{enumerate}
+
+\subsection{Babel}
+\label{sec:orgheadline11}
+This slide shows some code and resulting output using \textbf{Babel}.  Note the specification of \texttt{BEAMER\_act} property for the second column.
+\begin{enumerate}
+\item Octave code\hfill{}\textsc{BMCOL:B\_block}
+\label{sec:orgheadline9}
+\begin{verbatim}
+A = [1 2 ; 3 4]
+b = [1; 1];
+x = A\b
+\end{verbatim}
+
+\item The output\hfill{}\textsc{BMCOL:B\_block}
+\label{sec:orgheadline10}
+\begin{verbatim}
+A =
+
+   1   2
+   3   4
+
+x =
+
+  -1
+   1
+\end{verbatim}
+\end{enumerate}
+
+\section{Conclusions}
+\label{sec:orgheadline14}
+
+\subsection{Summary}
+\label{sec:orgheadline13}
+\begin{itemize}
+\item org is an incredible tool for time management
+\item \textbf{but} it is also excellent for writing and for preparing presentations
+\item Beamer is a very powerful \LaTeX{} package for presentations
+\item the combination is unbeatable!
+\end{itemize}
+\end{document}
