@@ -17,7 +17,20 @@ section{
     margin-left: 200px;
 }
 
+div#views{
+  display:block;
+  margin-top:20px;
+}
+
+.content-section{
+  display:block;
+  width:61.8%;
+  position:relative;
+  background: rgba(80, 80, 90, 0.9);
+}
+
 #group-title{
+  display:flex;
   color:rgba(230, 230, 230, 1);
   font-family: 'Titillium Web', sans-serif;
   font-weight:200;
@@ -44,6 +57,18 @@ section{
 .mdl-navigation__link{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    font-weight: 200;
+}
+
+.mdl-navigation__link:hover{
+  background: rgb(51, 102, 153);
+}
+
+#title-card.my-card{
+  height:100px;
+  width: 180px;
+  margin-top:-10px;
+  margin-bottom:20px;
+  background:  rgba(80, 80, 90, 0.9);
 }
 
 .container{
@@ -101,22 +126,27 @@ section{
   justify-content: space-between;
 
   height: 300px;
-  width: 150px;
-  background: rgba(76, 175, 80, 0.3)
-  background-color: #FCFDFD;
+  width: 180px;
   padding: 10px;
 }
 
-  .sideBar__item {
-    cursor: pointer;
-    padding: 5px 10px;
-    color: #16A2D7;
-    font-size: 12px;
+
+.sideBar__item {
+  display:block;
+  width: 180px;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: #ffffff;
+  text-align:center;
+  background:rgba(90, 122, 153, 0.8);
+  font-size: 12px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
   }
 
-  .sideBar__item.is-side-bar-item-selected {
-    background-color: #EEF3F5;
-    border-radius: 4px;
+  .sideBar__item:hover {
+    width: 180px;
+    background-color: rgba(238, 243, 245, 0.9);
   }
 /*end for the flex box example*/
 
