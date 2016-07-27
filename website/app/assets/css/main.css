@@ -1,4 +1,5 @@
 
+
 /* =================================== */
 /*      Basic Style
 /* =================================== */
@@ -12,18 +13,70 @@ body {
   background-image: url("../img/batthern.png");
 }
 
+section{
+    margin-left: 200px;
+}
+
+#group-title{
+  color:rgba(230, 230, 230, 1);
+  font-family: 'Titillium Web', sans-serif;
+  font-weight:200;
+}
+
 /*Testing begins*/
 .mdl-layout__header{
-  
+    background: rgba(80, 80, 90, 0.9)
+}
+
+
+
+.mdl-layout__title{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 200;
+}
+
+.mdl-layout__header-row{
+  position:relative;
+  margin:auto;
+  margin-left: 20px ;
 }
 
 .mdl-navigation__link{
-  
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 200;
 }
 
-.transparent-layout-components{
-  /* opacity: 0; */
+.container{
+  /* margin:auto; */
+  top:80px;
+  /* left:200px; */
+  width:70%;
+  position:relative;
 }
+
+.nav{
+  position: relative;
+  left: 0px;
+  width: 200px;
+}
+
+.mdl-layout{
+  //margin: auto;
+  width: 60%;
+  //top:100px;
+}
+
+.mdl-navigation{
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mdl-navigation__link{
+  margin: 0;
+}
+
 
 .sideBar {
   /**
@@ -122,6 +175,7 @@ h4, h5, h6 {
 
 body > section {
   padding: 100px 0;
+  margin-left: 200px;
 }
 
 .section-title {
