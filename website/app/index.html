@@ -4,10 +4,10 @@
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
     <head>
-        <base href="/">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>SiNAPSE</title>
+        <base href="/" />
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -64,62 +64,69 @@
          }
 
         </style>
+    </head>
 
         <body ng-controller="AppController">
 
-            <div class ="container">
-                <section>
-                    <div class="mdl-layout mdl-js-layout">
-                        <header class="mdl-layout__header">
-                            <div class="mdl-layout__header-row">
-                                <!--<span class="mdl-layout__title">Neuromorphic Robitcs</span> <div class="mdl-layout-spacer"></div>-->
-                                <nav class="mdl-navigation">
-                                    <a class="mdl-navigation__link" href="view1">2013</a>
-                                    <a class="mdl-navigation__link" href="#">2014</a>
-                                    <a class="mdl-navigation__link" href="#">2015</a>
-                                    <a class="mdl-navigation__link" href="#">2016</a>
-                                </nav>
-                            </div>
-                        </header>
-
-                        <div ui-view="main" ng-cloak>
-                            <div ng-view></div>
-                        </div>
-
-                    </div>
-
-                    
-                </section>
+            <div class ="mdl-layout mdl-js-layout container">
+                
 
                 <div class="sideBar">
                     <!-- This section gets pushed to the top-->
-                    <div class="sideBar__section">
                         <div class="my-card" id="title-card">
                             <h4 id="group-title" class="mdl-card__title">
                                 NEUROMORPHIC ROBOTICS
                             </h4>
                         </div>
 
-                        <div class="sideBar__item mdl-list__item mdl-navigation__link">
-                            Home
-                        </div>
-                        <div class="sideBar__item mdl-list__item mdl-navigation__link">
-                            People
-                        </div>
-                        <div class="sideBar__item mdl-list__item mdl-navigation__link">
-                            Projects
-                        </div>
-                        <div class="sideBar__item mdl-list__item mdl-navigation__link">
-                            Publications
-                        </div>
-                    </div>
+                        <a href="/home">
+                            <div class="sideBar__item mdl-list__item mdl-navigation__link">
+                                Home
+                            </div>
+                        </a>
+                        <a href="/people">
+                            <div class="sideBar__item mdl-list__item mdl-navigation__link">
+
+                                People
+                            </div>
+                        </a>
+                        <a href="/projects">
+                            <div class="sideBar__item mdl-list__item mdl-navigation__link">
+
+                                Projects
+                            </div>
+                        </a>
+                        <a href="/publications">
+                            <div class="sideBar__item mdl-list__item mdl-navigation__link">
+
+                                Publications
+                            </div>
+                        </a>
+
                     <!-- This section gets pushed to the bottom-->
                     <div class="sideBar__section">
-                        
+
                     </div>
                 </div>
 
+                <section>
+                    <header class="mdl-layout__header">
+                        <div class="mdl-layout__header-row">
+                            <!--<span class="mdl-layout__title">Neuromorphic Robitcs</span> <div class="mdl-layout-spacer"></div>-->
+                            <nav class="mdl-navigation">
+                                <a class="mdl-navigation__link" href="#">2013</a>
+                                <a class="mdl-navigation__link" href="#">2014</a>
+                                <a class="mdl-navigation__link" href="#">2015</a>
+                                <a class="mdl-navigation__link" href="#">2016</a>
+                            </nav>
+                        </div>
+                    </header>
 
+                    <div ui-view="main" ng-cloak>
+                        <div ng-view class="view-section"></div>
+                    </div>
+
+                </section>
 
             </div>
 
@@ -153,8 +160,8 @@
             <script src="bower_components/angular-route/angular-route.js"></script>
             <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
             <script src="app.js"></script>
-            <script src="view1/view1.js"></script>
-            <script src="view2/view2.js"></script>
+            <script src="people/people.js"></script>
+            <script src="publications/publications.js"></script>
             <script src="home/home.js"></script>
             <script src="components/version/version.js"></script>
             <script src="components/version/version-directive.js"></script>

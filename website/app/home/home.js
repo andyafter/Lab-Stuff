@@ -4,19 +4,7 @@ angular.module('myApp.home',
                 'ui.router',])
     .config(['$routeProvider',
              function($routeProvider) {
-                 $routeProvider
-                     .when('/', {
-                         templateUrl : 'home/home.html',
-                         controller  : 'HomeController'
-                     })
-                     .when('/view1', {
-                         templateUrl : 'people/people.html',
-                         controller  : 'PeopleController'
-                     })
-                     .when('/home', {
-                         templateUrl: 'home/home.html',
-                         controller: 'HomeController'
-                     });
+                 
              }])
     .controller('HomeController', ['$scope',function($scope) {
         // this is for the home page of the website.

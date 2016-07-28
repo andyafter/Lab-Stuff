@@ -14,7 +14,8 @@ body {
 }
 
 section{
-    margin-left: 200px;
+  margin-left: 200px;
+  margin-top: -20px;
 }
 
 div#views{
@@ -22,6 +23,10 @@ div#views{
   margin-top:20px;
 }
 
+.view-section{
+  top: 10px;
+  margin-bottom: auto;
+}
 .content-section{
   display:block;
   width:61.8%;
@@ -38,8 +43,8 @@ div#views{
 
 /*Testing begins*/
 .mdl-layout__header{
-  
-    background: rgba(80, 80, 90, 0.9)
+  margin-bottom:20px;
+  background: rgba(80, 80, 90, 0.9)
 }
 
 
@@ -78,6 +83,7 @@ div#views{
   /* left:200px; */
   max-width:70%;
   position:relative;
+  overflow:hidden;
 }
 
 .nav{
@@ -207,6 +213,7 @@ h4, h5, h6 {
 body > section {
   padding: 100px 0;
   margin-left: 200px;
+  overflow:hidden;
 }
 
 .section-title {
