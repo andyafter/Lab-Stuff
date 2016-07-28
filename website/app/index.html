@@ -4,6 +4,7 @@
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
     <head>
+        <base href="/">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>SiNAPSE</title>
@@ -64,7 +65,7 @@
 
         </style>
 
-        <body >
+        <body ng-controller="AppController">
 
             <div class ="container">
                 <section>
@@ -81,10 +82,9 @@
                             </div>
                         </header>
 
-                        <div id="views">
-                            Here should be the views
+                        <div ui-view="main" ng-cloak>
+                            <div ng-view></div>
                         </div>
-
 
                     </div>
 
@@ -99,7 +99,6 @@
                                 NEUROMORPHIC ROBOTICS
                             </h4>
                         </div>
-
 
                         <div class="sideBar__item mdl-list__item mdl-navigation__link">
                             Home
@@ -116,6 +115,7 @@
                     </div>
                     <!-- This section gets pushed to the bottom-->
                     <div class="sideBar__section">
+                        
                     </div>
                 </div>
 
@@ -151,6 +151,7 @@
 
 
             <script src="bower_components/angular-route/angular-route.js"></script>
+            <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
             <script src="app.js"></script>
             <script src="view1/view1.js"></script>
             <script src="view2/view2.js"></script>

@@ -38,6 +38,7 @@ div#views{
 
 /*Testing begins*/
 .mdl-layout__header{
+  
     background: rgba(80, 80, 90, 0.9)
 }
 
@@ -75,19 +76,19 @@ div#views{
   /* margin:auto; */
   top:80px;
   /* left:200px; */
-  width:70%;
+  max-width:70%;
   position:relative;
 }
 
 .nav{
   position: relative;
   left: 0px;
-  width: 200px;
+  max-width: 200px;
 }
 
 .mdl-layout{
   //margin: auto;
-  width: 60%;
+  max-width: 60%;
   //top:100px;
 }
 
