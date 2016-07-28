@@ -15,7 +15,14 @@ body {
 
 section{
   margin-left: 200px;
-  margin-top: -20px;
+  vertical-align:top;
+  position:absolute;
+  top:0px;
+}
+
+.flex-column {
+  -webkit-flex: 1;
+  flex: 1;
 }
 
 div#views{
@@ -81,9 +88,10 @@ div#views{
   /* margin:auto; */
   top:80px;
   /* left:200px; */
-  max-width:70%;
+  max-width:80%;
   position:relative;
   overflow:hidden;
+  display: flex;
 }
 
 .nav{
