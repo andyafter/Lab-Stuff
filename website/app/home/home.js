@@ -9,6 +9,10 @@ angular.module('myApp.home',
                          templateUrl : 'home/home.html',
                          controller  : 'HomeController'
                      })
+                     .when('/view1', {
+                         templateUrl : 'people/people.html',
+                         controller  : 'PeopleController'
+                     })
                      .when('/home', {
                          templateUrl: 'home/home.html',
                          controller: 'HomeController'
