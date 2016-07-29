@@ -14,7 +14,15 @@ body {
 }
 
 section{
-    margin-left: 200px;
+  margin-left: 200px;
+  vertical-align:top;
+  position:absolute;
+  top:0px;
+}
+
+.flex-column {
+  -webkit-flex: 1;
+  flex: 1;
 }
 
 div#views{
@@ -22,6 +30,10 @@ div#views{
   margin-top:20px;
 }
 
+.view-section{
+  top: 10px;
+  margin-bottom: auto;
+}
 .content-section{
   display:block;
   width:61.8%;
@@ -38,7 +50,8 @@ div#views{
 
 /*Testing begins*/
 .mdl-layout__header{
-    background: rgba(80, 80, 90, 0.9)
+  margin-bottom:20px;
+  background: rgba(80, 80, 90, 0.9)
 }
 
 
@@ -75,19 +88,21 @@ div#views{
   /* margin:auto; */
   top:80px;
   /* left:200px; */
-  width:70%;
+  max-width:80%;
   position:relative;
+  overflow:hidden;
+  display: flex;
 }
 
 .nav{
   position: relative;
   left: 0px;
-  width: 200px;
+  max-width: 200px;
 }
 
 .mdl-layout{
   //margin: auto;
-  width: 60%;
+  max-width: 60%;
   //top:100px;
 }
 
@@ -206,6 +221,7 @@ h4, h5, h6 {
 body > section {
   padding: 100px 0;
   margin-left: 200px;
+  overflow:hidden;
 }
 
 .section-title {

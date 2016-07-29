@@ -1,18 +1,15 @@
 angular.module('myApp.home',
-               ['ngRoute'])
-.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/home', {
-        templateUrl: 'home/home.html',
-        controller: 'HomeController'
-    });
-}])
-.controller('HomeController', [function($scope) {
-    console.log("something is happening");
-    // this is for the home page of the website.
-    $scope.init = function(){
-        console.log("Something is definitely happening!");
-    }
-}]);
-
-
-
+               ['myApp',
+                'ngRoute',
+                'ui.router',])
+    .config(['$routeProvider',
+             function($routeProvider) {
+                 
+             }])
+    .controller('HomeController', ['$scope',function($scope) {
+        // this is for the home page of the website.
+        $scope.init = {};
+        $scope.init = function() {
+            console.log("something is happening");
+        };
+    }]);
