@@ -42,3 +42,6 @@ contains the schedule and other information the month.
 *** TODO Migrate original emacs configs to purcell
     DEADLINE: <2016-07-11 Mon>
 *** TODO Finding 3d models for hands.
+** August
+*** TODO Test basic communication from D-Track to TCP or UDP
+*** TODO Read Source code from Wang Xin

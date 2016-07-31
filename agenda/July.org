@@ -34,3 +34,5 @@ arm controlling in local environment.
 Finished basic layouts of the website. Moved back to emacs prelude configuration.
 ** 25.07.2016
 Trying to finish the website.
+** 31.07.2016
+Finished basic layouts of the website. Trying to make the kinematics work. 
