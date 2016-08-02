@@ -9,7 +9,6 @@ num_retransmits = 0
 while(num_retransmits < 60):
     num_retransmits = num_retransmits + 1
 
-
     data = "Request 1"
     client_socket.sendto(data, address)
     print "Sending request 1"
