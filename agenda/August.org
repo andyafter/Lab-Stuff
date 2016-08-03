@@ -1,0 +1,5 @@
+* August
+** 8/2/2016 3:31:13 PM
+Tested simple information exchange based on Wangxin's code.
+
+Finished the presentation slides
