@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.30)  3 AUG 2016 17:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.30)  3 AUG 2016 22:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1020,9 +1020,9 @@ Package: moreverb 2008/06/03 v2.3a `more' verbatim facilities
 \listing@line=\count172
 )
 \verbatim@out=\write7
-runsystem(echo t > "w18-test-2016831034.tex")...disabled (restricted).
+runsystem(echo t > "w18-test-2016831325.tex")...disabled (restricted).
 
-runsystem(del "w18-test-2016831034.tex")...disabled (restricted).
+runsystem(del "w18-test-2016831325.tex")...disabled (restricted).
 
 
 
@@ -1341,8 +1341,17 @@ LaTeX Font Warning: Font shape `OT1/helvetica/m/n' in size <4> not available
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
+(./motivation.tex <img/cave.png, id=71, 537.00626pt x 480.79625pt>
+File: img/cave.png Graphic file (type png)
+
+<use img/cave.png>
+Package pdftex.def Info: img/cave.png used on input line 15.
+(pdftex.def)             Requested size: 199.16928pt x 178.31732pt.
+ [2
+
+ <./img/cave.png>])
 No file sinapse.bbl.
-[2
+[3
 
 ]
 \tf@nav=\write9
@@ -1372,10 +1381,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 262.
  ) 
 Here is how much of TeX's memory you used:
- 24634 strings out of 493089
- 480864 string characters out of 6134841
+ 24649 strings out of 493089
+ 481037 string characters out of 6134841
  575205 words of memory out of 5000000
- 27524 multiletter control sequences out of 15000+600000
+ 27531 multiletter control sequences out of 15000+600000
  11020 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,17n,73p,953b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1383,10 +1392,10 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on sinapse.pdf (2 pages, 50707 bytes).
+Output written on sinapse.pdf (3 pages, 130113 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 95 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 146 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
+ 9 named destinations out of 1000 (max. 500000)
+ 100 words of extra memory for PDF output out of 10000 (max. 10000000)
 

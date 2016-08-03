@@ -7,6 +7,7 @@
                      '(("gnuplottex" "miktex") ("adjustbox" "export")))
    (TeX-run-style-hooks
     "latex2e"
+    "motivation"
     "beamer"
     "beamer10"
     "exscale"
