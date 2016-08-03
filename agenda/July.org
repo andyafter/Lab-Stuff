@@ -36,3 +36,8 @@ Finished basic layouts of the website. Moved back to emacs prelude configuration
 Trying to finish the website.
 ** 31.07.2016
 Finished basic layouts of the website. Trying to make the kinematics work. 
+* August
+Second month. Starting testing in VR room.
+** Tue Aug  2 11:40:57 2016
+Testing simple hand position tracking. 
+** 
