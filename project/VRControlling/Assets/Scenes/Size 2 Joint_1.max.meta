@@ -1,0 +1,145 @@
+fileFormatVersion: 2
+guid: 1a3a8863c68df1746865ad11e6c41fb2
+timeCreated: 1461837933
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: AST881D14720 1
+    100002: AST881D14720 2
+    100004: Imported1
+    100006: Imported2
+    100008: Imported3
+    100010: Imported4
+    100012: Imported5
+    100014: NONE
+    100016: NONE 1
+    100018: NONE 2
+    100020: NONE 3
+    100022: NONE 4
+    100024: NONE 5
+    100026: NONE-DC_Shell
+    100028: NONE-DC_Shell 1
+    100030: NONE-DC_Shell 2
+    100032: NONE-DC_Shell 3
+    100034: NONE-DC_Shell 4
+    100036: NONE-DC_Shell 5
+    100038: NONE-DC_Shell 6
+    100040: NONE-DC_Shell 7
+    100042: NONE-DC_Shell 8
+    100044: //RootNode
+    400000: AST881D14720 1
+    400002: AST881D14720 2
+    400004: Imported1
+    400006: Imported2
+    400008: Imported3
+    400010: Imported4
+    400012: Imported5
+    400014: NONE
+    400016: NONE 1
+    400018: NONE 2
+    400020: NONE 3
+    400022: NONE 4
+    400024: NONE 5
+    400026: NONE-DC_Shell
+    400028: NONE-DC_Shell 1
+    400030: NONE-DC_Shell 2
+    400032: NONE-DC_Shell 3
+    400034: NONE-DC_Shell 4
+    400036: NONE-DC_Shell 5
+    400038: NONE-DC_Shell 6
+    400040: NONE-DC_Shell 7
+    400042: NONE-DC_Shell 8
+    400044: //RootNode
+    2300000: NONE-DC_Shell
+    2300002: NONE-DC_Shell 1
+    2300004: NONE-DC_Shell 2
+    2300006: NONE-DC_Shell 3
+    2300008: NONE-DC_Shell 4
+    2300010: NONE-DC_Shell 5
+    2300012: NONE-DC_Shell 6
+    2300014: NONE-DC_Shell 7
+    2300016: NONE-DC_Shell 8
+    3300000: NONE-DC_Shell
+    3300002: NONE-DC_Shell 1
+    3300004: NONE-DC_Shell 2
+    3300006: NONE-DC_Shell 3
+    3300008: NONE-DC_Shell 4
+    3300010: NONE-DC_Shell 5
+    3300012: NONE-DC_Shell 6
+    3300014: NONE-DC_Shell 7
+    3300016: NONE-DC_Shell 8
+    4300000: NONE-DC_Shell
+    4300002: NONE-DC_Shell
+    4300004: NONE-DC_Shell
+    4300006: NONE-DC_Shell
+    4300008: NONE-DC_Shell
+    4300010: NONE-DC_Shell
+    4300012: NONE-DC_Shell
+    4300014: NONE-DC_Shell
+    4300016: NONE-DC_Shell
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

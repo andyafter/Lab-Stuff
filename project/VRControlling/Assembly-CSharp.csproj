@@ -45,9 +45,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ExampleAPI.cs" />
-     <Compile Include="Assets\Robot_Control_UR10.cs" />
-     <Compile Include="Assets\ServerSocket.cs" />
+     <Compile Include="Assets\Scenes\ExampleAPI.cs" />
+     <Compile Include="Assets\Scenes\Robot_Control_UR10.cs" />
+     <Compile Include="Assets\Scenes\ServerSocket.cs" />
+     <Compile Include="Assets\Scenes\TestControlling.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

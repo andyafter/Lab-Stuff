@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: 83a6450f3f314f44c9f42fc293a1e235
+timeCreated: 1461833260
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: AST391F21104 1
+    100002: AST391F21104 2
+    100004: Imported1
+    100006: Imported3
+    100008: Imported3-DC_Shell
+    100010: Imported4
+    100012: Imported5
+    100014: Imported6
+    100016: Imported7
+    100018: Imported8
+    100020: Imported8-DC_Shell
+    100022: NONE
+    100024: NONE 1
+    100026: NONE 2
+    100028: NONE 3
+    100030: NONE 4
+    100032: NONE-DC_Shell
+    100034: NONE-DC_Shell 1
+    100036: NONE-DC_Shell 2
+    100038: NONE-DC_Shell 3
+    100040: NONE-DC_Shell 4
+    100042: //RootNode
+    400000: AST391F21104 1
+    400002: AST391F21104 2
+    400004: Imported1
+    400006: Imported3
+    400008: Imported3-DC_Shell
+    400010: Imported4
+    400012: Imported5
+    400014: Imported6
+    400016: Imported7
+    400018: Imported8
+    400020: Imported8-DC_Shell
+    400022: NONE
+    400024: NONE 1
+    400026: NONE 2
+    400028: NONE 3
+    400030: NONE 4
+    400032: NONE-DC_Shell
+    400034: NONE-DC_Shell 1
+    400036: NONE-DC_Shell 2
+    400038: NONE-DC_Shell 3
+    400040: NONE-DC_Shell 4
+    400042: //RootNode
+    2300000: Imported3-DC_Shell
+    2300002: Imported8-DC_Shell
+    2300004: NONE-DC_Shell
+    2300006: NONE-DC_Shell 1
+    2300008: NONE-DC_Shell 2
+    2300010: NONE-DC_Shell 3
+    2300012: NONE-DC_Shell 4
+    3300000: Imported3-DC_Shell
+    3300002: Imported8-DC_Shell
+    3300004: NONE-DC_Shell
+    3300006: NONE-DC_Shell 1
+    3300008: NONE-DC_Shell 2
+    3300010: NONE-DC_Shell 3
+    3300012: NONE-DC_Shell 4
+    4300000: NONE-DC_Shell
+    4300002: Imported3-DC_Shell
+    4300004: NONE-DC_Shell
+    4300006: NONE-DC_Shell
+    4300008: NONE-DC_Shell
+    4300010: NONE-DC_Shell
+    4300012: Imported8-DC_Shell
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
