@@ -38,10 +38,15 @@ contains the schedule and other information the month.
     CLOSED: [2016-07-31 Sun 21:41]
 *** TODO Simple test of collisions under Unity
 *** TODO Simple test of kinematical movement in the arm environment
-*** TODO Try unity 3d built-in IK package
+*** DONE Try unity 3d built-in IK package
+    CLOSED: [2016-08-04 Thu 14:46]
 *** TODO Migrate original emacs configs to purcell
     DEADLINE: <2016-07-11 Mon>
 *** TODO Finding 3d models for hands.
 ** August
 *** TODO Test basic communication from D-Track to TCP or UDP
 *** TODO Read Source code from Wang Xin
+** August
+*** TODO Setting up basic kinematics parameters in Unity
+*** TODO Search for the best practice in organizing the unity project
+*** TODO 

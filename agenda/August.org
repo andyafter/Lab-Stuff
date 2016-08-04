@@ -3,3 +3,6 @@
 Tested simple information exchange based on Wangxin's code.
 
 Finished the presentation slides
+** 8/4/2016 12:13:37 PM
+Finished basic grabbing objects in unity 3d. Integrating with 
+middleVR and testing in VR room.
