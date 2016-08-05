@@ -133,9 +133,16 @@ public class Robot_Control_UR10 : MonoBehaviour {
 
     // Use this for initialization
 	void Start () {
-
         print(Vector3.Distance(UR10_Joint_2.position, UR10_Joint_4.position));
         print(UR10_Joint_1.position);
+        print(UR10_Joint_2.position);
+        print(UR10_Joint_3.position);
+        print(UR10_Joint_4.position);
+        print(UR10_Joint_5.position);
+        print(UR10_Joint_6.position);
+        print(UR10_Joint_7.position);
+        print(UR10_Joint_8.position);
+        print(UR10_Joint_9.position);
 	}
 	
 	// Update is called once per frame
@@ -143,7 +150,7 @@ public class Robot_Control_UR10 : MonoBehaviour {
 
         //UR10_Joint_1.Rotate(0, joint_1_velocity * del_t, 0);
         //UR10_Joint_2.Rotate(0, 0, joint_1_velocity * del_t);
-        UR10_Joint_9.Rotate( 0,  joint_1_velocity * del_t ,0);
+        UR10_Joint_1.Rotate( 0,  joint_1_velocity * del_t ,0);
 
         Debug.Log("I am at place A");
         if ((Math.Abs(joint_delta_a) != 0) || (Math.Abs(joint_delta_b) != 0) || (Math.Abs(joint_delta_c) != 0)
