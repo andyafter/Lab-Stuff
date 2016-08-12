@@ -54,8 +54,20 @@ contains the schedule and other information the month.
     CLOSED: [2016-08-04 Thu 17:38]
 *** DONE Read Source code from Wang Xin
     CLOSED: [2016-08-04 Thu 17:38]
-*** TODO Setting up basic kinematics parameters in Unity
+*** DONE Setting up basic kinematics parameters in Unity
+    CLOSED: [2016-08-12 Fri 15:57]
 I'm gonna write on my own. This one is closed.
+
+Actually most of the tutorials on how to use inner built IK but most of them need to 
+use a avatar. Either figure out how to use build your own avatar or write the kinematics 
+on your own.
 *** TODO Search for the best practice in organizing the unity project
 *** TODO Record angle information for each angle
 *** TODO Write documentation for the robot hand
+In my github page there should be some basic parameters of the robot arm.
+*** TODO Design a compatible IK algorithm for the robot arm
+*** TODO Finish the implementation of IK algorithm
+*** TODO Implement a basic filter to solve the blinking problems
+*** TODO Think about as many possible situation as possible for the gesture designing
+*** TODO Learn how to use animator and animator controller in unity
+*** TODO Fullfill the git ignore file

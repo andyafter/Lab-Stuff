@@ -40,4 +40,7 @@ Finished basic layouts of the website. Trying to make the kinematics work.
 Second month. Starting testing in VR room.
 ** Tue Aug  2 11:40:57 2016
 Testing simple hand position tracking. 
-** 
+** 8/12/2016 3:53:02 PM
+Finished running mountain environment in four screens but not in 3d. We 
+will be looking into the tracking system instead of fixing this issue in the 
+next couple weeks.
