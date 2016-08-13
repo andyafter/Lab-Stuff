@@ -54,8 +54,11 @@ contains the schedule and other information the month.
     CLOSED: [2016-08-04 Thu 17:38]
 *** DONE Read Source code from Wang Xin
     CLOSED: [2016-08-04 Thu 17:38]
-*** TODO Setting up basic kinematics parameters in Unity
+*** DONE Setting up basic kinematics parameters in Unity
+    CLOSED: [2016-08-14 Sun 00:37]
 I'm gonna write on my own. This one is closed.
 *** TODO Search for the best practice in organizing the unity project
 *** TODO Record angle information for each angle
 *** TODO Write documentation for the robot hand
+*** TODO Find simple problems that can be abstracted to a reinforcement learning problem
+*** TODO Simple test with reinforcement learning
