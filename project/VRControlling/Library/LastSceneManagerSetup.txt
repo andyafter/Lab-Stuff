@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/robot_UR.unity
-  isLoaded: 1
-  isActive: 1

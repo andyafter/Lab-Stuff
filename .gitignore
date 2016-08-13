@@ -13,3 +13,11 @@ tmp
 
 # compiled files
 *.pyc
+
+# for the unity project
+*Temp/
+*Library/
+
+# visual studio
+
+
