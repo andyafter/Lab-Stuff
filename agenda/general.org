@@ -63,12 +63,15 @@ use a avatar. Either figure out how to use build your own avatar or write the ki
 on your own.
 *** TODO Search for the best practice in organizing the unity project
 *** TODO Record angle information for each angle
-*** TODO Write documentation for the robot hand
+*** DONE Write documentation for the robot hand
+    CLOSED: [2016-08-17 Wed 17:31]
 *** TODO Find simple problems that can be abstracted to a reinforcement learning problem
-*** TODO Simple test with reinforcement learning
+*** DONE Simple test with reinforcement learning
+    CLOSED: [2016-08-17 Wed 17:30]
 *** TODO Design a compatible IK algorithm for the robot arm
 *** TODO Finish the implementation of IK algorithm
 *** TODO Implement a basic filter to solve the blinking problems
 *** TODO Think about as many possible situation as possible for the gesture designing
-*** TODO Learn how to use animator and animator controller in unity
+*** DONE Learn how to use animator and animator controller in unity
+    CLOSED: [2016-08-17 Wed 17:31]
 *** TODO Fullfill the git ignore file

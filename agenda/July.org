@@ -44,3 +44,9 @@ Testing simple hand position tracking.
 Finished running mountain environment in four screens but not in 3d. We 
 will be looking into the tracking system instead of fixing this issue in the 
 next couple weeks.
+** 8/17/2016 2:15:38 PM
+Installed gym environment in windows for openAI. Tested basic stick model of 
+reinforcement learning in windows.
+ 
+Simple test on how to control the spinning speed of the robot arm. Spinning in 
+update is a time series process.
