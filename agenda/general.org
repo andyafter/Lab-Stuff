@@ -75,3 +75,6 @@ on your own.
 *** DONE Learn how to use animator and animator controller in unity
     CLOSED: [2016-08-17 Wed 17:31]
 *** TODO Fullfill the git ignore file
+*** DONE Test simple Vuforia app on Android
+    CLOSED: [2016-08-23 Tue 16:49]
+*** TODO Simple test with Android Vuforia
