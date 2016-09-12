@@ -50,3 +50,6 @@ reinforcement learning in windows.
  
 Simple test on how to control the spinning speed of the robot arm. Spinning in 
 update is a time series process.
+** Sat Sep  3 17:28:07 2016
+ Finished the modeling for IK(which was totally easy for anyone it's just I was too lazy this month).
+Still working on the learning of reinforcement learning.
