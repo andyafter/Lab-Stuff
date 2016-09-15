@@ -1,0 +1,164 @@
+\section{Inverse Kinematics}
+
+\begin{frame}
+  \frametitle{IK Algorithms}
+  \begin{itemize}
+  \item Cyclic Coordinate Descent
+  \item Jacobian Transpose
+  \item FABRIK
+  \item Neural Network
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Cyclic Coordinate Descent}
+  \only<1>{
+    \begin{columns}
+      \column{0.5\textwidth}
+      \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=5cm]{ccd.png}
+      \end{figure}
+
+      \column{0.5\textwidth}
+
+      \metroset{block=fill}
+      \vspace{6mm}
+      \begin{block}{Basic Idea}
+        \begin{itemize}
+        \item Greedy
+        \item Iterative
+        \item Does not care whether the target is within range
+        \end{itemize}
+      \end{block}
+
+      \begin{block}{Why}
+        WangXin made the CCD work.
+      \end{block}
+    \end{columns}
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jacobian Transpose}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{figure}[!ht]
+      \centering
+      \includegraphics[width = 6cm]{jacob.png}
+      \caption{Jacobian Transpose}
+      \label{fig:jacob}
+    \end{figure}
+
+    \column{0.5\textwidth}
+
+    \only<1>{
+
+      \begin{block}{Definitions}
+        \begin{itemize}
+        \item[] $J$ ~ Partial Derivation of the entire chain system.
+        \item[] $\pmb\theta$ ~ Vector of $\theta$ values.
+        \item[] $\pmb s$ ~ Vector of end effectors.
+        \item[] $\pmb p_j$ ~ Position of the joints.
+        \end{itemize}
+      \end{block}
+
+      \metroset{block=fill}
+      \begin{block}{Jacobian Matrix}
+        $$J({\pmb\theta}_{ij})=(\frac{\partial{\pmb s}_i}{\partial\theta_{j}})_{ij}$$
+      \end{block}
+
+      Where $i = 1, ..., k$ and $j = 1, ..., n$. In this case $k = 1$
+      and $n = 3$.
+    }
+    \only<2>{
+      \metroset{block=fill}
+      \begin{block}{Jacobian Transpose}
+        Jacobian Transpose is to move the angles with a step of
+        $$\Delta \theta = \alpha J^T \vec{\pmb e}$$
+
+        Where $\pmb e$ is the vector of direction of the step and
+        $\alpha$ is the selected step size.
+      \end{block}
+    }
+
+  \end{columns}
+
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{FABRIK}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{figure}[!ht]
+      \centering
+      \includegraphics[width=6cm]{fab.png}
+      \caption{FABRIK}
+      \label{fig:fab}
+    \end{figure}
+
+    \column{0.5\textwidth}
+
+    \only<1>{
+      \begin{block}{FABRIK}
+        Stands for Forward And Backward Reaching Inverse Kinematics.
+      \end{block}
+
+      \begin{block}{Definitions}
+        \begin{itemize}
+        \item[] $\pmb t$ ~ Vector of targets.
+        \item[] $d_i$ ~ Distance between each joint $d_i = |\pmb p_{i+1}
+          - \pmb p_i|$
+        \end{itemize}
+      \end{block}}
+    \only<2>{
+      \scriptsize
+      \begin{algorithm}[H]
+        \KwData{$\pmb d, \pmb t, \pmb p$}
+        \KwResult{The new joint positions $\pmb p$}
+        initialization\;
+        \eIf{Target is not within range}{
+          point directly to the target and return\;
+        }{
+          $\pmb b=\pmb p_1$ and $dif_A = |\pmb p_n-\pmb t|$\;
+          \While{$dif_A>tolerance$}{
+            $\pmb p_n=\pmb t$\;
+            \For{$i = n-1,  ..., 1$}{
+              $r_i = |\pmb p_{i+1}-\pmb p_i|$\;
+              $\lambda_i = \frac{d_i}{r_i}$\;
+              $\pmb p_i = (i-\lambda_i)\pmb p_{i+1} - \lambda_i \pmb p_i$\;
+            }
+            $\pmb p_1 = \pmb b$\;
+            \For{$i = 1,  ..., n-1$}{
+              $r_i = |\pmb p_{i+1}-\pmb p_i|$\;
+              $\lambda_i = \frac{d_i}{r_i}$\;
+              $\pmb p_i = (i-\lambda_i)\pmb p_{i+1} - \lambda_i \pmb p_i$\;
+            }
+          }
+        }
+      \end{algorithm}
+    }
+  \end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{FABRIK Constraints}
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=10cm]{constraints.png}
+    \caption{Example of Constraints in a Joint System}
+    \label{fig:constraints}
+  \end{figure}
+\end{frame}
+
+\input{space.tex}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "demo"
+%%% End:
