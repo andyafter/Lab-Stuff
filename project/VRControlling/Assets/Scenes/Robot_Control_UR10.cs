@@ -124,16 +124,23 @@ public class Robot_Control_UR10 : MonoBehaviour {
     public float SpeedJoint_6 = 24.0f;
     //public float del_t = 5.0f;
     public float del_t = 0.2f;
+
+    public int JMF1,JMF2,JMF3,JMF4, JMF5,JMF6,JMF7= 0;  // how many frames you want the joint to move(joint move frames)
+    private bool rotating1 = true;
     // Use this for initialization
 	void Start () {
         //receiveThread = new Thread(ReceiveData);
         //receiveThread.IsBackground = true;
         //receiveThread.Start();
+            JMF1 = 11;
+            JMF2 = 15;
+            JMF3 = 50;
+            JMF5 = 8;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        UR10_Joint_1.Rotate(0, joint_1_velocity * del_t, 0);
+        //UR10_Joint_1.Rotate(0, joint_1_velocity * del_t, 0);
         //UR10_Joint_2.Rotate(0, 0, joint_1_velocity * del_t);
         //UR10_Joint_3.Rotate(0, joint_1_velocity * del_t, 0);
         //UR10_Joint_4.Rotate(0, joint_1_velocity * del_t, 0);//redundant
@@ -149,6 +156,39 @@ public class Robot_Control_UR10 : MonoBehaviour {
         //rot.Set(cam_pos_x, cam_pos_z, -cam_pos_y);
         //MainCamera.position = rot;
         del_t *= 0.99f;
+        if(Indicator_sphere.position.y>-1){
+            Debug.Log("uau");
+        }
+
+        if(JMF1>0){
+            JMF1 -= 1;
+            UR10_Joint_1.Rotate(0, joint_1_velocity * del_t, 0);
+        }
+        if(JMF2>0){
+            JMF2 -= 1;
+            UR10_Joint_2.Rotate(0, 0, -joint_1_velocity * del_t);
+        }
+        if(JMF3>0){
+            JMF3 -= 1;
+            UR10_Joint_3.Rotate(0, joint_1_velocity * del_t, 0);
+        }
+        if(JMF4>0){
+            JMF4 -= 1;
+            UR10_Joint_4.Rotate(0, joint_1_velocity * del_t, 0);
+        }
+        if(JMF5>0){
+            JMF5 -= 1;
+            UR10_Joint_5.Rotate(0, 0, joint_1_velocity * del_t);
+        }
+        if(JMF6>0){
+            JMF6 -= 1;
+            UR10_Joint_6.Rotate(0, joint_1_velocity * del_t, 0);
+        }
+        if(JMF7>0){
+            JMF7 -= 1;
+            UR10_Joint_7.Rotate(0, joint_1_velocity * del_t, 0);
+        }
+        
         
         Indicator_sphere.position = new Vector3(pos_x, pos_y, pos_z);
         
