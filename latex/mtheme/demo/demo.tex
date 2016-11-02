@@ -1,0 +1,135 @@
+\documentclass[10pt]{beamer}
+
+\usetheme{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{decorations.markings}
+\tikzset{isometricXYZ/.style={x={(-0.866cm,-0.5cm)}, y={(0.866cm,-0.5cm)}, z={(0cm,1cm)}}}
+
+\usepackage[]{algorithm2e}
+
+\title{Gesture Interface}
+\subtitle{A Naive Framework}
+\date{\today}
+\author{Pan An (Andy)}
+\institute{National University of Singapore}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of Contents}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}
+  \frametitle{Overview}
+  \begin{block}{Gestures}
+    \begin{itemize}
+    \item Spatial Motions
+    \item Finger Motions
+    \item Muscles and other Biosignals
+    \item Possibility with hybrid hardwares
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Tasks(What we can do with machines)}
+    \begin{itemize}
+    \item Motions and movements
+    \item Objects and obstacles
+    \item Complex tasks and command compressing
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Gestures}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.5\textwidth}
+    \begin{figure}[!ht]
+      \centering
+      \includegraphics[width=3cm]{ges.jpg}
+      \caption{\scriptsize{} Example of Hand Gesture.}
+      \label{fig:gesture}
+    \end{figure}
+    \begin{block}{Color Based Method}
+      \scriptsize
+      The above picture is an example of color based gesture
+      recognition. Color based algorithms are normally heavily relying
+      on background color. 
+    \end{block}
+    \column{0.5\textwidth}
+
+    
+    \metroset{block=fill}
+    \vspace{8mm}
+    \begin{block}{Spatial Motions}
+      Swipe, tracking, clapping...
+    \end{block}
+
+    \begin{block}{Finger Motions}
+      Grabbing, rub, pointing and etc.
+    \end{block}
+
+    \begin{block}{Muscles and Other Biosignals}
+      All Involves hardwares.
+    \end{block}
+
+    \begin{alertblock}{Note}
+      Naive camera based gestures are used.  
+    \end{alertblock}
+  \end{columns}
+\end{frame}
+
+
+
+\input{ik.tex}
+
+\section{Learning Methods}
+\input{rl.tex}
+
+
+\begin{frame}[standout]
+  Questions?
+\end{frame}
+
+\appendix
+
+\begin{frame}[fragile]{Backup slides}
+  Sometimes, it is useful to add slides at the end of your presentation to
+  refer to during audience questions.
+
+  The best way to do this is to include the \verb|appendixnumberbeamer|
+  package in your preamble and call \verb|\appendix| before your backup slides.
+
+  \themename will automatically turn off slide numbering and progress bars for
+  slides in the appendix.
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+
+  \bibliography{demo}
+  \bibliographystyle{abbrv}
+
+\end{frame}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

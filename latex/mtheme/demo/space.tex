@@ -1,0 +1,106 @@
+\begin{frame}[fragile]
+  \frametitle{Reachable Space}
+  \begin{figure}[!ht]\centering
+
+    \begin{tikzpicture}[scale=3.5, isometricXYZ, line join=round,
+      opacity=.65, text opacity=1.0,%
+      >=latex,
+      inner sep=0pt,%
+      outer sep=2pt,%
+      ]
+      \def\h{5}
+
+      \newcommand{\quadrant}[2]{
+        \foreach \f in {85,75,...,5}
+        \foreach \t in {#1}
+        \draw [dotted, fill=#2]
+        ({sin(\f - \h)*cos(\t - \h)}, {sin(\f - \h)*sin(\t - \h)}, {cos(\f - \h)})
+        -- ({sin(\f - \h)*cos(\t + \h)}, {sin(\f - \h)*sin(\t + \h)}, {cos(\f - \h)})
+        -- ({sin(\f + \h)*cos(\t + \h)}, {sin(\f + \h)*sin(\t + \h)}, {cos(\f + \h)})
+        -- ({sin(\f + \h)*cos(\t - \h)}, {sin(\f + \h)*sin(\t - \h)}, {cos(\f + \h)})
+        -- cycle;
+      }
+
+      % Quadrants
+      \quadrant{130,140,...,310}{gray!2}
+      \quadrant{-50,-40,...,130}{gray!2}
+
+
+      \draw[thick] (0,0,0) -- (1,0,0) node[right] {};
+      \draw[gray, thick] (0,0,0) -- (0,0.2,0) node[right] {};
+      \draw plot [mark=*, mark size=0.2] coordinates{(0,0.2,0)};
+
+      \draw[gray, thick] (0.2,0.3,0.5) -- (0,0.2,0) node[right] {};
+      \draw plot [mark=*, mark size=0.2] coordinates{(0.2,0.3,0.5)};
+
+      \draw[gray, thick] (0.2,0.3,0.5) -- (0.5,0.35,0.4) node[right] {};
+      \draw plot [mark=*, mark size=0.2] coordinates{(0.5,0.35,0.4)};
+
+      \draw[gray, thick] (0.1,0.2,0.5) -- (0.5,0.35,0.4) node[right] {};
+      \draw plot [mark=*, mark size=0.2] coordinates{(0.1,0.2,0.5)};
+
+      \draw plot [mark=*, mark size=0.2] coordinates{(0,1,0)};
+
+      \draw plot [mark=*, mark size=0.2] coordinates{(0.2,0,0)};
+      \draw plot [mark=*, mark size=0.2] coordinates{(0.4,0,0)};
+      \draw plot [mark=*, mark size=0.2] coordinates{(0.7,0,0)};
+      \draw plot [mark=*, mark size=0.2] coordinates{(1,0,0)};
+
+      % View arrows
+      \def\l{1.15}
+      \foreach \f in {0,10,...,90}
+      \foreach \t in {95}
+      \draw [black, ->, thick]
+      ({\l*sin(\f)*cos(\t)},{\l*sin(\f)*sin(\t)},{\l*cos(\f)})
+      -- ({sin(\f)*cos(\t)},{sin(\f)*sin(\t)},{cos(\f)});
+
+      % Circles in local coordinate system of the arrows
+      % \foreach \f in {0,10,...,90}
+      % \foreach \t in {95}
+      % {
+      % \def\PosX{{\l*sin(\f)*cos(\t)}}
+      % \def\PosY{{\l*sin(\f)*sin(\t)}}
+      % \def\PosZ{{\l*cos(\f)}}
+      % \def\Pos{(\PosX, \PosY, \PosZ)}
+
+      % \begin{scope}[rotate around={\f:\Pos}]
+      %   \draw[->,red,thick] \Pos circle (0.07);
+      % \end{scope}
+      % };
+    \end{tikzpicture}
+
+    \caption{Reachable Space of a Fully Free Robot Arm}
+    \label{fig:space}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Reachable Space for UR10}
+  \pgfmathsetmacro\x{cos(105)*4}
+  \pgfmathsetmacro\y{sin(105)*4}
+  \begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}
+      \draw[thick] (4,0) arc (0:75:4);
+      \draw[thick] (\x,\y) arc (105:180:4);
+      \draw[thick] (-4,0) -- (4,0);
+      \draw[thick] (\x,\y) -- (-\x,\y);
+      \draw[thick] (0,0) -- (0, 0.2);
+      \draw[thick] (0,0.2) -- (-0.5,0.2);
+      \draw[thick] (-0.5,0.2) -- (-0.5,1.6);
+      \draw[thick] (-0.5,1.6) -- (0, 1.6);
+      \draw[thick] (0, 1.6) -- (0,3.2);
+      \draw[thick] (0, 3.2) -- (-0.3, 3.2);
+      \draw[thick] (-0.3, \y) -- (-0.3, 3.2);
+      \draw[line width = 0.5mm] (-0.3, \y) -- (\x, \y);
+    \end{tikzpicture}
+    
+    \caption{Reachable Space for UR10}
+    \label{fig:ur}
+  \end{figure}
+\end{frame}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "demo"
+%%% End:
