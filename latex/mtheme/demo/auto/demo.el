@@ -1,10 +1,10 @@
 (TeX-add-style-hook
- "sinapse"
+ "demo"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("beamer" "serif" "mathserif" "professionalfont" "hyperref={pdfpagelabels=false}")))
+                     '(("beamer" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("gnuplottex" "miktex") ("adjustbox" "export")))
+                     '(("ccicons" "scale=2")))
    (add-to-list 'LaTeX-verbatim-environments-local "semiverbatim")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
@@ -15,34 +15,22 @@
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
-    "motivation"
+    "ik"
+    "rl"
     "beamer"
     "beamer10"
-    "exscale"
-    "amsmath"
-    "graphicx"
-    "helvet"
-    "tcolorbox"
-    "textpos"
-    "xargs"
+    "appendixnumberbeamer"
+    "booktabs"
+    "ccicons"
+    "pgfplots"
+    "xspace"
     "tikz"
-    "amssymb"
-    "algorithm2e"
-    "pxfonts"
-    "eulervm"
-    "gnuplottex"
-    "adjustbox"
-    "cite"
-    "mathtools")
+    "tikz-3dplot"
+    "algorithm2e")
    (TeX-add-symbols
-    '("norm" 1)
-    "argmin"
-    "argmax"
-    "localtextbulletone"
-    "dom"
-    "mynew"
-    "gdw")
-   (LaTeX-add-bibliographies
-    "references"))
+    "themename")
+   (LaTeX-add-labels
+    "fig:gesture")
+   (LaTeX-add-bibliographies))
  :latex)
 
