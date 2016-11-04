@@ -3,7 +3,6 @@ logs/*
 *node_modules/
 *bower_components/
 tmp
-.DS_Store
 .idea
 
 # temp files for text editors
@@ -19,5 +18,17 @@ tmp
 *Library/
 
 # visual studio
+*.orig
+*.filters
+*.sln
+*.vcxproj
+*.xcodeproj
 
 
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### build directory ###
+*build/
