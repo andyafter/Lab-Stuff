@@ -1,4 +1,14 @@
 * Network Server 
 Network back engine is for handling the communication of the unity project. 
 
-** 
+** Requirements 
+This project is mainly powered by C++ under **cmake**
+
+*** Windows
+Under windows you will have to install some version of visual studio:
+- VS 2013 or 2015
+- cmake
+
+*** Linux
+- gcc and g++
+- cmake
