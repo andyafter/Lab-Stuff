@@ -13,8 +13,10 @@ protected:
        standalone;
        connected; */
     string status;
+    int port;
 
 public:
+    ARTClient();
     ARTClient(int port, string ip = "127.0.0.1");
     ~ARTClient();
     void run();
