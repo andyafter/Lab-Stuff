@@ -4,3 +4,4 @@ The implementation of any version of inverse kinematics requires the knowledge o
 the size and machanical specifications of the robotic arm. Here the real robot 
 size are presented below. You can either choose to **translate** it into 3d space, 
 or simply use real world scale measures to carry the implementation.
+

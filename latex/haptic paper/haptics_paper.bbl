@@ -1,0 +1,79 @@
+\begin{thebibliography}{10}
+
+\bibitem{galambos2012vibrotactile}
+P{\'e}ter Galambos.
+\newblock Vibrotactile feedback for haptics and telemanipulation: Survey,
+  concept and experiment.
+\newblock {\em Acta Polytechnica Hungarica}, 9(1):41--65, 2012.
+
+\bibitem{bark2013vivo}
+Karlin Bark, William McMahan, Austin Remington, Jamie Gewirtz, Alexei Wedmid,
+  David~I Lee, and Katherine~J Kuchenbecker.
+\newblock In vivo validation of a system for haptic feedback of tool vibrations
+  in robotic surgery.
+\newblock {\em Surgical endoscopy}, 27(2):656--664, 2013.
+
+\bibitem{bouzit2002rutgers}
+Mourad Bouzit, Grigore Burdea, George Popescu, and Rares Boian.
+\newblock The rutgers master ii-new design force-feedback glove.
+\newblock {\em IEEE/ASME Transactions on mechatronics}, 7(2):256--263, 2002.
+
+\bibitem{makino2016haptoclone}
+Yasutoshi Makino, Yoshikazu Furuyama, Seki Inoue, and Hiroyuki Shinoda.
+\newblock Haptoclone (haptic-optical clone) for mutual tele-environment by
+  real-time 3d image transfer with midair force feedback.
+\newblock In {\em Proceedings of the 2016 CHI Conference on Human Factors in
+  Computing Systems}, pages 1980--1990. ACM, 2016.
+
+\bibitem{wagner2005mechanisms}
+Christopher~R Wagner and Robert~D Howe.
+\newblock Mechanisms of performance enhancement with force feedback.
+\newblock In {\em First Joint Eurohaptics Conference and Symposium on Haptic
+  Interfaces for Virtual Environment and Teleoperator Systems. World Haptics
+  Conference}, pages 21--29. IEEE, 2005.
+
+\bibitem{nagendran2015symmetric}
+Arjun Nagendran, Anthony Steed, Brian Kelly, and Ye~Pan.
+\newblock Symmetric telepresence using robotic humanoid surrogates.
+\newblock {\em Computer Animation and Virtual Worlds}, 26(3-4):271--280, 2015.
+
+\bibitem{fernandes2015remembering}
+Ajoy~S Fernandes, Ranxiao~Frances Wang, and Daniel~J Simons.
+\newblock Remembering the physical as virtual: source confusion and physical
+  interaction in augmented reality.
+\newblock In {\em Proceedings of the ACM SIGGRAPH Symposium on Applied
+  Perception}, pages 127--130. ACM, 2015.
+
+\bibitem{fu2015towards}
+Bo~Fu.
+\newblock Towards intelligent telerobotics: Visualization and control of remote
+  robot.
+\newblock 2015.
+
+\bibitem{sheridan1995teleoperation}
+Thomas~B Sheridan.
+\newblock Teleoperation, telerobotics and telepresence: A progress report.
+\newblock {\em Control Engineering Practice}, 3(2):205--214, 1995.
+
+\bibitem{haouchine2013image}
+Nazim Haouchine, Jeremie Dequidt, Igor Peterlik, Erwan Kerrien, Marie-Odile
+  Berger, and Stephane Cotin.
+\newblock Image-guided simulation of heterogeneous tissue deformation for
+  augmented reality during hepatic surgery.
+\newblock In {\em Mixed and Augmented Reality (ISMAR), 2013 IEEE International
+  Symposium on}, pages 199--208. IEEE, 2013.
+
+\bibitem{berman2015design}
+Sigal Berman.
+\newblock Design considerations of dexterous telerobotics.
+\newblock In {\em Control and Systems Engineering}, pages 193--203. Springer,
+  2015.
+
+\bibitem{mollet2009virtual}
+Nicolas Mollet, Ryad Chellali, and Luca Brayda.
+\newblock Virtual and augmented reality tools for teleoperation: improving
+  distant immersion and perception.
+\newblock In {\em Transactions on Edutainment II}, pages 135--159. Springer,
+  2009.
+
+\end{thebibliography}

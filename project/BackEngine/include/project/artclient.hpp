@@ -21,6 +21,7 @@ public:
     ~ARTClient();
     void run();
     string getRawData();
+    void decodeData();
 };
 #endif
 

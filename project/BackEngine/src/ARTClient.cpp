@@ -1,7 +1,8 @@
+#include "artclient.hpp"
+
 #include<iostream>
 #include<string>
 
-#include<artclient.hpp>
 
 ARTClient::ARTClient(int port, string ip){
     std::cout << "ARTClient Initiated!" << std::endl;
@@ -24,3 +25,6 @@ string ARTClient::getRawData(){
     return rawData;
 }
 
+void ARTClient::decodeData(){
+    std::cout << "Trying very hard to decode data!" << std::endl;
+}

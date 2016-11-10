@@ -17,8 +17,6 @@ aux_source_directory(./include/project HEADERS)
 
 
 add_executable(Demo
-  ./src/main.cpp
-  #./include/project/artclient.hpp
-  ./src/ARTClient.cpp
+  ${DIR_SRCS}
   )
 
