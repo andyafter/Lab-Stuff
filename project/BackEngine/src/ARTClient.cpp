@@ -2,6 +2,7 @@
 
 #include<iostream>
 #include<string>
+#include <thread>
 
 
 ARTClient::ARTClient(int port, string ip){
@@ -19,6 +20,11 @@ ARTClient::~ARTClient(){
 
 void ARTClient::run(){
     std::cout << "ARTClient Started Running!" << std::endl;
+    std::thread t1(this->testThread);
+    for(int i = 0; i<1000; i++){
+      std::cout << i << std::endl;
+    }
+    t1.join();
 }
 
 string ARTClient::getRawData(){
@@ -27,4 +33,19 @@ string ARTClient::getRawData(){
 
 void ARTClient::decodeData(){
     std::cout << "Trying very hard to decode data!" << std::endl;
+}
+
+void ARTClient::testThread(){
+  for(int i=0; i<1000; ++i){
+    std::cout << i << std::endl;
+  }
+}
+
+void ARTClient::getARTData(){
+  std::cout << "Starting ART Data collection!" << std::endl;
+}
+
+void ARTClient::dummyData(){
+    // this is for getting ART data testing, move to unit test later!!
+    std::cout << "DummyData with UDP!" << std::endl;
 }

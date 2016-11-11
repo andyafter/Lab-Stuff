@@ -22,6 +22,9 @@ public:
     void run();
     string getRawData();
     void decodeData();
+    static void testThread();
+    static void getARTData();
+    static void dummyData();     // Move to unit testing later 
 };
 #endif
 
