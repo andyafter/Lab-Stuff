@@ -48,4 +48,6 @@ void ARTClient::getARTData(){
 void ARTClient::dummyData(){
     // this is for getting ART data testing, move to unit test later!!
     std::cout << "DummyData with UDP!" << std::endl;
+    string dum = "andyafter";
+    
 }
