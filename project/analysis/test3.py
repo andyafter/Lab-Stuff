@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 import numpy as np
 #from mpl_toolkits.mplot3d import Axes3D
 import mpl_toolkits.mplot3d.axes3d as p3
+
 import time
 
 
@@ -11,7 +13,8 @@ class AnimatedScatter():
     marker_data = []      # when dataset gets bigger you need to change it to something else
     time_stamps = []      # should be added to other data structures later
 
-    def get_data(self, fname):
+    def read_data(self, fname):
+        print "reading data"
         f = open(fname, 'r')
         n_loop = 0
         while n_loop < 200000:
@@ -33,7 +36,7 @@ class AnimatedScatter():
                     self.marker_ids[int(d[i+1][1:])] = 1
                     vec_marker = [float(d[i+2].split('[')[-1]), float(d[i+3]), float(d[i+4].split(']')[0])]
                     data.append(vec_marker)
-                self.marker_data.append(data)
+                yield self.marker_data.append(data)
         f.close()
 
     def data_stream(self):
@@ -44,21 +47,20 @@ class AnimatedScatter():
         print "showing"
         self.read_data("./data/data.txt")
 
-if __name__ == '__main__':
-    a = AnimatedScatter()
-    print "Reading Data", len(a.marker_data)
-    a.get_data("./data/data.txt")
-    d = np.array(a.marker_data[20000])
-    plt.ion()
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-    sc = ax.scatter(d[:, 0], d[:, 1], d[:, 2])
-    fig.show()
-    n = 0
-    for frame_data in a.marker_data:
-        print n
-        n+=1
-        data = np.array(frame_data)
-        plt.pause(0.000001)
-        sc._offsets3d = (data[:, 0], data[:, 1], data[:, 2])
-        plt.draw()
+
+a = AnimatedScatter()
+print a.marker_data
+a.read_data("./data/data.txt")
+plt.ion()
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+sc = ax.scatter([0.1], [0.2], [0.3])
+fig.show()
+for frame_data in a.marker_data:
+    data = np.array(frame_data)
+    if not data:
+        continue
+    plt.pause(0.01)
+    print data
+    sc._offsets3d = (data[:, 0], data[:, 1], data[:, 2])
+    plt.draw()
