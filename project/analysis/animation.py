@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 #from mpl_toolkits.mplot3d import Axes3D
 import mpl_toolkits.mplot3d.axes3d as p3
+import matplotlib.animation as animation
+
 import time
 
 
@@ -41,24 +43,42 @@ class AnimatedScatter():
             yield frame_data
 
     def show(self):
-        print "showing"
         self.read_data("./data/data.txt")
 
-if __name__ == '__main__':
-    a = AnimatedScatter()
-    print "Reading Data", len(a.marker_data)
-    a.get_data("./data/data.txt")
-    d = np.array(a.marker_data[20000])
-    plt.ion()
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-    sc = ax.scatter(d[:, 0], d[:, 1], d[:, 2])
-    fig.show()
-    n = 0
-    for frame_data in a.marker_data:
-        print n
-        n+=1
-        data = np.array(frame_data)
-        plt.pause(0.000001)
-        sc._offsets3d = (data[:, 0], data[:, 1], data[:, 2])
-        plt.draw()
+    def data_gen(self):
+        for data in self.marker_data:
+            yield np.array(data)
+
+
+scat = {}
+
+
+def update_animation(data):
+    scat.set_offsets(data[:, 0], data[:, 1], data[:, 2])
+    return scat
+
+
+a = AnimatedScatter()
+print "Reading Data", len(a.marker_data)
+a.get_data("./data/data.txt")
+
+fig = plt.figure()
+ax = p3.Axes3D(fig)
+
+data_ini = np.array(a.marker_data[0])
+scat = ax.scatter(data_ini[:, 0], data_ini[:, 1], data_ini[:, 2])
+
+ax.set_xlim3d([0.0, 5500.0])
+ax.set_xlabel('X')
+
+ax.set_ylim3d([0.0, 5500.0])
+ax.set_ylabel('Y')
+
+ax.set_zlim3d([0.0, 5500.0])
+ax.set_zlabel('Z')
+
+ax.set_title('3D Test')
+
+ani = animation.FuncAnimation(fig, update_animation, a.data_gen, interval=10)
+
+plt.show()
