@@ -15,8 +15,10 @@ set(EXTERNAL "external")
 include_directories(./include/project)
 
 # include gtest
-include_directories(/usr/local/include)
+include_directories(./include/gtest)
+#include_directories(./external/include/gtest)
 
+#link_directories(external/lib/osx)
 
 aux_source_directory(./src DIR_SRCS)
 aux_source_directory(./include/project HEADERS)
@@ -27,3 +29,4 @@ add_executable(Demo
   )
 
 target_link_libraries(Demo /usr/local/lib/libgtest.a)
+#target_link_libraries(Demo ./external/lib/osx/libgtest.a)
