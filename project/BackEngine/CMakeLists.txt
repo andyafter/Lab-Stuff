@@ -14,6 +14,10 @@ set(EXTERNAL "external")
 #set(DIR_SRCS ./src/)
 include_directories(./include/project)
 
+# include gtest
+include_directories(/usr/local/include)
+
+
 aux_source_directory(./src DIR_SRCS)
 aux_source_directory(./include/project HEADERS)
 
@@ -22,3 +26,4 @@ add_executable(Demo
   ${DIR_SRCS}
   )
 
+target_link_libraries(Demo /usr/local/lib/libgtest.a)

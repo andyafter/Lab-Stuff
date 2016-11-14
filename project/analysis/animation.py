@@ -43,7 +43,7 @@ class AnimatedScatter():
             yield frame_data
 
     def show(self):
-        self.read_data("./data/data.txt")
+        self.get_data("./data/data.txt")
 
     def data_gen(self):
         for data in self.marker_data:
@@ -54,7 +54,8 @@ scat = {}
 
 
 def update_animation(data):
-    scat.set_offsets(data[:, 0], data[:, 1], data[:, 2])
+    ax.clear()
+    ax.scatter(data[:, 0], data[:, 1], data[:, 2])
     return scat
 
 
@@ -66,7 +67,7 @@ fig = plt.figure()
 ax = p3.Axes3D(fig)
 
 data_ini = np.array(a.marker_data[0])
-scat = ax.scatter(data_ini[:, 0], data_ini[:, 1], data_ini[:, 2])
+scat = ax.scatter3D(data_ini[:, 0], data_ini[:, 1], data_ini[:, 2])
 
 ax.set_xlim3d([0.0, 5500.0])
 ax.set_xlabel('X')
@@ -79,6 +80,6 @@ ax.set_zlabel('Z')
 
 ax.set_title('3D Test')
 
-ani = animation.FuncAnimation(fig, update_animation, a.data_gen, interval=10)
+ani = animation.FuncAnimation(fig, update_animation, a.data_gen, interval=1)
 
 plt.show()
