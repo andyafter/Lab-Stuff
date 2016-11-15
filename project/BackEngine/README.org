@@ -4,6 +4,7 @@ Network back engine is for handling the communication of the unity project.
 ** Requirements 
 This project is mainly powered by C++ under **cmake**. Libraries required in this project will require manually installation so far:
 - googletest(Follow [[https://gist.github.com/massenz/41bb2c8375294f4d9927][this link]])
+- boost 
 
 Currently you do not need to install any of those packages. 
 
@@ -15,6 +16,11 @@ Under windows you will have to install some version of visual studio:
 *** Linux
 - gcc and g++
 - cmake
+  
+*** OSX
+- gcc and g++
+- cmake
+- brew install boost 
 
 ** Code Examples
 --ARTClient-- handles most events of getting data from UDP packages in the VR room. In this case you only need one instance for real time applications. 

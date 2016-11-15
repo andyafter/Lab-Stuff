@@ -5,7 +5,7 @@
 #include<thread>
 
 
-ARTDummy::ARTClient(){
+ARTDummy::ARTDummy(){
   std::cout << "ARTDummy Initialized!" << std::endl;
 }
 
