@@ -13,7 +13,6 @@
 
 #include "artclient.hpp"
 
-
 using namespace std;
 using namespace boost;
 using namespace boost::asio;
