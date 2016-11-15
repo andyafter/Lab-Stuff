@@ -24,7 +24,7 @@ endif()
 link_directories(${EXTERNAL_LIB_PATH})
 
 # include gtest
-include_directories(./include/gtest)
+#include_directories(./include/gtest)
 #include_directories(./external/include/gtest)
 
 aux_source_directory(./src DIR_SRCS)
@@ -35,5 +35,5 @@ add_executable(Demo
   ${DIR_SRCS}
   )
 
-target_link_libraries(Demo /usr/local/lib/libgtest.a)
+#target_link_libraries(Demo /usr/local/lib/libgtest.a)
 #target_link_libraries(Demo ./external/lib/osx/libgtest.a)
