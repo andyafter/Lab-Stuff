@@ -5,6 +5,8 @@ Network back engine is for handling the communication of the unity project.
 This project is mainly powered by C++ under **cmake**. Libraries required in this project will require manually installation so far:
 - googletest
 
+And before I clean up the cmake file. You probably will have to make sure that the cmake file is changed according to where you installed those libraries.
+
 *** Windows
 Under windows you will have to install some version of visual studio:
 - VS 2013 or 2015
