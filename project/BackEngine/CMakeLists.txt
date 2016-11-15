@@ -4,7 +4,7 @@ cmake_minimum_required (VERSION 2.8)
 project(BackEngine)
 
 find_package (Threads)
-find_package(Boost 1.5.9 REQUIRED system)
+find_package(Boost 1.5.9 REQUIRED system thread regex)
 
 if(NOT Boost_FOUND)
     message(STATUS "BOOST not found, test will not succeed!")
