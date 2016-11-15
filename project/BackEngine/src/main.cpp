@@ -28,12 +28,16 @@ io_service service;
 ip::tcp::endpoint ep(ip::tcp::v4(), 2001); // listen on 2001
 ip::tcp::acceptor acc(service, ep);
 
-int main(){
+int main(int argc, char *argv[]){
   cout<< "Starting Main Project\n";
   ARTClient client(5002);
   client.run();
   cout<< "Finished Main Project!!" << endl;
-  testBoostAsio();
+
+  if(argc > 0){
+    cout<< argv[1] << endl;
+    testBoostAsio();
+  }
 
   return 0;
 }
