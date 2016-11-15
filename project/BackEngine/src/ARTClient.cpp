@@ -2,7 +2,7 @@
 
 #include<iostream>
 #include<string>
-#include <thread>
+#include<thread>
 
 
 ARTClient::ARTClient(int port, string ip){
