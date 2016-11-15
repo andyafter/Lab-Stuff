@@ -54,7 +54,8 @@ scat = {}
 
 
 def update_animation(data):
-    scat.set_offsets(data[:, 0], data[:, 1], data[:, 2])
+    print "round!!!"
+    scat._offsets3d(data[:, 0], data[:, 1], data[:, 2])
     return scat
 
 
