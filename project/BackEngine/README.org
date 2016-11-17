@@ -22,8 +22,10 @@ Under windows you will have to install some version of visual studio:
 - cmake
 - brew install boost 
 
+** Gathering Testing Data
+Testing data can be gathered from the ART tracking system with [[https://github.com/schMarXman/cShART][cShART]]. The framework is based on the paper *A Design Framework for 3D Spatial Gesture Interfaces*
 ** Code Examples
---ARTClient-- handles most events of getting data from UDP packages in the VR room. In this case you only need one instance for real time applications. 
+*ARTClient* handles most events of getting data from UDP packages in the VR room. In this case you only need one instance for real time applications. 
 
 Here is an example of how to use ARTClient:
 #+NAME: ARTCLIENT_EXAMPLE
@@ -32,4 +34,4 @@ Here is an example of how to use ARTClient:
     client.run();
 #+END_SRC
 
---ARTDummy-- is a class which can generate dummy data for testing. 
+*ARTDummy* is a class which can generate dummy data for testing. 
