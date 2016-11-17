@@ -34,14 +34,14 @@ int main(int argc, char *argv[]){
   ARTClient client(5002);
   client.run();
 
-  ARTDummy dummy;
-  dummy.startUDPServer();
-  
+  boost::asio::io_service io_service;
+  ARTDummy c(io_service, "localhost", "1337");
+  c.send("Hello, World!");
 
-  if(argc > 0){
-    cout<< argv[1] << endl;
-    testBoostAsio();
-  }
+  // if(argc < 0){
+  //   cout<< argv[1] << endl;
+  //   testBoostAsio();
+  // }
 
   return 0;
 }
