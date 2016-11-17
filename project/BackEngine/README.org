@@ -6,7 +6,7 @@ This project is mainly powered by C++ under **cmake**. Libraries required in thi
 - googletest(Follow [[https://gist.github.com/massenz/41bb2c8375294f4d9927][this link]])
 - boost 
 
-Currently you do not need to install any of those packages. 
+Currently you do not need to install any of those packages. However if you want to do test driven programming, you can enable google test by installing it on your platform and uncomment the relative code in CMakeLists.txt.
 
 *** Windows
 Under windows you will have to install some version of visual studio:

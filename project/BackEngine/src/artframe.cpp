@@ -1,16 +1,15 @@
 #include<iostream>
-#include<time>
 
 #include "artframe.hpp"
 
 ARTFrame::ARTFrame(){
-  this.numMarkers = 0;
-  this.timestamp = 0;
+  this->numMarkers = 0;
+  this->timestamp = 0;
 }
 
 ARTFrame::ARTFrame(int num, long int time){
-  this.numMarkers = num;
-  this.timestamp = time;
+  this->numMarkers = num;
+  this->timestamp = time;
 }
 
 ARTFrame::~ARTFrame(){
@@ -22,9 +21,9 @@ string ARTFrame::getSequence(){
 }
 
 int ARTFrame::getNumMarkers(){
-  return this.numMarkers;
+  return this->numMarkers;
 }
 
 long int ARTFrame::getTimeStamp(){
-  return this.timestamp;
+  return this->timestamp;
 }

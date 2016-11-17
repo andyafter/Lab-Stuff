@@ -12,6 +12,7 @@
 #include<boost/algorithm/string.hpp>
 
 #include "artclient.hpp"
+#include "artdummy.hpp"
 
 using namespace std;
 using namespace boost;
@@ -29,9 +30,13 @@ ip::tcp::acceptor acc(service, ep);
 
 int main(int argc, char *argv[]){
   cout<< "Starting Main Project\n";
+
   ARTClient client(5002);
   client.run();
-  cout<< "Finished Main Project!!" << endl;
+
+  ARTDummy dummy;
+  dummy.startUDPServer();
+  
 
   if(argc > 0){
     cout<< argv[1] << endl;
