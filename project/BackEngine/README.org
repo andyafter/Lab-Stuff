@@ -12,6 +12,9 @@ Currently you do not need to install any of those packages. However if you want 
 Under windows you will have to install some version of visual studio:
 - VS 2013 or 2015
 - cmake
+However, installing and using boost.asio library would be difficult for windows, I will fix it later. 
+
+**** TODO Find a easy way to use boost.asio under windows.
 
 *** Linux
 - gcc and g++
