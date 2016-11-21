@@ -4,7 +4,8 @@ cmake_minimum_required (VERSION 2.8)
 project(BackEngine)
 
 find_package (Threads)
-find_package(Boost 1.5.9 REQUIRED system thread regex)
+set(Boost_USE_STATIC_LIBS ON)
+find_package(Boost 1.5.9 COMPONENTS system thread regex REQUIRED)
 
 if(NOT Boost_FOUND)
     message(STATUS "BOOST not found, test will not succeed!")
