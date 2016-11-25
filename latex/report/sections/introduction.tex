@@ -11,8 +11,8 @@ processing algorithms to process information resulting from the
 micro-motions.
 
 {\bf Vibro-Tactile Haptic Glove}
+We aim at designing a lightweight, wireless vibro-tactile glove to facilitate human perception of remote robotic environments. The vibratory actuators are placed at sensitive locations of the palm to deliver precise and localized haptic feedback. The objective is to make these gloves robust to user’s hand poses.
 
- A lightweight, wireless vibro-tactile glove was designed with a capability of rendering precisely localized haptic information.  The objective is to make these gloves robust to hand poses by use of flexible PCBs and proper selection and distribution of actuators.
 
  {\bf Virtual Reality Visualization}
  The project enables a VR environment (CAVE or virtual headset) to
@@ -24,19 +24,4 @@ micro-motions.
  robots to a VR environment. In addition, a tele-operator can control
  the robots to perform appropriate actions as tracking and following
  other objects and object recognition.
-
- \chapter{Materials and Methods}
-
- \section{Motion Segmentation }
- A motion segmentation strategy using biologically inspired principle of embodied cognition was developed. Embodied cognition states that body is an active part of perception as opposed to pure feedforward perception models. This form of action based active perception is used by animals to process information from their surroundings. Some common examples include whisker motion for sensing immediate surroundings, ear tympana motion for accurate source localization, and saccades in eyes for scene perception. We developed an algorithm for motion segmentation by taking motivation from biological principles of saccades. The algorithm performance was characterized through experiments in controlled environments.
-Motion segmentation is a critical pre-processing step for autonomous robotic systems to facilitate tracking-following of moving objects in cluttered environments. Using a frame-rate camera, localization and tracking of moving objects is straightforward applying object recognition algorithms but requires significant computational resources. Event based sensors are low power analog devices that represent a scene by means of asynchronous information updates of only the dynamic details at high temporal resolution and, hence, require significantly less calculations. High temporal resolution allows for the extraction of relevant spatiotemporal scene statistics and is useful for real-time robotic applications. Our saccade or micro-motion based framework uses a biologically inspired motor perturbation induced perception strategy, that facilitates the separation of static and dynamic elements of a scene. We introduce the concept of spike-groups as an optimal method to calculate scene statistics. Using this novel approach, spatiotemporal data are partitioned into elementary, independent event groups (spike-groups), which are subsequently used to characterize objects in a scene. In addition, we show that inherent vibrations present in a sensor’s mounting platform can be used to enhance motion segmentation. Experimental results show that our algorithm is able to classify moving objects in real-time with dense labelling.
-
-
-\section{Vibro-Tactile Haptic Glove}
-The second generation of vibro-tactile haptic gloves was developed. These gloves have the capability of rendering spatial touch information with amplitude modulation. The high-density gloves have 18 vibratory eccentric rotating mass actuators. The actuator locations were selected to deliver haptic feedback at the most used and sensitive areas on the palm-side of the hand during exploratory procedures. The actuators are held in place by a flexible PCB, made from polyimide, to closely represent the topography of the hand, minimize wiring complexities, prevent displacements after prolonged usage and give a more natural skin-like feel.
-The control box is placed at the wrist location. The vibration
-intensity and their activation is controlled wirelessly through a
-graphical user interface (GUI) that is designed to send custom
-stimulation patterns. The GUI enables single and multiple actuator
-activation with amplitude modulation for intensity control. In near-field operation the latency is low permitting real-time feedback. The control box consists of two pulse width modulation (PWM) drivers and one Arduino microcontroller. The computer transmitting an encoded stimulation signal received by the control box initiates the communication pathway. This signal is sent to a microcontroller for actuation. In addition, the control box contains a power source for the system. A prototype of the second generation haptic glove is show in Figure 1. 
 

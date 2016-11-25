@@ -11,6 +11,7 @@
     "sections/preface"
     "sections/introduction"
     "sections/ch2name"
+    "sections/results"
     "sections/conclusion"
     "sections/appAname")
    (LaTeX-add-labels

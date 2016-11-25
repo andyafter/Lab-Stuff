@@ -12,8 +12,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Vibro-Tactile Haptic Glove}{4}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Chapter 2 name}{5}{chapter.3}
+\contentsline {section}{\numberline {2.3}VR Simulation}{4}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Conclusion}{7}{chapter.4}
+\contentsline {chapter}{\numberline {3}Conclusion}{7}{chapter.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Appendix A name}{9}{appendix.A}
