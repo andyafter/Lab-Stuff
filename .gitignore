@@ -33,3 +33,5 @@ tmp
 
 ### build directory ###
 *build/
+*.gz
+*.out

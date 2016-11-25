@@ -10,10 +10,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Motion Segmentation }{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Vibro-Tactile Haptic Glove}{4}{section.2.2}
+\contentsline {section}{\numberline {2.2}Vibro-Tactile Haptic Glove}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}VR Simulation}{4}{section.2.3}
+\contentsline {section}{\numberline {2.3}VR Simulation}{6}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Conclusion}{7}{chapter.3}
+\contentsline {chapter}{\numberline {3}Results }{7}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix A name}{9}{appendix.A}
+\contentsline {section}{\numberline {3.1}Motion Segmentation}{7}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Vibro-Tactile Haptic Glove}{7}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Future Plans}{9}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix A name}{11}{appendix.A}
