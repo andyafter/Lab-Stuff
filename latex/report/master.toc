@@ -2,7 +2,7 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Preface}{ix}{chapter*.3}
+\contentsline {chapter}{Preface}{vii}{chapter*.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Objectives}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -12,16 +12,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Vibro-Tactile Haptic Glove}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}VR Simulation}{6}{section.2.3}
+\contentsline {section}{\numberline {2.3}VR Simulation}{7}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Results }{7}{chapter.3}
+\contentsline {chapter}{\numberline {3}Results}{9}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Motion Segmentation}{7}{section.3.1}
+\contentsline {section}{\numberline {3.1}Motion Segmentation}{9}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Vibro-Tactile Haptic Glove}{7}{section.3.2}
+\contentsline {section}{\numberline {3.2}Vibro-Tactile Haptic Glove}{9}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Future Plans}{9}{chapter.4}
+\contentsline {section}{\numberline {3.3}Virtual Reality Room}{10}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Motion Segmentation }{9}{section.4.1}
+\contentsline {chapter}{\numberline {4}Future Plans}{11}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix A name}{11}{appendix.A}
+\contentsline {section}{\numberline {4.1}Motion Segmentation }{11}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Vibro-Tactile Haptic Glove}{11}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix A name}{13}{appendix.A}
