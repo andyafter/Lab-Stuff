@@ -12,7 +12,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Vibro-Tactile Haptic Glove}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}VR Simulation}{7}{section.2.3}
+\contentsline {section}{\numberline {2.3}CAVE VR}{7}{section.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Results}{9}{chapter.3}
 \defcounter {refsection}{0}\relax 

@@ -6,7 +6,7 @@ As reported in D9, we developed a novel motion segmentation algorithm utilizing 
   \begin{center}
     \includegraphics[width=0.90\textwidth]{figures/motion-seg/setup}% This is a *.jpg file
   \end{center}
-  \textbf{\refstepcounter{figure}\label{fig:turtle_setup} Figure \arabic{figure}. Sensor integration in the robotic platform for experiments.}. { The robot is ROS-enabled and allows development of algorithms within the ROS ecosystem. }
+  \textbf{\refstepcounter{figure}\label{fig:turtle_setup} Figure \arabic{figure}. Sensor integration in the robotic platform for experiments.} { The robot is ROS-enabled and allows development of algorithms within the ROS ecosystem. }
 \end{figure}
 
 In this report, we emphasize on the development of (1) the robotic platform for integrating various sensors for navigation and motion segmentation and (2) wireless data transfer and rendition in a virtual reality platform. As shown in Fig\ref{fig:turtle_setup}, we use the turtlebot robotic platform to integrate the sensors and algorithms. The robot comprises three USB cameras with their field of views (FoV) aligned such that they form a continuous scene when rendered consecutively. The robot is equipped with a RGBD sensor, Intel's RealSense R200, allowing the robot to make a map of its environment and perform path planning. A central computing unit is responsible for executing the algorithms for path planning, obstacle avoidance, motion segmentation and wireless environment image transfer.
@@ -81,21 +81,33 @@ The communication pathway is initiated by transmitting an encoded stimulation si
 \end{figure}
 
 
-\section{VR Simulation}
+\section{CAVE VR}
+
 We aim at rendering complex virtual objects as shown in Figure 2, to
 the user by mapping their shapes to the vibratory stimuli on the
 haptic glove.
 
-A VR environment is built inside the CAVE with 4 projectors using
-Unity development platform. We have developed a pick and place VR
-simulation as shown in Figure 3. We are evaluating strategies for the
-rendition of 3-dimensional geometric shapes to the user with the
-vibro-tactile glove.
+Based on the previous development. We designed gesture language
+systems based on ART D-Track markers. %% add citation here for design
+%% framework of 3d gestures
+We conducted basic analysis on VR tasks and gesture segmentation, and
+selected HMM as one of the core models for the system
+design. 
 
-An ART D-track system as shown in Figure 4, is used to track the position and the movement of a user accurately in the VR environment. The ART-DTracking(Advanced Realtime Tracking) system, which is used for interaction in this case, will be used for providing gesture data. Simple clustering algorithms are used to locate the human hand and body. The position data is then translated and recorded into position data in the VR system for further usage.
 
+The VR environment we built contains different
+scenes. Each scene comes with  a set of gesture time sequence design
+requirements that are vital for the completion of the task. Further
+work will provide the implementation of the algorithmic architecture.  
 
-This tracking system will also be used by a tele-operator to interact
-with a virtual avatar of the robot deployed in a remote
-location. Depth sensors like RealSense or Kinect are used to render
-the scene around robot in the VR environment.
+Fig\ref{fig:pickplace} shows a scene for a simple pick and
+place task. This scene requires non consistent gesture signal(pick and
+drop). 
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=8cm]{figures/pickplace.png}
+  \caption{Pick and Place Task Scene}
+  \label{fig:pickplace}
+\end{figure}
+
