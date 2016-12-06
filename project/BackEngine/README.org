@@ -1,5 +1,5 @@
 * Network Server 
-Network back engine is for handling the communication of the unity project. 
+Network back engine is for handling the communication of the unity project. This project is mainly for developing and testing small pieces of code under Mac or ubuntu operating system. You can then copy and paste into GesEngine under windows. 
 
 ** Requirements 
 This project is mainly powered by C++ under **cmake**. Libraries required in this project will require manually installation so far:
