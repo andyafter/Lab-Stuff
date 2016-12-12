@@ -37,3 +37,4 @@ tmp
 *.out
 
 *.el
+project/build*
