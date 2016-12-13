@@ -38,3 +38,5 @@ tmp
 
 *.el
 project/build*
+
+*.user
