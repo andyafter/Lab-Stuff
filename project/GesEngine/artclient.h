@@ -3,6 +3,8 @@
 
 #include<string>
 
+#include <QUdpSocket>
+
 using namespace std;
 
 class artclient
