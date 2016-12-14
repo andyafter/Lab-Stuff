@@ -1,20 +1,22 @@
 #ifndef ARTCLIENT_H
 #define ARTCLIENT_H
 
-#include<string>
-
+#include <QObject>
 #include <QUdpSocket>
 
-using namespace std;
-
-class artclient
+class ARTClient : public QObject
 {
+    Q_OBJECT
 public:
-    artclient();
-    ~artclient();
-    void udpListen();
+    explicit ARTClient(QObject *parent = 0);
+
+signals:
+
+public slots:
+    void readyRead();
+
 protected:
-    string rawData;
+    QUdpSocket *socket;
 };
 
 #endif // ARTCLIENT_H
