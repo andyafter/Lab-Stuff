@@ -12,7 +12,7 @@ class artclient
 public:
     artclient();
     ~artclient();
-    udpListen();
+    void udpListen();
 protected:
     string rawData;
 };
