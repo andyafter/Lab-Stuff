@@ -12,11 +12,12 @@ void ARTClient::readyRead(){
     QByteArray Buffer;
     Buffer.resize(socket->pendingDatagramSize());
 
-    QHostAddress *sender = new QHostAddress("192.168.1.110");
-    quint16 senderPort = 5002;
+    QHostAddress *sender;
+    quint16 senderPort;
     socket->readDatagram(Buffer.data(),Buffer.size(), sender, &senderPort);
-    qDebug()<<"message from" <<sender->toString();
-    qDebug()<<"message port" <<senderPort;
-    qDebug()<<"message from" <<Buffer;
-
+    if(Buffer.size()>0 && sender->toString() == "192.168.1.100"){
+        qDebug()<<"message from" <<sender->toString();
+        qDebug()<<"message port" <<senderPort;
+        qDebug()<<"message:" <<Buffer;
+    }
 }
