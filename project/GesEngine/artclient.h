@@ -14,6 +14,7 @@ signals:
 
 public slots:
     void readyRead();
+    void extractMarkers();
 
 protected:
     QUdpSocket *socket;
