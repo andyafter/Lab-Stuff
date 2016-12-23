@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 #from mpl_toolkits.mplot3d import Axes3D
-import mpl_toolkits.mplot3d.axes3d as p3
 import matplotlib.animation as animation
 
 import time
@@ -16,10 +15,11 @@ class AnimatedScatter():
     def get_data(self, fname):
         f = open(fname, 'r')
         n_loop = 0
-        while n_loop < 200000:
+        while n_loop < 2000000:
             n_loop += 1          # for getting testing data
             line = f.readline()
             if not line:
+                print "end of file"
                 break
             if line[:2] == "3d":
                 self.num_dframes += 1
@@ -27,6 +27,8 @@ class AnimatedScatter():
                 data = []
                 # number of vectors
                 num = int(d[0])
+                if num<10:
+                    continue # here to save some time for the data analysis
                 for k in range(num):
                     # data stores all the points inside the marker
                     # every group is 4 elements, the second element would be something like 1.000][227.002
@@ -50,36 +52,6 @@ class AnimatedScatter():
             yield np.array(data)
 
 
-scat = {}
-
-
-def update_animation(data):
-    print "round!!!"
-    scat._offsets3d(data[:, 0], data[:, 1], data[:, 2])
-    return scat
-
-
-a = AnimatedScatter()
-print "Reading Data", len(a.marker_data)
-a.get_data("./data/data.txt")
-
-fig = plt.figure()
-ax = p3.Axes3D(fig)
-
-data_ini = np.array(a.marker_data[0])
-scat = ax.scatter3D(data_ini[:, 0], data_ini[:, 1], data_ini[:, 2])
-
-ax.set_xlim3d([0.0, 5500.0])
-ax.set_xlabel('X')
-
-ax.set_ylim3d([0.0, 5500.0])
-ax.set_ylabel('Y')
-
-ax.set_zlim3d([0.0, 5500.0])
-ax.set_zlabel('Z')
-
-ax.set_title('3D Test')
-
-ani = animation.FuncAnimation(fig, update_animation, a.data_gen, interval=1)
-
-plt.show()
+#a = AnimatedScatter()
+#print "Reading Data", len(a.marker_data)
+#a.get_data("./data/data.txt")
