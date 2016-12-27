@@ -23,5 +23,5 @@ void ARTClient::readyRead(){
 }
 
 void ARTClient::extractMarkers(){
-  
+  qDebug() << "Here inside the extractMarkers." << endl;
 }
