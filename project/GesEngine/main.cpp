@@ -11,10 +11,13 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-    ARTClient server;
-    while(1){
-        server.readyRead();
-    }
-    server.readyRead();
+
+    // ARTClient server;
+    // while(1){
+    //     server.readyRead();
+    // }
+    // server.readyRead();
+    ARTClient client;
+    client.extractMarkers("hello");
     return a.exec();
 }

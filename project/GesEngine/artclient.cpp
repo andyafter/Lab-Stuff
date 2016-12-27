@@ -1,3 +1,5 @@
+#inlcude <QString>
+
 #include "artclient.h"
 
 ARTClient::ARTClient(QObject *parent) : QObject(parent){
@@ -22,6 +24,6 @@ void ARTClient::readyRead(){
     }
 }
 
-void ARTClient::extractMarkers(){
-  qDebug() << "Here inside the extractMarkers." << endl;
+void ARTClient::extractMarkers(QString frame){
+  qInfo() << "Here inside the extractMarkers." << endl;
 }
