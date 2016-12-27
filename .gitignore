@@ -39,4 +39,4 @@ tmp
 *.el
 project/build*
 
-*.user
+*.pro.user
