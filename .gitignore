@@ -39,8 +39,11 @@ tmp
 *.el
 project/build*
 
+
 *.user
 
 ### data directory
 project/analysis/gesdata*
 *.app
+*.pro.user
+
