@@ -21,3 +21,7 @@ void ARTClient::readyRead(){
         qDebug()<<"message:" <<Buffer;
     }
 }
+
+void ARTClient::extractMarkers(){
+  
+}
