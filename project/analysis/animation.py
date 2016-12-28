@@ -22,7 +22,6 @@ class AnimatedScatter():
                 if line == "":
                     continue
                 if line[:2] == "3d":
-                    print line
                     self.num_dframes += 1
                     d = line.split()[1:]
                     data = []
