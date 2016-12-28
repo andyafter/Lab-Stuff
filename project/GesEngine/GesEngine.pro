@@ -3,11 +3,18 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = 
+TARGET =
+TARGET.path = .
 DEPENDPATH += .
 INCLUDEPATH += .
+INSTALLS += TARGET
+
+QT += charts core gui network
 
 # Input
-HEADERS += artclient.h mainwindow.h
+HEADERS += artclient.h mainwindow.h \
+    gesvisulizer.h
 FORMS += mainwindow.ui
-SOURCES += artclient.cpp main.cpp mainwindow.cpp
+SOURCES += artclient.cpp main.cpp mainwindow.cpp \
+    gesvisulizer.cpp
+
