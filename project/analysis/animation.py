@@ -14,7 +14,7 @@ class AnimatedScatter():
 
     def get_data(self, fname):
         f = open(fname, 'r')
-        n_loop, self.marker_data = 0, []
+        n_loop, self.marker_data, self.marker_ids = 0, [], {}
         #while n_loop < 2000000:
         with open(fname,'r') as f:
             for line in f:

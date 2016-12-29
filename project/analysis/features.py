@@ -17,15 +17,17 @@ for ndata in range(2,21):
 
     dis = np.array([])
 
-    print len(marker_data)
+    print len(marker_data), len(data.marker_ids)
 
     for frame in marker_data:
         sum_dis = 0
+        total_edges = 0
         for i in range(len(frame)-1):
             for j in range(1, len(frame)):
                 sum_dis += LA.norm(np.array(frame[i])-np.array(frame[j]))
-        dis = np.append(dis, sum_dis)
+                total_edges += 1
+        dis = np.append(dis, (sum_dis)/total_edges)
 
-    plt.clf()
-    plt.plot(range(len(dis)), dis)
-    plt.savefig("grab{}.png".format(str(ndata)))
+    # plt.clf()
+    # plt.plot(range(len(dis)), dis)
+    # plt.savefig("grab{}.png".format(str(ndata)))
