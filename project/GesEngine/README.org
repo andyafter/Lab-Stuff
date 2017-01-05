@@ -1,7 +1,0 @@
-Gesture Engine
-
-* Gesture Engine
-
-This project is meant to be used to collect data from the ART tracking system. It is responsible for data analysis and gesture recognition.
-
-This project is implemented with QT.

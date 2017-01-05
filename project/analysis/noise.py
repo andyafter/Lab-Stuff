@@ -11,4 +11,3 @@ from animation import AnimatedScatter
 data = AnimatedScatter()
 data.get_data("./gesdata/data15.txt")
 
-
