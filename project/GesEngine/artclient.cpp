@@ -13,6 +13,16 @@ void ARTClient::extractMarkers(QString frame)
     qInfo() << "Here inside the extractMarkers." << endl;
 }
 
+void ARTClient::gestureLearning()
+{
+    // analysis and extract fearures from real time data
+}
+
+void ARTClient::emitGestureEvent()
+{
+    // when a gesture is detected, trigered to send a signal to something else
+}
+
 void ARTClient::readyRead(){
     QByteArray Buffer;
     Buffer.resize(socket->pendingDatagramSize());

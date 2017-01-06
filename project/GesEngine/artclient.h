@@ -11,6 +11,8 @@ class ARTClient : public QObject
 public:
     explicit ARTClient(QObject *parent = 0);
     void extractMarkers(QString frame);
+    void gestureLearning();
+    void emitGestureEvent();
 signals:
 
 public slots:
