@@ -16,6 +16,10 @@ void ARTClient::extractMarkers(QString frame)
 void ARTClient::gestureLearning()
 {
     // analysis and extract fearures from real time data
+    /* You can have multiple layers of gestures. If you do 
+       so you need multiple functions and multiple events. 
+       The scheduling of these gestures might come in handy.
+     */
 }
 
 void ARTClient::emitGestureEvent()
