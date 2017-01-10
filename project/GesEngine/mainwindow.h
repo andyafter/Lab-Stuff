@@ -15,6 +15,12 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+signals:
+    void on_stop();
+
+private slots:
+    void on_actionHome_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

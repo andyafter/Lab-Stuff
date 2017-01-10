@@ -8,6 +8,7 @@ QT       += core gui
 QT       += opengl
 QT       += datavisualization
 QT       += network
+QT       += concurrent
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -20,10 +21,13 @@ LIBS += -lglut
 SOURCES += main.cpp\
         mainwindow.cpp \
     glwidget.cpp \
-    artclient.cpp
+    artclient.cpp \
+    connectiondialog.cpp
 
 HEADERS  += mainwindow.h \
     glwidget.h \
-    artclient.h
+    artclient.h \
+    connectiondialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    connectiondialog.ui

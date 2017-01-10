@@ -8,6 +8,16 @@ ARTClient::ARTClient(QObject *parent) : QObject(parent){
     connect(socket, SIGNAL(readyRead()),this,SLOT(readyRead()));
 }
 
+ARTClient::~ARTClient()
+{
+
+}
+
+void ARTClient::startReading()
+{
+
+}
+
 void ARTClient::extractMarkers(QString frame)
 {
     qInfo() << "Here inside the extractMarkers." << endl;
@@ -22,9 +32,9 @@ void ARTClient::gestureLearning()
      */
 }
 
-void ARTClient::emitGestureEvent()
+void ARTClient::broadCaseGestureEvent()
 {
-    // when a gesture is detected, trigered to send a signal to something else
+     // when a gesture is detected, trigered to send a signal to something else
 }
 
 void ARTClient::readyRead(){
@@ -39,4 +49,9 @@ void ARTClient::readyRead(){
         qDebug()<<"message port" <<senderPort;
         qDebug()<<"message:" <<Buffer;
     }
+}
+
+void ARTClient::stopRead()
+{
+
 }
