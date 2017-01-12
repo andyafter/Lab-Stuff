@@ -24,6 +24,7 @@ public:
 
 signals:
     //// understand and change this function
+    ///  seems no implementation of this function
     void on_number(QString name, int number);
 
 public slots:

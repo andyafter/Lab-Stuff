@@ -1,8 +1,10 @@
 #include "artclient.h"
 
 ARTClient::ARTClient(QObject *parent) : QObject(parent){
-    QHostAddress *art = new QHostAddress("192.168.1.110");  // art address
 
+    readStop = false;
+    // not sure if it is the best practice to put the initialization of socket here
+    QHostAddress *art = new QHostAddress("192.168.1.110");  // art address
     socket = new QUdpSocket(this);
     socket->bind(*art,5002);
     connect(socket, SIGNAL(readyRead()),this,SLOT(readyRead()));
@@ -15,7 +17,11 @@ ARTClient::~ARTClient()
 
 void ARTClient::startReading()
 {
-
+    while(!readStop){
+        qDebug()<<"From Thread";
+        emit on_number("fthread",1);
+        QThread::currentThread()->msleep(100);
+    }
 }
 
 void ARTClient::extractMarkers(QString frame)
@@ -53,5 +59,5 @@ void ARTClient::readyRead(){
 
 void ARTClient::stopRead()
 {
-
+    readStop = true;
 }
