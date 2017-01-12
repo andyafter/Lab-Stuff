@@ -12,3 +12,13 @@ ConnectionDialog::~ConnectionDialog()
 {
     delete ui;
 }
+
+void ConnectionDialog::on_conStartBtn_clicked()
+{
+    qDebug()<<"here is something!";
+}
+
+void ConnectionDialog::on_conStopBtn_clicked()
+{
+
+}
