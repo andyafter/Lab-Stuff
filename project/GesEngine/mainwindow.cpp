@@ -18,7 +18,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionHome_triggered()
 {
-    qDebug()<<"triggered!" ;
     ConnectionDialog dialog;
     dialog.setModal(true);
     dialog.exec();
