@@ -7,7 +7,7 @@ ARTClient::ARTClient(QObject *parent) : QObject(parent){
     QHostAddress *art = new QHostAddress("192.168.1.110");  // art address
     socket = new QUdpSocket(this);
     socket->bind(*art,5002);
-    connect(socket, SIGNAL(readyRead()),this,SLOT(readyRead()));
+    //connect(socket, SIGNAL(readyRead()),this,SLOT(readyRead()));
 }
 
 ARTClient::~ARTClient()
@@ -17,11 +17,14 @@ ARTClient::~ARTClient()
 
 void ARTClient::startReading()
 {
+    int n = 1;
     while(!readStop){
-        qDebug()<<"From Thread";
+        if(n++%60==0){
+            qDebug()<<"From Thread"<< n;
+        }
         emit on_number("fthread",1);
-        QThread::currentThread()->msleep(100);
-        emit readyRead();
+        QThread::currentThread()->msleep(10);
+        readyRead();
     }
 }
 
@@ -33,8 +36,8 @@ void ARTClient::extractMarkers(QString frame)
 void ARTClient::gestureLearning()
 {
     // analysis and extract fearures from real time data
-    /* You can have multiple layers of gestures. If you do 
-       so you need multiple functions and multiple events. 
+    /* You can have multiple layers of gestures. If you do
+       so you need multiple functions and multiple events.
        The scheduling of these gestures might come in handy.
      */
 }
@@ -48,13 +51,14 @@ void ARTClient::readyRead(){
     QByteArray Buffer;
     Buffer.resize(socket->pendingDatagramSize());
 
-    QHostAddress *sender;
+    QHostAddress sender;
     quint16 senderPort;
-    socket->readDatagram(Buffer.data(),Buffer.size(), sender, &senderPort);
-    if(Buffer.size()>0 && sender->toString() == "192.168.1.100"){
-        qDebug()<<"message from" <<sender->toString();
-        qDebug()<<"message port" <<senderPort;
-        qDebug()<<"message:" <<Buffer;
+
+    socket->readDatagram(Buffer.data(),Buffer.size(), &sender, &senderPort);
+    if(Buffer.size()>0 && sender.toString() == "192.168.1.100"){
+        //qDebug()<<"message from" <<sender.toString();
+        //qDebug()<<"message port" <<senderPort;
+        //qDebug()<<"message:" <<Buffer;
     }
 }
 
