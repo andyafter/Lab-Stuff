@@ -22,6 +22,10 @@ public:
     // communicate with Unity project
     void broadCaseGestureEvent();
 
+    QString getRawData() const;
+
+    void setRawData(const QString &value);
+
 signals:
     //// understand and change this function
     ///  seems no implementation of this function
@@ -37,6 +41,7 @@ protected:
 
 private:
     bool readStop;
+    QString rawData;
 };
 
 #endif // ARTCLIENT_H

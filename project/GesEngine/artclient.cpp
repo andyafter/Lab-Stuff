@@ -66,3 +66,13 @@ void ARTClient::stopRead()
 {
     readStop = true;
 }
+
+void ARTClient::setRawData(const QString &value)
+{
+    rawData = value;
+}
+
+QString ARTClient::getRawData() const
+{
+    return rawData;
+}
