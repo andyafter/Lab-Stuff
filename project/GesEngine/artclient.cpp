@@ -21,6 +21,7 @@ void ARTClient::startReading()
         qDebug()<<"From Thread";
         emit on_number("fthread",1);
         QThread::currentThread()->msleep(100);
+        readyRead();
     }
 }
 
