@@ -10,6 +10,7 @@ ConnectionDialog::ConnectionDialog(QWidget *parent) :
 
 ConnectionDialog::~ConnectionDialog()
 {
+    aclient.stopRead();
     emit on_stop();
     delete ui;
 }
@@ -29,6 +30,5 @@ void ConnectionDialog::on_conStopBtn_clicked()
 
 ConnectionDialog::connectART(QString address, int port)
 {
-    qDebug() << "From MainWindow: ";
     ui->lineEdit->setText(address + "haha" + QString(port));
 }

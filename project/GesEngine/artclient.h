@@ -42,6 +42,7 @@ protected:
 private:
     bool readStop;
     QString rawData;
+    QVector<QVector<float>> markers;
 };
 
 #endif // ARTCLIENT_H

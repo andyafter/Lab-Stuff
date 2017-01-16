@@ -12,7 +12,7 @@ ARTClient::ARTClient(QObject *parent) : QObject(parent){
 
 ARTClient::~ARTClient()
 {
-
+    readStop = true;
 }
 
 void ARTClient::startReading()
@@ -30,7 +30,25 @@ void ARTClient::startReading()
 
 void ARTClient::extractMarkers(QString frame)
 {
-    qInfo() << "Here inside the extractMarkers." << endl;
+    markers.clear();
+    // this function converts the udp package to a list of marker positions
+    QString data = frame.split('\n')[4];
+    QStringList temp = data.split("][");
+    for(int i =1;i<temp.length();++i){
+        QVector<float> position;
+        QStringList posString;
+        if(temp[i].contains("] [")){
+            posString = temp[i].split("] [")[0].split(" ");
+        }
+        else if(temp[i].contains("]\r")){
+            posString = temp[i].split("]\r")[0].split(" ");
+        }
+        position.append(posString[0].toFloat());
+        position.append(posString[1].toFloat());
+        position.append(posString[2].toFloat());
+        markers.append(position);
+    }
+    qDebug()<<markers;
 }
 
 void ARTClient::gestureLearning()
@@ -60,6 +78,7 @@ void ARTClient::readyRead(){
         //qDebug()<<"message port" <<senderPort;
         //qDebug()<<"message:" <<Buffer;
         rawData = Buffer;
+        extractMarkers(rawData);
     }
 }
 
