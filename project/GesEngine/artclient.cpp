@@ -1,4 +1,5 @@
 #include "artclient.h"
+#include <QtMath>
 
 ARTClient::ARTClient(QObject *parent) : QObject(parent){
 
@@ -20,7 +21,7 @@ void ARTClient::startReading()
     int n = 1;
     while(!readStop){
         if(n++%60==0){
-            qDebug()<<"From Thread"<< n;
+            qDebug()<<"From Thread";
         }
         emit on_number("fthread",1);
         QThread::currentThread()->msleep(10);
@@ -32,6 +33,7 @@ void ARTClient::extractMarkers(QString frame)
 {
     markers.clear();
     // this function converts the udp package to a list of marker positions
+    // it's better to use math tools like opencv for this part
     QString data = frame.split('\n')[4];
     QStringList temp = data.split("][");
     for(int i =1;i<temp.length();++i){
@@ -43,12 +45,14 @@ void ARTClient::extractMarkers(QString frame)
         else if(temp[i].contains("]\r")){
             posString = temp[i].split("]\r")[0].split(" ");
         }
+        if(posString[2].toFloat()>2250){
+            continue;
+        }
         position.append(posString[0].toFloat());
         position.append(posString[1].toFloat());
         position.append(posString[2].toFloat());
         markers.append(position);
     }
-    qDebug()<<markers;
 }
 
 void ARTClient::gestureLearning()
@@ -62,7 +66,37 @@ void ARTClient::gestureLearning()
 
 void ARTClient::broadCaseGestureEvent()
 {
-     // when a gesture is detected, trigered to send a signal to something else
+    // when a gesture is detected, trigered to send a signal to something else
+}
+
+void ARTClient::features()
+{
+    QVector<float> center(3);
+    for(int i = 0; i<markers.length(); i++){
+        center[0] += markers[i][0];
+        center[1] += markers[i][1];
+        center[2] += markers[i][2];
+    }
+    center[0] = center[0] / float(markers.length());
+    center[1] = center[1] / float(markers.length());
+    center[2] = center[2] / float(markers.length());
+
+    float adis = 0;
+    int n = 0;
+    for(int i =0; i<markers.length()-1;i++){
+        for(int j =1; j<markers.length();j++){
+            n++;
+            float dis = 0;
+            dis += (markers[i][0] - markers[j][0])*(markers[i][0] - markers[j][0]);
+            dis += (markers[i][1] - markers[j][1])*(markers[i][1] - markers[j][1]);
+            dis += (markers[i][2] - markers[j][2])*(markers[i][2] - markers[j][2]);
+            adis += qSqrt(dis);
+        }
+    }
+    adis = adis/n;
+    if(adis<81){
+        qDebug() << "grab!";
+    }
 }
 
 void ARTClient::readyRead(){
@@ -79,6 +113,7 @@ void ARTClient::readyRead(){
         //qDebug()<<"message:" <<Buffer;
         rawData = Buffer;
         extractMarkers(rawData);
+        features();
     }
 }
 

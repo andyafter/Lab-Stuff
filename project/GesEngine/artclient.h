@@ -21,6 +21,8 @@ public:
     void gestureLearning();
     // communicate with Unity project
     void broadCaseGestureEvent();
+    // online feature analysis, delete later
+    void features();
 
     QString getRawData() const;
 
