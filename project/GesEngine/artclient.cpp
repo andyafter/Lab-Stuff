@@ -59,6 +59,7 @@ void ARTClient::readyRead(){
         //qDebug()<<"message from" <<sender.toString();
         //qDebug()<<"message port" <<senderPort;
         //qDebug()<<"message:" <<Buffer;
+        rawData = Buffer;
     }
 }
 
