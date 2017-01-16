@@ -17,7 +17,6 @@ ConnectionDialog::~ConnectionDialog()
 
 void ConnectionDialog::on_conStartBtn_clicked()
 {
-    qDebug()<<"here is something!";
     connect(&aclient, &ARTClient::on_number, this, &ConnectionDialog::connectART);
     connect(this, &ConnectionDialog::on_stop, &aclient, &ARTClient::stopRead);
     QFuture<void> test = QtConcurrent::run(&this->aclient, &ARTClient::startReading);
