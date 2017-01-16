@@ -9,6 +9,7 @@ QT       += opengl
 QT       += datavisualization
 QT       += network
 QT       += concurrent
+QT       += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -22,12 +23,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     glwidget.cpp \
     artclient.cpp \
-    connectiondialog.cpp
+    connectiondialog.cpp \
+    qcustomplot.cpp
 
 HEADERS  += mainwindow.h \
     glwidget.h \
     artclient.h \
-    connectiondialog.h
+    connectiondialog.h \
+    qcustomplot.h
 
 FORMS    += mainwindow.ui \
     connectiondialog.ui
