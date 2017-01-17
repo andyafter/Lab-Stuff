@@ -5,6 +5,7 @@
 #include <QDebug>
 
 #include "artclient.h"
+//#include "gesserver.h"
 
 namespace Ui {
 class ConnectionDialog;
@@ -27,11 +28,12 @@ private slots:
     void on_conStopBtn_clicked();
 
 public slots:
-    connectART(QString address, int port);
+    void connectART(QString address, int port);
 
 private:
     Ui::ConnectionDialog *ui;
     ARTClient aclient;
+    // GesServer ges;
 };
 
 #endif // CONNECTIONDIALOG_H

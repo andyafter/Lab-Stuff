@@ -8,15 +8,6 @@ ARTClient::ARTClient(QObject *parent) : QObject(parent){
     socket = new QUdpSocket(this);
     socket->bind(*art,5002);
     //connect(socket, SIGNAL(readyRead()),this,SLOT(readyRead()));
-
-    server = new QTcpServer(this);
-    connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
-    if(!server->listen(QHostAddress::Any, 1234)){
-        qDebug() << "Server could not start!";
-    }
-    else{
-        qDebug() << "Server Started!";
-    }
 }
 
 ARTClient::~ARTClient()
@@ -126,16 +117,6 @@ void ARTClient::readyRead(){
 void ARTClient::stopRead()
 {
     readStop = true;
-}
-
-void ARTClient::newConnection()
-{
-    // find a way to separate all these
-    QTcpSocket *socket = server->nextPendingConnection();
-    socket->write("hello world!!");
-    socket->flush();
-    socket->waitForBytesWritten(3000);
-    socket->close();
 }
 
 void ARTClient::setRawData(const QString &value)
