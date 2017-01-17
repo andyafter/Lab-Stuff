@@ -24,15 +24,13 @@ SOURCES += main.cpp\
     glwidget.cpp \
     artclient.cpp \
     connectiondialog.cpp \
-    qcustomplot.cpp \
-    gesserver.cpp
+    qcustomplot.cpp
 
 HEADERS  += mainwindow.h \
     glwidget.h \
     artclient.h \
     connectiondialog.h \
-    qcustomplot.h \
-    gesserver.h
+    qcustomplot.h
 
 FORMS    += mainwindow.ui \
     connectiondialog.ui

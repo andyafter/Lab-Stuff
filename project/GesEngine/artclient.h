@@ -7,6 +7,8 @@
 #include <QThread>
 #include <QtConcurrent>
 #include <QtMath>
+#include <QTcpServer>
+#include <QTcpSocket>
 
 class ARTClient : public QObject
 {
@@ -38,6 +40,7 @@ public slots:
     // getting data from udp broadcast
     void readyRead();
     void stopRead();
+    void newConnection();
 
 protected:
     QUdpSocket *socket;
@@ -46,6 +49,7 @@ private:
     bool readStop;
     QString rawData;
     QVector<QVector<float>> markers;
+    QTcpServer *server;
 };
 
 #endif // ARTCLIENT_H
