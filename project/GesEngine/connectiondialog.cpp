@@ -21,7 +21,6 @@ void ConnectionDialog::on_conStartBtn_clicked()
     connect(this, &ConnectionDialog::on_stop, &aclient, &ARTClient::stopRead);
     //connect(this, &ConnectionDialog::on_stop, &ges, &GesServer::stopConnection);
     QFuture<void> test = QtConcurrent::run(&this->aclient, &ARTClient::startReading);
-    //QFuture<void> test2 = QtConcurrent::run(&this->ges, &GesServer::newConnection);
 }
 
 void ConnectionDialog::on_conStopBtn_clicked()

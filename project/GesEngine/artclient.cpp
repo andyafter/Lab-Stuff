@@ -125,11 +125,11 @@ void ARTClient::readyRead(){
 
 void ARTClient::newConnection()
 {
-    QTcpSocket *sock = server->nextPendingConnection();
-    sock->write("hello world!!");
-    sock->flush();
-    sock->waitForBytesWritten(3000);
-    sock->close();
+    sockUnity = server->nextPendingConnection();
+    sockUnity->write("hello world!!");
+    sockUnity->flush();
+    sockUnity->waitForBytesWritten(3000);
+    sockUnity->close();
 }
 
 

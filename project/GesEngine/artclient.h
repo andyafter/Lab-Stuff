@@ -44,6 +44,7 @@ public slots:
 
 protected:
     QUdpSocket *socket;
+    QTcpSocket *sockUnity;
 
 private:
     bool readStop;
