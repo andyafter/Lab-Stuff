@@ -15,6 +15,7 @@ tmp
 *.pyc
 
 # for the unity project
+
 *Temp/
 *Library/
 
@@ -47,3 +48,4 @@ project/analysis/gesdata*
 *.app
 *.pro.user
 
+project/UnityNetworkTest/*

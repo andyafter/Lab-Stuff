@@ -16,6 +16,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = GesEngine
 TEMPLATE = app
 
+include("network/network.pri")
+
 LIBS += -lOpengl32
 LIBS += -lglut
 
