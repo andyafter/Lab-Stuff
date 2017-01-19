@@ -31,6 +31,8 @@ public:
 
     void setRawData(const QString &value);
 
+    void sendUnity();
+
 signals:
     //// understand and change this function
     ///  seems no implementation of this function

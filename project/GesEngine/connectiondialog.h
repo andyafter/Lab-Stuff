@@ -21,11 +21,14 @@ public:
 
 signals:
     void on_stop();
+    void sendToUnity();
 
 private slots:
     void on_conStartBtn_clicked();
 
     void on_conStopBtn_clicked();
+
+    void on_pushButton_clicked();
 
 public slots:
     void connectART(QString address, int port);
@@ -33,7 +36,6 @@ public slots:
 private:
     Ui::ConnectionDialog *ui;
     ARTClient aclient;
-    // GesServer ges;
 };
 
 #endif // CONNECTIONDIALOG_H

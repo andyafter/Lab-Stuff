@@ -130,6 +130,7 @@ void ARTClient::newConnection()
     sockUnity->flush();
     sockUnity->waitForBytesWritten(3000);
     sockUnity->close();
+
 }
 
 
@@ -141,6 +142,12 @@ void ARTClient::stopRead()
 void ARTClient::setRawData(const QString &value)
 {
     rawData = value;
+}
+
+void ARTClient::sendUnity()
+{
+    //sockUnity->write("here is something");
+    qDebug()<<"something haha";
 }
 
 QString ARTClient::getRawData() const
