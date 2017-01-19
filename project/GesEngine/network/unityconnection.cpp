@@ -24,7 +24,7 @@ void UnityConnection::setSocket(QTcpSocket *socket)
     connect(m_socket, static_cast<void (QTcpSocket::*)(QAbstractSocket::SocketError)>(&QTcpSocket::error), this, &UnityConnection::error);
 }
 
-QTcpSocket *UnityConnection::get_socket()
+QTcpSocket *UnityConnection::getSocket()
 {
     if(!sender()) return 0;
     return static_cast<QTcpSocket*>(sender());
@@ -32,30 +32,39 @@ QTcpSocket *UnityConnection::get_socket()
 
 void UnityConnection::connected()
 {
+    if(!sender()) return;
+    qDebug() << this << "connected" << sender();
 
 }
 
 void UnityConnection::disconnected()
 {
+    if(!sender()) return;
+    qDebug() << this << " disconnected " << getSocket();
 
 }
 
 void UnityConnection::readyRead()
 {
-
 }
 
-void UnityConnection::bytesWritten(qint64)
+void UnityConnection::bytesWritten(qint64 bytes)
 {
+    if(!sender()) return;
+    qDebug() << this << " bytes written " << getSocket() << " number of bytes " << bytes;
 
 }
 
 void UnityConnection::stateChanged(QAbstractSocket::SocketState socketState)
 {
+    if(!sender()) return;
+    qDebug() << this << " socket state " << getSocket() << " state = " << socketState;
 
 }
 
 void UnityConnection::error(QAbstractSocket::SocketError socketError)
 {
+    if(!sender()) return;
+    qDebug() << this << " error " << getSocket() << " error = " << socketError;
 
 }
