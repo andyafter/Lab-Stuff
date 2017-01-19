@@ -17,12 +17,13 @@ signals:
 
 protected:
     QTcpSocket *m_socket;
-    QTcpSocket *get_socket;
+    QTcpSocket *get_socket();
 
 public slots:
     virtual void connected();
     virtual void disconnected();
-    virtual void byteWritten(qint64);
+    virtual void readyRead();
+    virtual void bytesWritten(qint64);
     virtual void stateChanged(QAbstractSocket::SocketState socketState);
     virtual void error(QAbstractSocket::SocketError socketError);
 };
