@@ -5,7 +5,7 @@
 #include <QDebug>
 
 #include "artclient.h"
-//#include "gesserver.h"
+#include "unityserver.h"
 
 namespace Ui {
 class ConnectionDialog;
@@ -36,6 +36,7 @@ public slots:
 private:
     Ui::ConnectionDialog *ui;
     ARTClient aclient;
+    UnityServer m_server;
 };
 
 #endif // CONNECTIONDIALOG_H

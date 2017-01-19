@@ -26,6 +26,13 @@ void ConnectionDialog::on_conStartBtn_clicked()
     ui->conStartBtn->setEnabled(false);
     ui->conStopBtn->setEnabled(true);
     ui->pushButton->setEnabled(true);
+
+    if(m_server.listen(QHostAddress::Any, 1234)){
+        qDebug() << this << " server started ";
+    }
+    else{
+        qCritical() << m_server.errorString();
+    }
 }
 
 void ConnectionDialog::on_conStopBtn_clicked()
