@@ -6,6 +6,8 @@ ConnectionDialog::ConnectionDialog(QWidget *parent) :
     ui(new Ui::ConnectionDialog)
 {
     ui->setupUi(this);
+    ui->conStopBtn->setEnabled(false);
+    ui->pushButton->setEnabled(false);
 }
 
 ConnectionDialog::~ConnectionDialog()
@@ -21,11 +23,17 @@ void ConnectionDialog::on_conStartBtn_clicked()
     //connect(this, &ConnectionDialog::sendToUnity, &aclient, &ARTClient::sendUnity);
 
     QFuture<void> test = QtConcurrent::run(&this->aclient, &ARTClient::startReading);
+    ui->conStartBtn->setEnabled(false);
+    ui->conStopBtn->setEnabled(true);
+    ui->pushButton->setEnabled(true);
 }
 
 void ConnectionDialog::on_conStopBtn_clicked()
 {
     emit on_stop();
+    ui->conStartBtn->setEnabled(true);
+    ui->conStopBtn->setEnabled(false);
+    ui->pushButton->setEnabled(false);
 }
 
 void ConnectionDialog::connectART(QString address, int port)

@@ -130,7 +130,6 @@ void ARTClient::newConnection()
     sockUnity->flush();
     sockUnity->waitForBytesWritten(3000);
     sockUnity->close();
-
 }
 
 
