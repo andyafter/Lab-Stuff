@@ -21,13 +21,11 @@ LIBS += -lglut
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    glwidget.cpp \
     artclient.cpp \
     connectiondialog.cpp \
     qcustomplot.cpp
 
 HEADERS  += mainwindow.h \
-    glwidget.h \
     artclient.h \
     connectiondialog.h \
     qcustomplot.h
