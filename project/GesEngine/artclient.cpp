@@ -11,7 +11,7 @@ ARTClient::ARTClient(QObject *parent) : QObject(parent){
 
     server = new QTcpServer(this);
     connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
-    if(!server->listen(QHostAddress::Any, 1234)){
+    if(!server->listen(QHostAddress::Any, 12345)){
         qDebug() << "Server could not start!";
     }
     else{

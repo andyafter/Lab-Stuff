@@ -87,6 +87,9 @@ void UnityConnections::accept(qintptr handle, UnityConnection *connection)
     connect(socket, &QTcpSocket::disconnected, this, &UnityConnections::disconnected);
     connect(socket, static_cast<void (QTcpSocket::*)(QAbstractSocket::SocketError)>(&QTcpSocket::error), this, &UnityConnections::error);
 
+    connection->moveToThread(QThread::currentThread());
+    connection->setSocket(socket);
+    m_connection.insert(socket, connection);
     qDebug() << this << "clients = " << m_connection.count();
     emit socket->connected();
 }

@@ -46,6 +46,8 @@ void UnityConnection::disconnected()
 
 void UnityConnection::readyRead()
 {
+    if(!sender()) return;
+    qDebug() << this << " readyRead " << getSocket();
 }
 
 void UnityConnection::bytesWritten(qint64 bytes)
