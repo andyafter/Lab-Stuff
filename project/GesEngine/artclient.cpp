@@ -126,11 +126,7 @@ void ARTClient::readyRead(){
 
 void ARTClient::newConnection()
 {
-    sockUnity = server->nextPendingConnection();
-    sockUnity->write("hello world!!");
-    sockUnity->flush();
-    sockUnity->waitForBytesWritten(3000);
-    sockUnity->close();
+    // original plan for tcp
 }
 
 
