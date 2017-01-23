@@ -83,3 +83,8 @@ void UnityServer::complete()
 
     qDebug() << this << " complete ";
 }
+
+void UnityServer::artClientData(QString data)
+{
+    qDebug() << "test success" << data;
+}

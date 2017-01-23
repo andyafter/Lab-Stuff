@@ -30,7 +30,6 @@ protected:
 
 public slots:
     void complete();
-
 };
 
 #endif // UNITYSERVER_H

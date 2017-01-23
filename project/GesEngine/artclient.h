@@ -37,6 +37,7 @@ signals:
     //// understand and change this function
     ///  seems no implementation of this function
     void on_number(QString name, int number);
+    void refreshMarkers(QString data);
 
 public slots:
     // getting data from udp broadcast

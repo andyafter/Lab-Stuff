@@ -48,6 +48,7 @@ void UnityConnection::readyRead()
 {
     if(!sender()) return;
     qDebug() << this << " readyRead " << getSocket();
+    getSocket()->write("haha");
 }
 
 void UnityConnection::bytesWritten(qint64 bytes)

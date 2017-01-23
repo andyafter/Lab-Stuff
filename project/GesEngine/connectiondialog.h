@@ -21,7 +21,7 @@ public:
 
 signals:
     void on_stop();
-    void sendToUnity();
+    void sendToUnity(QString data);
 
 private slots:
     void on_conStartBtn_clicked();
