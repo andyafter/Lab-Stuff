@@ -96,9 +96,10 @@ void UnityConnections::accept(qintptr handle, UnityConnection *connection)
 
 void UnityConnections::sendToAllConnections(QString data)
 {
+    QByteArray sendData;    // it has to be a bytearray
+    sendData.append(data);
     QMap<QTcpSocket*, UnityConnection*>::iterator i;
     for (i = m_connection.begin(); i != m_connection.end(); ++i){
-        // the key contains the socket
-        i.key()->write(data);
+        i.key()->write(sendData);
     }
 }
