@@ -22,7 +22,7 @@ void ConnectionDialog::on_conStartBtn_clicked()
     connect(this, &ConnectionDialog::on_stop, &aclient, &ARTClient::stopRead);
     //connect(this, &ConnectionDialog::sendToUnity, &aclient, &ARTClient::sendUnity);
 
-    connect(this, &ConnectionDialog::sendToUnity, &m_server, &UnityServer::artClientData);
+    connect(&aclient, &ARTClient::refreshMarkers, &m_server, &UnityServer::artClientData);
     QFuture<void> test = QtConcurrent::run(&this->aclient, &ARTClient::startReading);
     ui->conStartBtn->setEnabled(false);
     ui->conStopBtn->setEnabled(true);
@@ -52,5 +52,5 @@ void ConnectionDialog::connectART(QString address, int port)
 void ConnectionDialog::on_pushButton_clicked()
 {
     qDebug()<< aclient.getRawData();
-    emit sendToUnity("from push button event");
+    emit aclient.refreshMarkers("from push button event");
 }

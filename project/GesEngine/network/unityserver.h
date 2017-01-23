@@ -30,6 +30,7 @@ protected:
 
 public slots:
     void complete();
+    void artClientData(QString data);
 };
 
 #endif // UNITYSERVER_H

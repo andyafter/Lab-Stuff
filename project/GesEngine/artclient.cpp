@@ -120,6 +120,7 @@ void ARTClient::readyRead(){
         rawData = Buffer;
         extractMarkers(rawData);
         features();
+        emit refreshMarkers(rawData);
     }
 }
 
