@@ -31,6 +31,7 @@ public slots:
     void start();
     void quit();
     void accept(qintptr handle, UnityConnection *connection);
+    void sendToAllConnections(QString data);
 };
 
 #endif // UNITYCONNECTIONS_H

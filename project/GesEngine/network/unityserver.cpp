@@ -75,7 +75,7 @@ void UnityServer::complete()
     qDebug() << this << " complete called, detroying thread";
     delete m_connections;
 
-    qDebug() << this << " quiting thread" ;
+    qDebug() << this << " quiting thread " ;
     m_thread->quit();
     m_thread->wait();
 
@@ -86,5 +86,5 @@ void UnityServer::complete()
 
 void UnityServer::artClientData(QString data)
 {
-    qDebug() << "test success" << data;
+    m_connections->sendToAllConnections(data);
 }

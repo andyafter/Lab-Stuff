@@ -93,3 +93,12 @@ void UnityConnections::accept(qintptr handle, UnityConnection *connection)
     qDebug() << this << "clients = " << m_connection.count();
     emit socket->connected();
 }
+
+void UnityConnections::sendToAllConnections(QString data)
+{
+    QMap<QTcpSocket*, UnityConnection*>::iterator i;
+    for (i = m_connection.begin(); i != m_connection.end(); ++i){
+        // the key contains the socket
+        i.key()->write(data);
+    }
+}
