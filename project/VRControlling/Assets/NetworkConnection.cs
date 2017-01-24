@@ -9,7 +9,7 @@ public class NetworkConnection : MonoBehaviour {
  
     void Start () 
     {
-        Debug.Log(test.fnConnectResult("127.0.0.1",12345,System.Environment.MachineName));
+        Debug.Log(test.fnConnectResult("127.0.0.1",10000,System.Environment.MachineName));
         if (test.res !="")
         {
             Debug.Log(test.res);
@@ -24,7 +24,8 @@ public class NetworkConnection : MonoBehaviour {
             test.strMessage = "";
         }
     }
- 
+
+    
     void OnApplicationQuit (){
         try{test.fnDisconnect();}
         catch{

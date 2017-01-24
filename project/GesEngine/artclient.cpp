@@ -9,14 +9,16 @@ ARTClient::ARTClient(QObject *parent) : QObject(parent){
     socket->bind(*art,5002);
     //connect(socket, SIGNAL(readyRead()),this,SLOT(readyRead()));
 
-    server = new QTcpServer(this);
-    connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
+    //server = new QTcpServer(this);
+    //connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
+
+    /*
     if(!server->listen(QHostAddress::Any, 12345)){
         qDebug() << "Server could not start!";
     }
     else{
         qDebug() << "Server Started!";
-    }
+    }*/
 }
 
 ARTClient::~ARTClient()

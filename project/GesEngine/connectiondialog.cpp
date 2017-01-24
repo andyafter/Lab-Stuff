@@ -18,12 +18,14 @@ ConnectionDialog::~ConnectionDialog()
 
 void ConnectionDialog::on_conStartBtn_clicked()
 {
-    connect(&aclient, &ARTClient::on_number, this, &ConnectionDialog::connectART);
+    // connect(&aclient, &ARTClient::on_number, this, &ConnectionDialog::connectART);
     connect(this, &ConnectionDialog::on_stop, &aclient, &ARTClient::stopRead);
     //connect(this, &ConnectionDialog::sendToUnity, &aclient, &ARTClient::sendUnity);
 
     connect(&aclient, &ARTClient::refreshMarkers, &m_server, &UnityServer::artClientData);
     QFuture<void> test = QtConcurrent::run(&this->aclient, &ARTClient::startReading);
+
+    // protect the procedure
     ui->conStartBtn->setEnabled(false);
     ui->conStopBtn->setEnabled(true);
     ui->pushButton->setEnabled(true);
@@ -46,11 +48,11 @@ void ConnectionDialog::on_conStopBtn_clicked()
 
 void ConnectionDialog::connectART(QString address, int port)
 {
-    ui->lineEdit->setText(address + "haha" + QString(port));
+    //ui->lineEdit->setText(address + "haha" + QString(port));
+    // save this function for some input from hand
 }
 
 void ConnectionDialog::on_pushButton_clicked()
 {
-    qDebug()<< aclient.getRawData();
     emit aclient.refreshMarkers("from push button event");
 }
