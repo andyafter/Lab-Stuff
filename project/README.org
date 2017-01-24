@@ -15,6 +15,9 @@ GesEngine communicates with VRControlling with pure TCP sockets. Make sure that:
 
 ** VRControlling 
 This is the pick and place project for the VR room. What is really important is that you need to go through [[this post][http://wiki.unity3d.com/wiki/index.php?title=Simple_TCP/IP_Client_-_Server]](if you are new to csharp). 
+
+If SharpConnect.dll is not in the plugin folder in assets, you should compile one using SharpConnect.cs by doing:
+- csc /target:library SharpConnect.cs (Under windows)
 ** Hardware 
 The hardware of this project is a CAVE VR system. Markers are located on gloves. Beware that the minimum distance between any 2 markers should exceed 3cm. 
 
