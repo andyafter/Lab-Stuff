@@ -100,6 +100,7 @@ void UnityConnections::sendToAllConnections(QString data)
     sendData.append(data);
     QMap<QTcpSocket*, UnityConnection*>::iterator i;
     for (i = m_connection.begin(); i != m_connection.end(); ++i){
+        qDebug()<<"data sent";
         i.key()->write(sendData);
     }
 }

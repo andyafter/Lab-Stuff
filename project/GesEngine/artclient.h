@@ -25,7 +25,7 @@ public:
     // communicate with Unity project
     void broadCaseGestureEvent();
     // online feature analysis, delete later
-    void features();
+    QString features();
 
     QString getRawData() const;
 
@@ -53,6 +53,7 @@ private:
     bool readStop;
     QString rawData;
     QVector<QVector<float>> markers;
+    QVector<float> handCenter;
     QTcpServer *server;
 };
 

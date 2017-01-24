@@ -13,7 +13,7 @@ UnityServer::~UnityServer()
 bool UnityServer::listen(const QHostAddress &address, quint16 port)
 {
     if(!QTcpServer::listen(address, port)) return false;
-
+    qDebug() << address.toString();
     m_thread = new QThread(this);
     m_connections = new UnityConnections();
 

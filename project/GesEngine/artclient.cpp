@@ -77,7 +77,7 @@ void ARTClient::broadCaseGestureEvent()
     // when a gesture is detected, trigered to send a signal to something else
 }
 
-void ARTClient::features()
+QString ARTClient::features()
 {
     QVector<float> center(3);
     for(int i = 0; i<markers.length(); i++){
@@ -88,6 +88,8 @@ void ARTClient::features()
     center[0] = center[0] / float(markers.length());
     center[1] = center[1] / float(markers.length());
     center[2] = center[2] / float(markers.length());
+
+    handCenter = center;
 
     float adis = 0;
     int n = 0;
@@ -102,9 +104,19 @@ void ARTClient::features()
         }
     }
     adis = adis/n;
-    if(adis<81){
+
+    QString messageToUnity = "";
+    if(adis<80){
         qDebug() << "grab!";
+        messageToUnity += "grab ";
     }
+    messageToUnity += QString::number(center[0]);
+    messageToUnity += " ";
+    messageToUnity += QString::number(center[1]);
+    messageToUnity += " ";
+    messageToUnity += QString::number(center[2]);
+    messageToUnity += " ";
+    return messageToUnity;
 }
 
 void ARTClient::readyRead(){
@@ -119,8 +131,9 @@ void ARTClient::readyRead(){
         // Buffer will be where the data is stored
         rawData = Buffer;
         extractMarkers(rawData);
-        features();
-        emit refreshMarkers(rawData);
+        QString messageToUnity = features();
+        qDebug() << messageToUnity;
+        emit refreshMarkers(messageToUnity);
     }
 }
 
