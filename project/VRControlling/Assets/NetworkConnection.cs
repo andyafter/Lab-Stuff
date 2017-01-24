@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Runtime.InteropServices;
 using SharpConnect;
+using System.Security.Permissions;
 
 public class NetworkConnection : MonoBehaviour {
     public Connector test=new Connector();
@@ -9,7 +11,7 @@ public class NetworkConnection : MonoBehaviour {
  
     void Start () 
     {
-        Debug.Log(test.fnConnectResult("127.0.0.1",10000,System.Environment.MachineName));
+        Debug.Log(test.fnConnectResult("127.0.0.1", 1234, System.Environment.MachineName));
         if (test.res !="")
         {
             Debug.Log(test.res);
