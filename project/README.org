@@ -7,7 +7,10 @@ or simply use real world scale measures to carry the implementation.
 ** BackEngine
 BackEngine project is mainly for reading data from the VR room and provide gesture analysis. The project is in C++. Requirements and documentations are prepared in [[./BackEngine/README.org][this file]](In org-mode Emacs, you can just use C-c, C-o to go to that file).
 ** GesEngine
-GesEngine is a QT based project for capturing gesture data in the CAVE system, analysis of data and gesture recognition.
+GesEngine is a QT based project for capturing gesture data in the CAVE system, analysis of data and gesture recognition. 
+
+GesEngine communicates with VRControlling with pure TCP sockets. Make sure that:
+- The port you use for connecting the VRControlling is the same in SharpConnect.dll, NetworkConnection.cs and m_server in GesEngine.
 
 
 ** VRControlling 
