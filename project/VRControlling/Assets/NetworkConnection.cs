@@ -3,11 +3,12 @@ using System.Collections;
 using System.Runtime.InteropServices;
 using SharpConnect;
 using System.Security.Permissions;
+using System.Globalization;
 
 public class NetworkConnection : MonoBehaviour {
     public Connector test=new Connector();
     string lastMessage;
-    public Transform PlayerCoord;
+    public Transform hand;
  
     void Start () 
     {
@@ -20,7 +21,15 @@ public class NetworkConnection : MonoBehaviour {
     void Update () 
     {
         if(test.strMessage!=""){
-            print(test.strMessage);
+            string[] data = test.strMessage.Split();
+            if(data.Length == 3)
+            {
+                if (data[0] != "nan")
+                {
+                    // here you should adjust the hand position
+                    print(float.Parse(data[0], CultureInfo.InvariantCulture.NumberFormat));
+                }
+            }
             // this is kinda dirty. It helps clears all the message from the server
             // every time there is an update
             test.strMessage = "";
