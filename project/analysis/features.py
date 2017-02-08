@@ -8,7 +8,7 @@ import time
 from animation import AnimatedScatter
 
 
-for ndata in range(2,21):
+for ndata in [2, 20]:
     data = AnimatedScatter()
     data.get_data("./gesdata/data{}.txt".format(str(ndata)))
 
@@ -28,6 +28,6 @@ for ndata in range(2,21):
                 total_edges += 1
         dis = np.append(dis, (sum_dis)/total_edges)
 
-    # plt.clf()
-    # plt.plot(range(len(dis)), dis)
-    # plt.savefig("grab{}.png".format(str(ndata)))
+    plt.clf()
+    plt.plot(range(len(dis)), dis)
+    plt.savefig("grab{}.png".format(str(ndata)))
