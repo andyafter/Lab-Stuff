@@ -25,12 +25,18 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     artclient.cpp \
     connectiondialog.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    point.cpp \
+    cluster.cpp \
+    kmeans.cpp
 
 HEADERS  += mainwindow.h \
     artclient.h \
     connectiondialog.h \
-    qcustomplot.h
+    qcustomplot.h \
+    point.h \
+    cluster.h \
+    kmeans.h
 
 FORMS    += mainwindow.ui \
     connectiondialog.ui
