@@ -21,5 +21,4 @@ If SharpConnect.dll is not in the plugin folder in assets, you should compile on
 ** Hardware 
 The hardware of this project is a CAVE VR system. Markers are located on gloves. Beware that the minimum distance between any 2 markers should exceed 3cm. 
 
-Marker id could change but we assume that it doesn't change very fast.
 
