@@ -71,14 +71,14 @@ void KMeans::run(vector<Point> & points)
                 prohibited_indexes.push_back(index_point);
                 points[index_point].setCluster(i);
                 Cluster cluster(i, points[index_point]);
-                //clusters.push_back(cluster);
+                clusters.push_back(cluster);
                 break;
             }
         }
     }
 
     int iter = 1;
-    /*
+
     while(true)
     {
         bool done = true;
@@ -153,6 +153,6 @@ void KMeans::run(vector<Point> & points)
         qDebug() << "\n\n";
     }
 
-    qDebug() << clusters.size() <<"\n"; */
+    qDebug() << clusters.size() <<"\n";
 }
 
