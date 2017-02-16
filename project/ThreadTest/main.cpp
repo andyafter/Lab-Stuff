@@ -40,7 +40,16 @@ void kmeans(QVector<QVector<float>> points){
     // initialize centers and find functions to erase everything from qvector
     for(int i=0; i<points.length(); ++i){
         float dis1, dis2 = 0;
+        for(int i=0; i<points.length(); ++i){
+            dis1 += (points[i][j]-centers[0][j])^2;
+            dis2 += (points[i][j]-centers[1][j])^2;
+        }
+        if(dis1<dis2){
 
+        }
+        else{
+
+        }
     }
 
 
