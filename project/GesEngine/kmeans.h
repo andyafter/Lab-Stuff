@@ -1,6 +1,7 @@
 #ifndef KMEANS_H
 #define KMEANS_H
 
+#include <QDebug>
 #include "cluster.h"
 
 class KMeans
@@ -15,7 +16,7 @@ public:
     KMeans();
     KMeans(int K, int total_points, int total_values, int max_iterations);
     void run(vector<Point> & points);
-
+    QVector<float> center();
 };
 
 #endif // KMEANS_H

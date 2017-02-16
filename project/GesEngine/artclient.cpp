@@ -113,10 +113,10 @@ QString ARTClient::features()
         values.push_back(markers[i][1]);
         values.push_back(markers[i][2]);
         Point p(i, values);
-        points.push_back(i);
+        points.push_back(p);
     }
 
-    Kmeans kmeans(K, markers.length(), total_values, max_iterations);
+    KMeans kmeans(K, markers.length(), total_values, max_iterations);
     kmeans.run(points);
 
     for(int i =0; i<markers.length()-1;i++){

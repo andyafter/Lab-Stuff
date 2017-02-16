@@ -67,17 +67,18 @@ void KMeans::run(vector<Point> & points)
             if(find(prohibited_indexes.begin(), prohibited_indexes.end(),
                     index_point) == prohibited_indexes.end())
             {
+
                 prohibited_indexes.push_back(index_point);
                 points[index_point].setCluster(i);
                 Cluster cluster(i, points[index_point]);
-                clusters.push_back(cluster);
+                //clusters.push_back(cluster);
                 break;
             }
         }
     }
 
     int iter = 1;
-
+    /*
     while(true)
     {
         bool done = true;
@@ -118,7 +119,6 @@ void KMeans::run(vector<Point> & points)
 
         if(done == true || iter >= max_iterations)
         {
-            cout << "Break in iteration " << iter << "\n\n";
             break;
         }
 
@@ -130,26 +130,29 @@ void KMeans::run(vector<Point> & points)
     {
         int total_points_cluster =  clusters[i].getTotalPoints();
 
-        cout << "Cluster " << clusters[i].getID() + 1 << endl;
+        //cout << "Cluster " << clusters[i].getID() + 1 << endl;
         for(int j = 0; j < total_points_cluster; j++)
         {
-            cout << "Point " << clusters[i].getPoint(j).getID() + 1 << ": ";
-            for(int p = 0; p < total_values; p++)
-                cout << clusters[i].getPoint(j).getValue(p) << " ";
+            //cout << "Point " << clusters[i].getPoint(j).getID() + 1 << ": ";
+           // for(int p = 0; p < total_values; p++)
+                //cout << clusters[i].getPoint(j).getValue(p) << " ";
 
             string point_name = clusters[i].getPoint(j).getName();
 
-            if(point_name != "")
-                cout << "- " << point_name;
+            //if(point_name != "")
+                //cout << "- " << point_name;
 
-            cout << endl;
+            //cout << endl;
         }
 
-        cout << "Cluster values: ";
+        qDebug() << "Cluster values: ";
 
         for(int j = 0; j < total_values; j++)
-            cout << clusters[i].getCentralValue(j) << " ";
+            qDebug() << clusters[i].getCentralValue(j) << " ";
 
-        cout << "\n\n";
+        qDebug() << "\n\n";
     }
+
+    qDebug() << clusters.size() <<"\n"; */
 }
+

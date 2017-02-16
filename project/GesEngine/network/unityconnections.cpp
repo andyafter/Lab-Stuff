@@ -98,7 +98,7 @@ void UnityConnections::sendToAllConnections(QString data)
 {
     QByteArray sendData;    // it has to be a bytearray
     sendData.append(data);
-    qDebug() << "inside send all" << m_connection;
+    // qDebug() << "inside send all" << m_connection;
     QMap<QTcpSocket*, UnityConnection*>::iterator i;
     for (i = m_connection.begin(); i != m_connection.end(); ++i){
         qDebug()<<"data sent";
