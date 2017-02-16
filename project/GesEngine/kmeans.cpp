@@ -7,6 +7,7 @@ KMeans::KMeans()
 
 KMeans::KMeans(int K, int total_points, int total_values, int max_iterations)
 {
+    srand (time(NULL));
     this->K = K;
     this->total_points = total_points;
     this->total_values = total_values;

@@ -10,6 +10,8 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 
+#include "kmeans.h"
+
 class ARTClient : public QObject
 {
     Q_OBJECT

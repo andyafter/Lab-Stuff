@@ -82,6 +82,10 @@ void ARTClient::broadCaseGestureEvent()
 QString ARTClient::features()
 {
     QVector<float> center(3);
+    // kmeans parameters
+    int total_values, K, max_iterations, has_name;
+    vector<Point> points;
+
     for(int i = 0; i<markers.length(); i++){
         center[0] += markers[i][0];
         center[1] += markers[i][1];
@@ -91,10 +95,30 @@ QString ARTClient::features()
     center[1] = center[1] / float(markers.length());
     center[2] = center[2] / float(markers.length());
 
+    // parameters initialization
+    K = 2;
+    total_values = 3;
+    max_iterations = 200;
+    has_name = 0;
+
     handCenter = center;
 
     float adis = 0;
     int n = 0;
+
+    for(int i =0; i<markers.length()-1;i++){
+        vector<double> values;
+        // should make this into a rewrite function in Point
+        values.push_back(markers[i][0]);
+        values.push_back(markers[i][1]);
+        values.push_back(markers[i][2]);
+        Point p(i, values);
+        points.push_back(i);
+    }
+
+    Kmeans kmeans(K, markers.length(), total_values, max_iterations);
+    kmeans.run(points);
+
     for(int i =0; i<markers.length()-1;i++){
         for(int j =1; j<markers.length();j++){
             n++;
@@ -134,7 +158,7 @@ void ARTClient::readyRead(){
         rawData = Buffer;
         extractMarkers(rawData);
         QString messageToUnity = features();
-        qDebug() << messageToUnity;
+        //qDebug() << messageToUnity;
         emit refreshMarkers(messageToUnity);
     }
 }
