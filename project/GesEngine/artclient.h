@@ -10,6 +10,9 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 
+#include <QTime>
+#include <QtMath>
+
 #include "kmeans.h"
 
 class ARTClient : public QObject
@@ -34,6 +37,8 @@ public:
     void setRawData(const QString &value);
 
     void sendUnity();
+
+    void kmeans(QVector<QVector<float>> points);
 
 signals:
     //// understand and change this function

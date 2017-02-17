@@ -87,6 +87,8 @@ QString ARTClient::features()
     K = 2;
     max_iterations = 100;
 
+    kmeans(markers);
+
     for(int i = 0; i<markers.length(); i++){
         center[0] += markers[i][0];
         center[1] += markers[i][1];
@@ -170,4 +172,93 @@ void ARTClient::sendUnity()
 QString ARTClient::getRawData() const
 {
     return rawData;
+}
+
+void ARTClient::kmeans(QVector<QVector<float>> points){
+
+    if(points.length()==0){
+        return;
+    }
+    // consider only k==2
+    int K = 2;
+
+    // whether the function converges
+    float distort = 1;
+
+    // centers and cluster points
+    QVector<QVector<float>> centers(K);
+    QVector<QVector<float>> clusters(K);     // cluster is only the center position and how many points are there
+
+    QVector<float> result;
+    // this process should be generalized if you do k>2
+    // c1 and c2 will later be used to store how many markers are there in a class(which is dirty but I prefer not to declaire too many variables)
+    int c1 = qrand() % points.length();
+    int c2 = qrand() % points.length();
+
+    while(c2==c1){    // dirty stuff
+        c2 = qrand() % points.length();
+    }
+
+    centers[0] = points[c1];
+    centers[1] = points[c2];
+
+    // initialize centers and find functions to erase everything from qvector
+
+    for(int i=0; i<K; ++i){
+        for(int j=0; j<4; ++j){
+            clusters[i].append(0.0);
+        }
+    }
+
+    float lastSumDis = 0.0;
+
+    while(distort > 0){
+        // get new centers
+        float sumDis = 0;
+        int num1 = 0, num2 = 0;
+        for(int i=0; i<points.length(); ++i){
+            float dis1 = 0, dis2 = 0;
+            for(int j=0; j<3; ++j){
+                dis1 += qPow(points[i][j]-centers[0][j], 2);
+                dis2 += qPow(points[i][j]-centers[1][j], 2);
+            }
+            if(dis1 < dis2){
+                for(int j=0; j<3; ++j)
+                    clusters[0][j] += points[i][j];
+                clusters[0][3] += 1;
+                sumDis += dis1;
+                num1 ++;
+            }
+            else{
+                for(int j=0; j<3; ++j)
+                    clusters[1][j] += points[i][j];
+                clusters[1][3] += 1;
+                sumDis += dis2;
+                num2 ++;
+            }
+        }
+        // calculate average centers
+        for(int i=0; i<K; ++i)
+            for(int j=0; j<3; ++j)
+                if(clusters[i][3]>0)
+                    centers[i][j] = clusters[i][j] /clusters[i][3];
+
+        // here is dirty code, the one with less markers are the glove
+        if(num1>num2){
+            result = centers[1];
+        }
+        else{
+            result = centers[0];
+        }
+        // set the cluster centers to 0
+        for(int i=0; i<K; ++i){
+            for(int j=0; j<4; ++j){
+                clusters[i][j] = 0;
+            }
+        }
+        distort = qPow(sumDis - lastSumDis, 2);
+        lastSumDis = sumDis;
+    }
+
+    qDebug() << result;
 }
