@@ -11,6 +11,7 @@
 #include <algorithm>
 
 #include <QTime>
+#include <QtMath>
 
 using namespace std;
 
@@ -19,12 +20,11 @@ void kmeans(QVector<QVector<float>> points){
     int K = 2;
 
     // whether the function converges
-    float distort = -1;
+    float distort = 1;
 
     // centers and cluster points
     QVector<QVector<float>> centers(K);
-    QVector<QVector<float>> centersTemp(K);     // storing the temporary values for
-    QVector<QVector<QVector<float>>> clusters(K);
+    QVector<QVector<float>> clusters(K);     // cluster is only the center position and how many points are there
 
     // this process should be generalized if you do k>2
     // c1 and c2 will later be used to store how many markers are there in a class(which is dirty but I prefer not to declaire too many variables)
@@ -37,22 +37,63 @@ void kmeans(QVector<QVector<float>> points){
 
     centers[0] = points[c1];
     centers[1] = points[c2];
+
+    qDebug() << centers;
     // initialize centers and find functions to erase everything from qvector
-    for(int i=0; i<points.length(); ++i){
-        float dis1, dis2 = 0;
-        for(int i=0; i<points.length(); ++i){
-            dis1 += (points[i][j]-centers[0][j])^2;
-            dis2 += (points[i][j]-centers[1][j])^2;
-        }
-        if(dis1<dis2){
 
-        }
-        else{
-
+    for(int i=0; i<K; ++i){
+        for(int j=0; j<4; ++j){
+            clusters[i].append(0.0);
         }
     }
 
+    float lastSumDis = 0.0;
 
+    while(distort > 0){
+        // get new centers
+        float sumDis = 0;
+        for(int i=0; i<points.length(); ++i){
+            float dis1 = 0, dis2 = 0;
+            for(int j=0; j<3; ++j){
+                dis1 += qPow(points[i][j]-centers[0][j], 2);
+                dis2 += qPow(points[i][j]-centers[1][j], 2);
+            }
+            if(dis1 < dis2){
+                for(int j=0; j<3; ++j)
+                    clusters[0][j] += points[i][j];
+                clusters[0][3] += 1;
+                sumDis += dis1;
+                qDebug() << "distance 1" << dis1 << dis2;
+            }
+            else{
+                for(int j=0; j<3; ++j)
+                    clusters[1][j] += points[i][j];
+                clusters[1][3] += 1;
+                sumDis += dis2;
+                qDebug() << "distance 2" << dis1 << dis2;
+            }
+        }
+        // calculate average centers
+        for(int i=0; i<K; ++i)
+            for(int j=0; j<3; ++j)
+                if(clusters[i][3]>0)
+                    centers[i][j] = clusters[i][j] /clusters[i][3];
+
+        qDebug() << clusters;
+
+        // set the cluster centers to 0
+        for(int i=0; i<K; ++i){
+            for(int j=0; j<4; ++j){
+                clusters[i][j] = 0;
+            }
+        }
+        distort = qPow(sumDis - lastSumDis, 2);
+        lastSumDis = sumDis;
+        qDebug() << centers;
+        qDebug() << points;
+    }
+
+    qDebug() << clusters << centers;
 }
 
 int main(int argc, char *argv[])
@@ -109,14 +150,8 @@ int main(int argc, char *argv[])
     p[2] = 2.0;
     points.append(p);
 
-    qDebug() << points;
-
     QTime time = QTime::currentTime();
     qsrand((uint)time.msec());
-
-    for(int i=0; i<100; i++){
-        qDebug() << qrand()% 10;
-    }
 
     kmeans(points);
     QApplication a(argc, argv);
