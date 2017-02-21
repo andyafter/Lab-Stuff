@@ -18,6 +18,9 @@ This is the pick and place project for the VR room. What is really important is 
 
 If SharpConnect.dll is not in the plugin folder in assets, you should compile one using SharpConnect.cs by doing:
 - csc /target:library SharpConnect.cs (Under windows)
+
+** DVSRL
+Data analysis for DVS camera data. To implement visual servoing on event based data, we try to extract features like spatial and temporal correlations. The visual servoing is based on reinforcement learning.
 ** Hardware 
 The hardware of this project is a CAVE VR system. Markers are located on gloves. Beware that the minimum distance between any 2 markers should exceed 3cm. 
 
