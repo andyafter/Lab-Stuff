@@ -2,7 +2,7 @@ from socket import *
 import struct
 import numpy as np
 
-def net_raw_UDP_jAER(host='localhost', port=8991, buf_size=8192, num_read=2500, camera='DAVIS240', debug=0):
+def net_raw_UDP_jAER(host='localhost', port=8991, buf_size=8192, num_read=250, camera='DBS128', debug=0):
     print "here here"
     EVT_DVS = 0
     EVT_APS = 1
@@ -37,11 +37,8 @@ def net_raw_UDP_jAER(host='localhost', port=8991, buf_size=8192, num_read=2500, 
         # frames[5, :, :] = resetTsBuffer
         # frames[6, :, :] = exposures
 
-    print "before socket"
     s = socket(AF_INET, SOCK_DGRAM)
-    print "before binding"
     s.bind((host, port))
-    print "before receive"
     data = s.recv(buf_size)
 
     xaddr = []
