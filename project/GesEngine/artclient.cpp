@@ -3,6 +3,7 @@
 ARTClient::ARTClient(QObject *parent) : QObject(parent){
 
     readStop = false;
+    srand(time(NULL));
     // not sure if it is the best practice to put the initialization of socket here
     QHostAddress *art = new QHostAddress("192.168.1.110");  // art address
     socket = new QUdpSocket(this);
@@ -33,9 +34,12 @@ void ARTClient::startReading()
         if(n++%60==0){
             qDebug()<<"From Thread";
         }
+
         emit on_number("fthread",1);
+
         QThread::currentThread()->msleep(10);
         readyRead();
+
     }
 }
 
@@ -86,8 +90,10 @@ QString ARTClient::features()
     int K, max_iterations;
     K = 2;
     max_iterations = 100;
+    qDebug() << "Here inside the features";
+    qDebug() << "here in features" << kmeans(markers);
 
-    kmeans(markers);
+    return "";
 
     for(int i = 0; i<markers.length(); i++){
         center[0] += markers[i][0];
@@ -104,7 +110,7 @@ QString ARTClient::features()
     int n = 0;
 
     for(int i =0; i<markers.length()-1;i++){
-        for(int j =1; j<markers.length();j++){
+        for(int j = i; j<markers.length();j++){
             n++;
             float dis = 0;
             dis += (markers[i][0] - markers[j][0])*(markers[i][0] - markers[j][0]);
@@ -135,15 +141,19 @@ void ARTClient::readyRead(){
 
     QHostAddress sender;
     quint16 senderPort;
-
+    qDebug() << "before socket";
     socket->readDatagram(Buffer.data(),Buffer.size(), &sender, &senderPort);
+
     if(Buffer.size()>0 && sender.toString() == "192.168.1.100"){
         // Buffer will be where the data is stored
         rawData = Buffer;
+        qDebug() << "before buffer";
         extractMarkers(rawData);
+        qDebug() << "before features";
         QString messageToUnity = features();
+        qDebug() << "afterfeatures";
         //qDebug() << messageToUnity;
-        emit refreshMarkers(messageToUnity);
+        //emit refreshMarkers(messageToUnity);
     }
 }
 
@@ -174,14 +184,14 @@ QString ARTClient::getRawData() const
     return rawData;
 }
 
-void ARTClient::kmeans(QVector<QVector<float>> points){
+QVector<float> ARTClient::kmeans(QVector<QVector<float>> points){
 
-    if(points.length()==0){
-        return;
+    if(points.length()<=1){
+        QVector<float> none(3);
+        return none;
     }
     // consider only k==2
     int K = 2;
-
     // whether the function converges
     float distort = 1;
 
@@ -192,24 +202,32 @@ void ARTClient::kmeans(QVector<QVector<float>> points){
     QVector<float> result;
     // this process should be generalized if you do k>2
     // c1 and c2 will later be used to store how many markers are there in a class(which is dirty but I prefer not to declaire too many variables)
-    int c1 = qrand() % points.length();
-    int c2 = qrand() % points.length();
+    int c1 = rand() % points.length();
+    int c2 = rand() % points.length();
 
+
+
+    qDebug() << "before while kmeans" ;
     while(c2==c1){    // dirty stuff
-        c2 = qrand() % points.length();
+        c2 = rand() % points.length();
+        // using time directly as the random number
+        if(c2==0){
+            c2 = (c1+1) % points.length();
+        }
+        qDebug() << c2 <<time(NULL);
     }
 
     centers[0] = points[c1];
     centers[1] = points[c2];
 
     // initialize centers and find functions to erase everything from qvector
-
+    qDebug() << "before kj";
     for(int i=0; i<K; ++i){
         for(int j=0; j<4; ++j){
             clusters[i].append(0.0);
         }
     }
-
+    qDebug() << points.length();
     float lastSumDis = 0.0;
 
     while(distort > 0){
@@ -244,7 +262,7 @@ void ARTClient::kmeans(QVector<QVector<float>> points){
                     centers[i][j] = clusters[i][j] /clusters[i][3];
 
         // here is dirty code, the one with less markers are the glove
-        if(num1>num2){
+        if(num1 > num2){
             result = centers[1];
         }
         else{
@@ -258,7 +276,8 @@ void ARTClient::kmeans(QVector<QVector<float>> points){
         }
         distort = qPow(sumDis - lastSumDis, 2);
         lastSumDis = sumDis;
+
     }
 
-    qDebug() << result;
+    return result;
 }
