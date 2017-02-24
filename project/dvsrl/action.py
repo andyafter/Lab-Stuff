@@ -1,4 +1,4 @@
-lfrom socket import *
+from socket import *
 import struct
 import numpy as np
 
@@ -111,7 +111,7 @@ def action(host='localhost', port=8991, buf_size=8192):
     MESSAGE = "Connected!"
 
     robot_socket = socket(AF_INET, SOCK_DGRAM)
-    robot_socket.connect((TCP_IP, TCP_PORT))
+    robot_socket.connect((host, TCP_PORT))
     robot_socket.send(MESSAGE)
 
     for i in range(100):
