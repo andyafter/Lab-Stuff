@@ -110,14 +110,15 @@ def action(host='localhost', port=8991, buf_size=8192):
     BUFFER_SIZE = 1024
     MESSAGE = "Connected!"
 
-    robot_socket = socket(AF_INET, SOCK_DGRAM)
+    robot_socket = socket()
     robot_socket.connect((host, TCP_PORT))
     robot_socket.send(MESSAGE)
 
-    for i in range(100):
+    for i in range(10000):
         data = data_socket.recv(buf_size)
         print net_raw_UDP_jAER(data)
-        robot_socket.send("event")
+        if i%300 == 0:
+            robot_socket.send("something happens to the robot arm\n")
     robot_socket.close()
 
 action()
