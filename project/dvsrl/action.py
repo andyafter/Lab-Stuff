@@ -1,6 +1,7 @@
 from socket import *
 import struct
 import numpy as np
+import time
 
 def net_raw_UDP_jAER(data="", num_read=250, camera='DBS128', debug=0):
     EVT_DVS = 0
@@ -43,6 +44,7 @@ def net_raw_UDP_jAER(data="", num_read=250, camera='DBS128', debug=0):
     pol = []
     timestamps = []
     frames = []
+    addr = []
 
     # print "read_done"
     sequence_number = struct.unpack('>I', data[0:4])[0]
@@ -105,20 +107,28 @@ def action(host='localhost', port=8991, buf_size=8192):
     data_socket = socket(AF_INET, SOCK_DGRAM)
     data_socket.bind((host, port))
 
-    TCP_IP = '127.0.0.1'
-    TCP_PORT = 30001
+    TCP_IP = '172.16.205.209'
+    TCP_PORT = 30002
     BUFFER_SIZE = 1024
     MESSAGE = "Connected!"
+    moves = []
+
+    # \n is very important 
+    moves.append("movej([-0.26, -2.4, -1.5, -2.2775736604458237, 3.3528323423665642, -1.2291967454894914], a=0.3962634015954636, v=0.1071975511965976)\n")
+    moves.append("movej([-0.1, -2.4, -1.5, -2.2775736604458237, 3.3528323423665642, -1.2291967454894914], a=0.3962634015954636, v=0.1071975511965976)\n")
 
     robot_socket = socket()
-    robot_socket.connect((host, TCP_PORT))
-    robot_socket.send(MESSAGE)
+    robot_socket.connect((TCP_IP, TCP_PORT))
 
-    for i in range(10000):
+    n = 0
+
+    for i in range(3000):
         data = data_socket.recv(buf_size)
-        print net_raw_UDP_jAER(data)
+        net_raw_UDP_jAER(data)
         if i%300 == 0:
-            robot_socket.send("something happens to the robot arm\n")
+            print "send to robot", i
+            n += 1
+            robot_socket.send(moves[n%2])
     robot_socket.close()
 
 action()
