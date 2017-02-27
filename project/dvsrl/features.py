@@ -8,5 +8,4 @@ Timestep is 1us
 '''
 
 def gaussian_distribution():
-    
     return []
