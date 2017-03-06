@@ -124,7 +124,8 @@ QString ARTClient::features()
         // qDebug() << "grab!";
         // messageToUnity += "grab ";
     }
-    center = handPos;
+
+    center = handPos;  // result from kmeans
     messageToUnity += QString::number(center[0]);
     messageToUnity += " ";
     messageToUnity += QString::number(center[1]);
