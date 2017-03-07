@@ -90,10 +90,8 @@ QString ARTClient::features()
     int K, max_iterations;
     K = 2;
     max_iterations = 100;
-    qDebug() << "Here inside the features";
-    qDebug() << "here in features" << kmeans(markers);
-
-    return "";
+    QVector<float> handPos = kmeans(markers);
+    qDebug() << handPos;
 
     for(int i = 0; i<markers.length(); i++){
         center[0] += markers[i][0];
@@ -123,9 +121,11 @@ QString ARTClient::features()
 
     QString messageToUnity = "";
     if(adis<80){
-        qDebug() << "grab!";
-        messageToUnity += "grab ";
+        // qDebug() << "grab!";
+        // messageToUnity += "grab ";
     }
+
+    center = handPos;  // result from kmeans
     messageToUnity += QString::number(center[0]);
     messageToUnity += " ";
     messageToUnity += QString::number(center[1]);
@@ -141,19 +141,15 @@ void ARTClient::readyRead(){
 
     QHostAddress sender;
     quint16 senderPort;
-    qDebug() << "before socket";
     socket->readDatagram(Buffer.data(),Buffer.size(), &sender, &senderPort);
 
     if(Buffer.size()>0 && sender.toString() == "192.168.1.100"){
         // Buffer will be where the data is stored
         rawData = Buffer;
-        qDebug() << "before buffer";
         extractMarkers(rawData);
-        qDebug() << "before features";
         QString messageToUnity = features();
-        qDebug() << "afterfeatures";
         //qDebug() << messageToUnity;
-        //emit refreshMarkers(messageToUnity);
+        emit refreshMarkers(messageToUnity);
     }
 }
 
@@ -188,6 +184,7 @@ QVector<float> ARTClient::kmeans(QVector<QVector<float>> points){
 
     if(points.length()<=1){
         QVector<float> none(3);
+        none[0] = 1111111;
         return none;
     }
     // consider only k==2
@@ -205,29 +202,23 @@ QVector<float> ARTClient::kmeans(QVector<QVector<float>> points){
     int c1 = rand() % points.length();
     int c2 = rand() % points.length();
 
-
-
-    qDebug() << "before while kmeans" ;
     while(c2==c1){    // dirty stuff
         c2 = rand() % points.length();
         // using time directly as the random number
         if(c2==0){
             c2 = (c1+1) % points.length();
         }
-        qDebug() << c2 <<time(NULL);
     }
 
     centers[0] = points[c1];
     centers[1] = points[c2];
 
     // initialize centers and find functions to erase everything from qvector
-    qDebug() << "before kj";
     for(int i=0; i<K; ++i){
         for(int j=0; j<4; ++j){
             clusters[i].append(0.0);
         }
     }
-    qDebug() << points.length();
     float lastSumDis = 0.0;
 
     while(distort > 0){
