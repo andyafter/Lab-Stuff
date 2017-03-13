@@ -12,6 +12,9 @@
 
 #include <QTime>
 #include <QtMath>
+#include <QDateTime>
+
+#include <time.h>
 
 #include "kmeans.h"
 
@@ -38,7 +41,7 @@ public:
 
     void sendUnity();
 
-    void kmeans(QVector<QVector<float>> points);
+    QVector<float> kmeans(QVector<QVector<float>> points);
 
 signals:
     //// understand and change this function

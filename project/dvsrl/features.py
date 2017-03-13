@@ -11,7 +11,6 @@ Timestep is 1us
 
 def gaussian_distribution():
     #loadaerdat(datafile="dvsdata.aedat")
-    
     return []
 
 X = np.array([171, 184, 210, 198, 166, 167])
