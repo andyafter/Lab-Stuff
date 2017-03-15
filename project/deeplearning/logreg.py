@@ -9,9 +9,9 @@ f.close()
 
 def shared_dataset(data_xy):
     data_x, data_y = data_xy
-    share_x = theano.shared(numpt.asarray(data_x, dtype = theano.config.floatX))
-    share_y = theano.shared(numpt.asarray(data_y, dtype = theano.config.floatX))
-    return shared_x, T.cast(shared_y, 'int32')
+    share_x = theano.shared(numpy.asarray(data_x, dtype = theano.config.floatX))
+    share_y = theano.shared(numpy.asarray(data_y, dtype = theano.config.floatX))
+    return share_x, T.cast(share_y, 'int32')
 
 test_set_x, test_set_y =  shared_dataset(test_set)
 valid_set_x, valid_set_y = shared_dataset(valid_set)
