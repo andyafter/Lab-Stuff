@@ -3,6 +3,7 @@ import struct
 import numpy as np
 import time
 
+# change the name of this function, since it only take cares of the parsing now
 def net_raw_UDP_jAER(data="", num_read=250, camera='DBS128', debug=0):
     EVT_DVS = 0
     EVT_APS = 1
@@ -126,9 +127,8 @@ def action(host='localhost', port=8991, buf_size=8192):
         data = data_socket.recv(buf_size)
         net_raw_UDP_jAER(data)
         if i%300 == 0:
-            print "send to robot", i
             n += 1
             robot_socket.send(moves[n%2])
     robot_socket.close()
 
-action()
+#action()
