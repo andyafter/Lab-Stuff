@@ -22,11 +22,11 @@ def action(host='localhost', port=8991, buf_size=8192):
         data = data_socket.recv(buf_size)
         timestamp, x, y, pol, frames= net_raw_UDP_jAER(data)
         sec_t = timestamp[0]//10000
-        observation.append((x,y))
-
+        observation.append([x,y])
+        
         if sec_t != sec:
             sec = sec_t
-            print(len(observation))
+            ###print(len(observation))
             event_sequence.append(len(observation))
             events = 0
             if not last_observation:
