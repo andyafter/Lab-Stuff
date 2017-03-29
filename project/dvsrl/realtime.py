@@ -21,13 +21,16 @@ def action(host='localhost', port=8991, buf_size=8192):
     for i in range(1000):
         data = data_socket.recv(buf_size)
         timestamp, x, y, pol, frames= net_raw_UDP_jAER(data)
+        if len(timestamp)<=0:
+            continue
         sec_t = timestamp[0]//10000
         observation.append([x,y])
-        
+        # print(timestamp)
+
         if sec_t != sec:
             sec = sec_t
-            ###print(len(observation))
-            event_sequence.append(len(observation))
+            print(len(timestamp))
+            event_sequence.append(len(timestamp))
             events = 0
             if not last_observation:
                 # this is only to checkout if no observation will duplicate
