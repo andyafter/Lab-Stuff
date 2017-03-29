@@ -36,8 +36,6 @@ for x in range(0,1000):
 
 
 time.sleep(0.1)
-currentvalues = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-stopvalue = b"r," + b",".join(str(x).encode() for x in currentvalues)+b','
 ard.write(stopvalue)
 for x in range(0,1000):
     x = x+1
