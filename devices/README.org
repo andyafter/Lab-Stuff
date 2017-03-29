@@ -1,0 +1,4 @@
+* Devices
+
+This folder contains code and software that is specifically designed for out devices. Out devices include haptic gloves, 
+UR10 robot arms, Ujin robots, etc.
