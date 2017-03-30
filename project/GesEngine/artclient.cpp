@@ -50,6 +50,9 @@ void ARTClient::extractMarkers(QString frame)
     // it's better to use math tools like opencv for this part
     QString data = frame.split('\n')[4];
     QStringList temp = data.split("][");
+    //qDebug() << temp.length();
+    //qDebug() << data;
+    //qDebug() << temp;
     for(int i =1;i<temp.length();++i){
         QVector<float> position;
         QStringList posString;
@@ -90,8 +93,9 @@ QString ARTClient::features()
     int K, max_iterations;
     K = 2;
     max_iterations = 100;
-    QVector<float> handPos = kmeans(markers);
-    qDebug() << handPos;
+    QVector<float> handPos ;
+    // handPos = kmeans(markers);
+    // qDebug() << handPos;
 
     for(int i = 0; i<markers.length(); i++){
         center[0] += markers[i][0];
@@ -104,6 +108,8 @@ QString ARTClient::features()
 
     handCenter = center;
 
+
+    // previous grabbing detection
     float adis = 0;
     int n = 0;
 
@@ -125,7 +131,10 @@ QString ARTClient::features()
         // messageToUnity += "grab ";
     }
 
-    center = handPos;  // result from kmeans
+    // center = handPos;  // result from kmeans
+    handPos = handCenter;
+    center = handCenter; // average ball position
+    qDebug() << handPos;
     messageToUnity += QString::number(center[0]);
     messageToUnity += " ";
     messageToUnity += QString::number(center[1]);
@@ -201,7 +210,7 @@ QVector<float> ARTClient::kmeans(QVector<QVector<float>> points){
     // c1 and c2 will later be used to store how many markers are there in a class(which is dirty but I prefer not to declaire too many variables)
     int c1 = rand() % points.length();
     int c2 = rand() % points.length();
-
+    qDebug() << points.length();
     while(c2==c1){    // dirty stuff
         c2 = rand() % points.length();
         // using time directly as the random number
@@ -253,12 +262,13 @@ QVector<float> ARTClient::kmeans(QVector<QVector<float>> points){
                     centers[i][j] = clusters[i][j] /clusters[i][3];
 
         // here is dirty code, the one with less markers are the glove
-        if(num1 > num2){
+        if(num1 < num2){
             result = centers[1];
         }
         else{
             result = centers[0];
         }
+        //qDebug()<<num1<<num2;
         // set the cluster centers to 0
         for(int i=0; i<K; ++i){
             for(int j=0; j<4; ++j){
