@@ -49,3 +49,7 @@ project/analysis/gesdata*
 *.pro.user
 
 project/UnityNetworkTest/*
+
+### model file
+*VGG_ILSVRC_16_layers.caffemodel
+*vgg16_weights.npz

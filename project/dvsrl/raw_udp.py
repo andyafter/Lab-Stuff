@@ -3,7 +3,7 @@ import struct
 import numpy as np
 
 def net_raw_UDP_jAER(host='localhost', port=8991, buf_size=8192, num_read=250, camera='DBS128', debug=0):
-    print "here here"
+
     EVT_DVS = 0
     EVT_APS = 1
 
@@ -103,7 +103,7 @@ def net_raw_UDP_jAER(host='localhost', port=8991, buf_size=8192, num_read=250, c
             if((read_reset == 0) and x_addr == 0 and y_addr == 0):
                 frame = np.zeros([7, sizeX, sizeY]);
                 frames.append(frame)
-        print timestamps, xaddr, yaddr, pol
+        print(timestamps, xaddr, yaddr, pol)
         xaddr = []
         yaddr = []
         pol = []
