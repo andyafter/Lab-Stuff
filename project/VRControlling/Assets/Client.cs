@@ -38,7 +38,8 @@ public class Client : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // change y to minus 10 instead of plus
-        hand.position = new Vector3(160f - handPos.x, handPos.z + 10f, 240f + handPos.y);   
+        hand.position = new Vector3(160f - handPos.x, handPos.z + 10f, 240f + handPos.y);
+        clientListen = true;  // make sure that stream is not closed
 	}
 
 	void gesEngineClient(){

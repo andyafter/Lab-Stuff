@@ -941,9 +941,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.8019905, y: 3.1046734, z: 10.47244}
   m_Center: {x: 0.33522627, y: 1.5523367, z: 0}
+--- !u!4 &1439044354 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 3e7cc2b8390eb0b41b67ad13be05a108, type: 3}
+  m_PrefabInternal: {fileID: 955609036}
 --- !u!1 &1444549685 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 3e7cc2b8390eb0b41b67ad13be05a108, type: 3}
+  m_PrefabInternal: {fileID: 2034360874}
+--- !u!4 &1444549688 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 3e7cc2b8390eb0b41b67ad13be05a108, type: 3}
   m_PrefabInternal: {fileID: 2034360874}
 --- !u!65 &1444549690
 BoxCollider:
@@ -1076,6 +1084,7 @@ GameObject:
   - component: {fileID: 1996685810}
   - component: {fileID: 1996685809}
   - component: {fileID: 1996685811}
+  - component: {fileID: 1996685812}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1119,6 +1128,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 771199055}
+--- !u!114 &1996685812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1996685808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5504992e8891c9841aaa8a9d9ffcdbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 1444549688}
+  target: {fileID: 1439044354}
+  hand: {fileID: 771199055}
+  cube: {fileID: 369155256}
+  sphere: {fileID: 1779941386}
+  cylinder: {fileID: 267410489}
 --- !u!1001 &2034360874
 Prefab:
   m_ObjectHideFlags: 0
