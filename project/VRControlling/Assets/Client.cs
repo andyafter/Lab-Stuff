@@ -19,7 +19,7 @@ public class Client : MonoBehaviour {
 	private bool clientListen = true;   // closes client listeing loop in another thread
     private Vector3 locator = new Vector3(160f, 0f, 240f);
 
-    private float scale = 0.05F;
+    private float scale = 0.03F;
 
     public Transform hand;
     private Vector3 handPos;
@@ -38,7 +38,7 @@ public class Client : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // change y to minus 10 instead of plus
-        hand.position = new Vector3(160f - handPos.x, handPos.z + 10f, 240f + handPos.y);
+        hand.position = new Vector3(160f - handPos.x, handPos.z - 15f, 240f + handPos.y);
         clientListen = true;  // make sure that stream is not closed
 	}
 

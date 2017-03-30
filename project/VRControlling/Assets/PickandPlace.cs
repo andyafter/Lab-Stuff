@@ -36,18 +36,18 @@ public class PickandPlace : MonoBehaviour {
 		print(dis_source);
 
 		if (status == 1) {
-			currentObject.position = new Vector3 (hand.position.x, hand.position.y - 0.05f, hand.position.z);
+			currentObject.position = new Vector3 (hand.position.x, hand.position.y - 1.5f, hand.position.z);
 
 			float disHandTarget = Vector3.Distance(target.position, hand.position);
-			if(disHandTarget<1){
+			if(disHandTarget<8){
 				// put it down
-				//WWW www = new WWW(url);
+				WWW www = new WWW(url);
 				if (current == 0) {
-					currentObject.position = new Vector3 (cubeOri.x, cubeOri.y, cubeOri.z + 2.0f);
+					currentObject.position = new Vector3 (cubeOri.x  + 20.0f, cubeOri.y, cubeOri.z);
 				}else if (current == 1) {
-					currentObject.position = new Vector3 (sphereOri.x, sphereOri.y, sphereOri.z + 2.0f);
+					currentObject.position = new Vector3 (sphereOri.x  + 20.0f, sphereOri.y, sphereOri.z);
 				}else if (current == 2) {
-					currentObject.position = new Vector3 (cylinderOri.x, cylinderOri.y, cylinderOri.z + 2.0f);
+					currentObject.position = new Vector3 (cylinderOri.x  + 20.0f, cylinderOri.y, cylinderOri.z);
 				}
 				current += 1;
 				current %= 3;    // since there are 3 objects so far	
@@ -56,9 +56,10 @@ public class PickandPlace : MonoBehaviour {
 		}
 		else{
 			float disHandSource = Vector3.Distance(source.position, hand.position);
-			if(disHandSource<1){
+			print(disHandSource);
+			if(disHandSource<8){
 				// pick
-				//WWW www = new WWW(url);
+				WWW www = new WWW(url);
 				status = 1;
 				if (current == 0) {
 					currentObject = cube;
