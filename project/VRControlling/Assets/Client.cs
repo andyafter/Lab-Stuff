@@ -52,13 +52,6 @@ public class Client : MonoBehaviour {
             handPos.y = -float.Parse(res[1]) * scale;
             handPos.z = float.Parse(res[2]) * scale;
             //handPos = new Vector3(float.Parse(res[0]), -float.Parse(res[1]), float.Parse(res[2])) * scale;
-            //print(handPos.x);
-            // up->back
-            //down->forward
-            //left->down
-            //right-> up
-            //forward->right
-            //backward->left
 		}
 
 	}
