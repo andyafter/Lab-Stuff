@@ -23,19 +23,12 @@ while True:
 ard.flush()
 stopvalue = b"r," + b",".join(str(x).encode() for x in currentvalues)+b','
 
-#currentvalues = [100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100]
-for i in range(1):
-    currentvalues[i] = 100
+currentvalues = [100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100]
 
 cvalue = b"r," + b",".join(str(x).encode() for x in currentvalues)+b','
 
 print(cvalue, len(currentvalues))
 ard.write(cvalue)
-#ard.flush()
-for x in range(0,1000):
-    x = x+1
-#ard.flush()
-
 
 time.sleep(0.1)
 ard.write(stopvalue)
