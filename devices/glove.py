@@ -29,17 +29,12 @@ cvalue = b"r," + b",".join(str(x).encode() for x in currentvalues)+b','
 
 print(cvalue, len(currentvalues))
 ard.write(cvalue)
-#ard.flush()
-for x in range(0,1000):
-    x = x+1
-#ard.flush()
-
 
 time.sleep(0.1)
 ard.write(stopvalue)
 for x in range(0,1000):
     x = x+1
-#ard.flush()
+ard.flush()
 
 '''
 while (condition==True):
