@@ -10,8 +10,7 @@ def ur_data_parser(ur_data):
     return parsed_data
 
 
-HOST = "172.16.206.29"    # The remote host
-PORT = 30002            # The same port as used by the server
+HOST = "172.16.206.6"    # The remote host
 s = socket.socket()
 
 s.connect((HOST, PORT))
