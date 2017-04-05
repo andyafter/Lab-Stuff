@@ -63,6 +63,7 @@ private:
     bool readStop;
     QString rawData;
     QVector<QVector<float>> markers;
+    QVector<QVector<float>> prevMarkers;
     QVector<float> handCenter;
     QTcpServer *server;
 };
