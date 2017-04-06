@@ -20,9 +20,16 @@ public class URReal : MonoBehaviour {
 
     private bool sendCommand = false;    // when you want to send a command, set it to true
     private int tickCounter = 0;        // to count time in a game
+    private Vector3 urBase;
+    private Vector3 handBase;
+
+    // game objects 
+    public Transform endEffector;
 
     void Start () {
-        message = "movej(p[0.7, -0.1, 0.1, 0.5, 3, 0.015], a = 1.3962634015954636, v = 0.3071975511965976)\n";
+        urBase = new Vector3(1.0f, -0.161f, 0f);
+        handBase = new Vector3();
+        message = "movej(p[1.0, -0.16, 0, 0.5, 3, 0.015], a = 1.3962634015954636, v = 0.3071975511965976)\n";
         client = new TcpClient(ip, port);
         stream = client.GetStream();
         clientThread = new Thread(commandAgent);
@@ -34,6 +41,15 @@ public class URReal : MonoBehaviour {
         ++tickCounter;
         if(tickCounter%20 == 0)
         {
+            // here the conversion of x, y, z should be written
+            message = "movej(p[";
+            message += Convert.ToString(Convert.ToInt32(endEffector.position.x));
+            message += ",";
+            message += Convert.ToString(Convert.ToInt32(endEffector.position.y));
+            message += ",";
+            message += Convert.ToString(Convert.ToInt32(endEffector.position.z));
+            message += ", 0.5, 3, 0.015], a = 1.3962634015954636, v = 0.3071975511965976)\n";
+            print(message);
             //sendCommand = true;
         }		
 	}

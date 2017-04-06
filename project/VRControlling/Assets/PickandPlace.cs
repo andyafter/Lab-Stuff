@@ -33,7 +33,7 @@ public class PickandPlace : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float dis_source = Vector3.Distance(target.position, source.position);
-		print(hand.position);
+		//print(hand.position);
 
 		if (status == 1) {
 			currentObject.position = new Vector3 (hand.position.x, hand.position.y - 1.5f, hand.position.z);
