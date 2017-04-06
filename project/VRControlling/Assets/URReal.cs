@@ -28,7 +28,7 @@ public class URReal : MonoBehaviour {
 
     void Start () {
         urBase = new Vector3(1.0f, -0.161f, 0f);
-        handBase = new Vector3();
+        handBase = new Vector3(158.0f, 8.0f, 233.0f);
         message = "movej(p[1.0, -0.16, 0, 0.5, 3, 0.015], a = 1.3962634015954636, v = 0.3071975511965976)\n";
         client = new TcpClient(ip, port);
         stream = client.GetStream();
@@ -39,18 +39,22 @@ public class URReal : MonoBehaviour {
 	
 	void Update () {
         ++tickCounter;
-        if(tickCounter%20 == 0)
+        if(tickCounter%10 == 0)
         {
+            Vector3 urRefresh = new Vector3(0f, 0f, 0f);
+            urRefresh[0] = urBase[0] + (handBase[2] - endEffector.position.z) / 100f;
+            urRefresh[1] = urBase[1] + (-handBase[0] + endEffector.position.x) / 100f;
+            urRefresh[2] = urBase[2] + (-handBase[1] + endEffector.position.y) / 100f;
             // here the conversion of x, y, z should be written
-            message = "movej(p[";
-            message += Convert.ToString(Convert.ToInt32(endEffector.position.x));
+            message = "movep(p[";
+            message += Convert.ToString(urRefresh[0]);
             message += ",";
-            message += Convert.ToString(Convert.ToInt32(endEffector.position.y));
+            message += Convert.ToString(urRefresh[1]);
             message += ",";
-            message += Convert.ToString(Convert.ToInt32(endEffector.position.z));
-            message += ", 0.5, 3, 0.015], a = 1.3962634015954636, v = 0.3071975511965976)\n";
+            message += Convert.ToString(urRefresh[2]);
+            message += ", 0.5, 3, 0.015], a = 1.3962634015954636, v = 0.3071975511965976, r = 0.1)\n";
             print(message);
-            //sendCommand = true;
+            sendCommand = true;
         }		
 	}
 
