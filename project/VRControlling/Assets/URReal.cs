@@ -10,7 +10,7 @@ using System.Text;
 
 public class URReal : MonoBehaviour {
 
-    private string ip = "127.0.0.1";
+    private string ip = "172.16.205.134";
     private int port = 30002;
     private Thread clientThread;
     private TcpClient client;
@@ -21,21 +21,20 @@ public class URReal : MonoBehaviour {
     private bool sendCommand = false;    // when you want to send a command, set it to true
     private int tickCounter = 0;        // to count time in a game
 
-    // Use this for initialization
     void Start () {
-        
+        message = "movej(p[0.7, -0.1, 0.1, 0.5, 3, 0.015], a = 1.3962634015954636, v = 0.3071975511965976)\n";
+        client = new TcpClient(ip, port);
         stream = client.GetStream();
         clientThread = new Thread(commandAgent);
         sendCommand = true;
         clientThread.Start();
     }
 	
-	// Update is called once per frame
 	void Update () {
         ++tickCounter;
         if(tickCounter%20 == 0)
         {
-            sendCommand = true;
+            //sendCommand = true;
         }		
 	}
 
