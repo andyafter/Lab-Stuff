@@ -33,7 +33,7 @@ public class PickandPlace : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float dis_source = Vector3.Distance(target.position, source.position);
-		print(dis_source);
+		print(hand.position);
 
 		if (status == 1) {
 			currentObject.position = new Vector3 (hand.position.x, hand.position.y - 1.5f, hand.position.z);
@@ -56,7 +56,6 @@ public class PickandPlace : MonoBehaviour {
 		}
 		else{
 			float disHandSource = Vector3.Distance(source.position, hand.position);
-			print(disHandSource);
 			if(disHandSource<8){
 				// pick
 				WWW www = new WWW(url);
