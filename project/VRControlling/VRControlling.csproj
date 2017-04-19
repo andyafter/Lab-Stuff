@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scenes\Robot_Control_UR10.cs" />
     <Compile Include="Assets\Scenes\ServerSocket.cs" />
     <Compile Include="Assets\Scenes\TestControlling.cs" />
+    <Compile Include="Assets\URReal.cs" />
     <Compile Include="Assets\child.cs" />
     <Compile Include="Assets\follow.cs" />
     <Compile Include="Assets\mouse.cs" />

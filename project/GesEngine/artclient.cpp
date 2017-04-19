@@ -4,12 +4,10 @@ ARTClient::ARTClient(QObject *parent) : QObject(parent){
 
     readStop = false;
     srand(time(NULL));
-    // not sure if it is the best practice to put the initialization of socket here
+
     QHostAddress *art = new QHostAddress("192.168.1.110");  // art address
     socket = new QUdpSocket(this);
     socket->bind(*art,5002);
-    //connect(socket, SIGNAL(readyRead()),this,SLOT(readyRead()));
-
     //server = new QTcpServer(this);
     //connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
 
@@ -45,14 +43,22 @@ void ARTClient::startReading()
 
 void ARTClient::extractMarkers(QString frame)
 {
+
+    prevMarkers.clear();
+    for(int i = 0; i<markers.size(); ++i){
+        QVector<float> position;
+        position.append(markers[i][0]);
+        position.append(markers[i][1]);
+        position.append(markers[i][2]);
+        prevMarkers.append(position);
+    }
+
     markers.clear();
     // this function converts the udp package to a list of marker positions
     // it's better to use math tools like opencv for this part
     QString data = frame.split('\n')[4];
     QStringList temp = data.split("][");
-    //qDebug() << temp.length();
-    //qDebug() << data;
-    //qDebug() << temp;
+
     for(int i =1;i<temp.length();++i){
         QVector<float> position;
         QStringList posString;
@@ -134,6 +140,7 @@ QString ARTClient::features()
     // center = handPos;  // result from kmeans
     handPos = handCenter;
     center = handCenter; // average ball position
+    center = kmeans(markers);
     qDebug() << handPos;
     messageToUnity += QString::number(center[0]);
     messageToUnity += " ";
@@ -166,7 +173,6 @@ void ARTClient::newConnection()
 {
     // original plan for tcp
 }
-
 
 void ARTClient::stopRead()
 {
