@@ -8,20 +8,30 @@ import Leap
 from Leap import CircleGesture, KeyTapGesture, ScreenTapGesture, SwipeGesture
 
 
-class SampleListener(Leap.Listener):
+class LeapFlaskListener(Leap.Listener):
 
-    def on_connect(self, controller):        
+    def on_connect(self, controller):
         print "Connected"
 
     def on_frame(self, controller):
         frame = controller.frame()
-        print "Frame id: %d, timestamp: %d, hands: %d, fingers: %d" % (
-          frame.id, frame.timestamp, len(frame.hands), len(frame.fingers))
+        #print "Frame id: %d, timestamp: %d, hands: %d, fingers: %d" % (
+          #frame.id, frame.timestamp, len(frame.hands), len(frame.fingers))
+        pointable = frame.pointables.frontmost
+        direction = pointable.direction
+        length = pointable.length
+        width = pointable.width
+        stabilizedPosition = pointable.stabilized_tip_position
+        position = pointable.tip_position
+        speed = pointable.tip_velocity
+        touchDistance = pointable.touch_distance
+        zone = pointable.touch_zone
+        print zone, position
 
 
 def main():
     # Create a sample listener and controller
-    listener = SampleListener()
+    listener = LeapFlaskListener()
     controller = Leap.Controller()
 
     # Have the sample listener receive events from the controller
@@ -36,5 +46,3 @@ def main():
     finally:
         # Remove the sample listener when done
         controller.remove_listener(listener)
-
-main()
