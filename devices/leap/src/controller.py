@@ -31,11 +31,12 @@ class LeapFlaskListener(Leap.Listener):
         speed = pointable.tip_velocity
         touchDistance = pointable.touch_distance
         zone = pointable.touch_zone
+        
+        MESSAGE = ""
         for point in frame.pointables:
             # point here is a pointable
-            self.fingers.append([point.tip_position[0], point.tip_position[1],point.tip_position[2]])
-            print self.fingers
-        MESSAGE = str(self.fingers)
+            self.fingers.append(" ".join([str(point.tip_position[0]), str(point.tip_position[1]), str(point.tip_position[2])]))
+        MESSAGE = ",".join(self.fingers)
         self.sock.sendto(MESSAGE, (self.UDP_IP, self.UDP_PORT))
 
 
