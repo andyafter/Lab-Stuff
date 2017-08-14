@@ -1,0 +1,51 @@
+#+TITLE: Tutorial for Robotics and Graphics
+#+AUTHOR: Pan An
+
+
+#+LATEX: \newpage
+#+BEGIN_abstract
+This documentation presents tutorials for all the projects that might concern our group in SiNAPSE. All the source code and resources for the projects presented here can be found on Github. In the chapter of fluid simulation, rendering models are provided in order to help with further optimization of the platform.
+#+END_abstract
+
+#+LATEX: \newpage
+* iLimb Controlling
+The iLimb controlling is composed by several different part:
+- Core code uploading
+- Keyboard controlling
+- Programming manipulation
+
+For more advanced features, read the source code of /Core/.
+** Keyboard Controlling 
+iLimb Core contains the core project for iLimb development board provided together with iLimb robot hand. Please refer to the iLimb devboard manual for details of development environment setup. 
+
+
+| Key        | Pressed Action                                             |
+| 0	  | Normal grip                                                |
+| 1	  | Standard Precision Pinch Closed                            |
+| 2	  | Standard Tripod Closed                                     |
+| 3	  | Thumb Park, continuous                                     |
+| 5	  | Lateral grip                                               |
+| 6 	 | Index Point (trigger)                                      |
+| 7	  | Standard Precision Open                                    |
+| 9	  | Thumb Precision Closed                                     |
+| a	  | Thumb Precision Open                                       |
+| b	  | Thumb Tripod Open                                          |
+| d	  | Standard Tripod Open                                       |
+| e	  | Thumb Tripod Open                                          |
+| f	  | Donning/doffing  glove                                     |
+| o	  | Open all fingers (depends on active fingers in that grip)  |
+| c	  | Close all fingers (depends on active fingers in that grip) |
+| t	  | Move thumb individually                                    |
+| i	  | Move index finger individually                             |
+| m	  | Move middle finger individually                            |
+| r	  | Move ring finger individually                              |
+| p	  | Move pinky finger individually                             |
+| s	  | Stop all movement                                          |
+| x	  | Stop movement of wrist                                     |
+| y	  | Move wrist one direction                                   |
+| z	  | Move wrist other direction (depends on cable orientation)  |
+
+
+* VR Room 
+
+* Fluid Simulation

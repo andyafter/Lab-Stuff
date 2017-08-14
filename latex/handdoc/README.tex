@@ -1,0 +1,88 @@
+% Created 2017-08-11 Fri 16:56
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Pan An}
+\date{\today}
+\title{Tutorial for Robotics and Graphics}
+\hypersetup{
+ pdfauthor={Pan An},
+ pdftitle={Tutorial for Robotics and Graphics},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 24.5.1 (Org mode 8.3.4)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+\begin{abstract}
+This documentation presents tutorials for all the projects that might concern our group in SiNAPSE. All the source code and resources for the projects presented here can be found on Github. In the chapter of fluid simulation, rendering models are provided in order to help with further optimization of the platform.
+\end{abstract}
+
+\newpage
+\section{iLimb Controlling}
+\label{sec:orgheadline2}
+The iLimb controlling is composed by several different part:
+\begin{itemize}
+\item Core code uploading
+\item Keyboard controlling
+\item Programming manipulation
+\end{itemize}
+
+For more advanced features, read the source code of \emph{Core}.
+\subsection{Keyboard Controlling}
+\label{sec:orgheadline1}
+iLimb Core contains the core project for iLimb development board provided together with iLimb robot hand. Please refer to the iLimb devboard manual for details of development environment setup. 
+
+\definecolor{contiYellow}{RGB}{255,165,0}
+\rowcolors[]{2}{contiYellow!5}{contiYellow!20}
+\begin{center}
+\begin{tabular}{rS}
+Key & Pressed Action\\
+0 & Normal grip\\
+1 & Standard Precision Pinch Closed\\
+2 & Standard Tripod Closed\\
+3 & Thumb Park, continuous\\
+5 & Lateral grip\\
+6 & Index Point (trigger)\\
+7 & Standard Precision Open\\
+9 & Thumb Precision Closed\\
+a & Thumb Precision Open\\
+b & Thumb Tripod Open\\
+d & Standard Tripod Open\\
+e & Thumb Tripod Open\\
+f & Donning/doffing  glove\\
+o & Open all fingers (depends on active fingers in that grip)\\
+c & Close all fingers (depends on active fingers in that grip)\\
+t & Move thumb individually\\
+i & Move index finger individually\\
+m & Move middle finger individually\\
+r & Move ring finger individually\\
+p & Move pinky finger individually\\
+s & Stop all movement\\
+x & Stop movement of wrist\\
+y & Move wrist one direction\\
+z & Move wrist other direction (depends on cable orientation)\\
+\end{tabular}
+\end{center}
+\section{VR Room}
+\label{sec:orgheadline3}
+
+\section{Fluid Simulation}
+\label{sec:orgheadline4}
+\end{document}
