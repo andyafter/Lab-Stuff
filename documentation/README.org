@@ -22,9 +22,7 @@ Our experimental set up consists of a robotic hand ~iLimb~, an ARM based develop
 
 Long press the plastic button attached to the batteries until the there are blue LEDs glowing.  
 
-The iLimb manual provided in our group should have a concise description of all the software needed for development board configuration. When the development environment is set up, make sure the connection of the board to the hand is correct:
-
-- 
+The iLimb manual provided in our group should have a concise description of all the software needed for development board configuration. When the development environment is set up, make sure the connection of the board to the hand is correct by checking the images in this folder. 
 
 ** Keyboard Controlling 
 iLimb Core contains the core project for iLimb development board provided together with iLimb robot hand. Please refer to the iLimb devboard manual for details of development environment setup. 
