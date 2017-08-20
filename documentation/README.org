@@ -16,14 +16,36 @@ The iLimb controlling is composed by several different part:
 - Programming Interface
 
 For more advanced features, read the source code of /Core/. 
+
+** Prior Steps
+Our experimental set up consists of a robotic hand ~iLimb~, an ARM based development board and batteries. Before running anything on the setup, you need to charge the battery.
+
+Long press the plastic button attached to the batteries until the there are blue LEDs glowing.  
+
+The iLimb manual provided in our group should have a concise description of all the software needed for development board configuration. When the development environment is set up, make sure the connection of the board to the hand is correct:
+
+- 
+
 ** Keyboard Controlling 
 iLimb Core contains the core project for iLimb development board provided together with iLimb robot hand. Please refer to the iLimb devboard manual for details of development environment setup. 
 
 In order to run keyboard control commands, you need to have a serial port terminal installed. In this tutorial we choose to use ~Teraterm~. 
 
-*** Burn Core Project File
-In order to make use of the 
+- Turn on the development board, you will see green lights on the board. If not, slightly adjust the battery cable until it does.
+- Connect the USB of the burner board to a computer with complete software setup.
+- Copy and paste the ~Nucleo_LDA.bin~ in /Core/ folder to the disk of the board.
 
+By now the development board should be able to work with programming and keyboard interfaces. 
+
+Follow steps below to test:
+1. Open Teraterm, check to ~Serial~ radius and select the port of the burner. Here we assume that it is ~COM1~. Click "OK". 
+2. Go to Setup -> Serial port and change the baud rate to 115200.
+3. Turn the development off and on, you will see a sequence of messages. Click "Y" to select new configuration. Click 2 to choose keyboard control, then press "Enter".
+4. There will be two initialization moves, normally I will choose to wait for it to finish. When the hand finishes initialization testing, try the keys in the following table.
+
+
+
+*** Burn Core Project File
 
 | Key        | Pressed Action                                             |
 | 0	  | Normal grip                                                |
@@ -52,7 +74,9 @@ In order to make use of the
 | z	  | Move wrist other direction (depends on cable orientation)  |
 
 ** Programming Interface
-The programming interface of the
+There are several ways to manipulate the robot hand with programming. Easiest way is to send keyboard commands from serial port with any programming language. The ~iLimb~ repository contains documents for source code manipulation(which is a docx file). 
+
+To simply control the hand with MATLAB programs, refer to the ~initialization.m~ in ~iLimb~ repository.
 
 
 * VR Room 

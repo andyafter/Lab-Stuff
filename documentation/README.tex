@@ -1,4 +1,4 @@
-% Created 2017-08-16 Wed 17:24
+% Created 2017-08-20 Sun 20:20
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -37,7 +37,7 @@ This documentation presents tutorials for all the projects that might concern ou
 
 \newpage
 \section{iLimb Controlling}
-\label{sec:orgheadline4}
+\label{sec:orgheadline5}
 The iLimb controlling is composed by several different part:
 \begin{itemize}
 \item Core Code Uploading
@@ -46,16 +46,45 @@ The iLimb controlling is composed by several different part:
 \end{itemize}
 
 For more advanced features, read the source code of \emph{Core}. 
+
+\subsection{Prior Steps}
+\label{sec:orgheadline1}
+Our experimental set up consists of a robotic hand \texttt{iLimb}, an ARM based development board and batteries. Before running anything on the setup, you need to charge the battery.
+
+Long press the plastic button attached to the batteries until the there are blue LEDs glowing.  
+
+The iLimb manual provided in our group should have a concise description of all the software needed for development board configuration. When the development environment is set up, make sure the connection of the board to the hand is correct:
+
+\begin{itemize}
+\item 
+\end{itemize}
+
 \subsection{Keyboard Controlling}
-\label{sec:orgheadline2}
+\label{sec:orgheadline3}
 iLimb Core contains the core project for iLimb development board provided together with iLimb robot hand. Please refer to the iLimb devboard manual for details of development environment setup. 
 
 In order to run keyboard control commands, you need to have a serial port terminal installed. In this tutorial we choose to use \texttt{Teraterm}. 
 
-\subsubsection{Burn Core Project File}
-\label{sec:orgheadline1}
-In order to make use of the 
+\begin{itemize}
+\item Turn on the development board, you will see green lights on the board. If not, slightly adjust the battery cable until it does.
+\item Connect the USB of the burner board to a computer with complete software setup.
+\item Copy and paste the \texttt{Nucleo\_LDA.bin} in \emph{Core} folder to the disk of the board.
+\end{itemize}
 
+By now the development board should be able to work with programming and keyboard interfaces. 
+
+Follow steps below to test:
+\begin{enumerate}
+\item Open Teraterm, check to \texttt{Serial} radius and select the port of the burner. Here we assume that it is \texttt{COM1}. Click "OK".
+\item Go to Setup -> Serial port and change the baud rate to 115200.
+\item Turn the development off and on, you will see a sequence of messages. Click "Y" to select new configuration. Click 2 to choose keyboard control, then press "Enter".
+\item There will be two initialization moves, normally I will choose to wait for it to finish. When the hand finishes initialization testing, try the keys in the following table.
+\end{enumerate}
+
+
+
+\subsubsection{Burn Core Project File}
+\label{sec:orgheadline2}
 
 \begin{center}
 \begin{tabular}{ll}
@@ -88,13 +117,15 @@ z & Move wrist other direction (depends on cable orientation)\\
 \end{center}
 
 \subsection{Programming Interface}
-\label{sec:orgheadline3}
-The programming interface of the
+\label{sec:orgheadline4}
+There are several ways to manipulate the robot hand with programming. Easiest way is to send keyboard commands from serial port with any programming language. The \texttt{iLimb} repository contains documents for source code manipulation(which is a docx file). 
+
+To simply control the hand with MATLAB programs, refer to the \texttt{initialization.m} in \texttt{iLimb} repository.
 
 
 \section{VR Room}
-\label{sec:orgheadline5}
+\label{sec:orgheadline6}
 
 \section{Fluid Simulation}
-\label{sec:orgheadline6}
+\label{sec:orgheadline7}
 \end{document}
