@@ -1,4 +1,4 @@
-% Created 2017-08-21 Mon 16:26
+% Created 2017-09-04 Mon 12:25
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -119,9 +119,22 @@ There are several ways to manipulate the robot hand with programming. Easiest wa
 To simply control the hand with MATLAB programs, refer to the \texttt{initialization.m} in \texttt{iLimb} repository.
 
 
-\section{Fluid Simulation}
+\section{VR Room}
 \label{sec:orgheadline6}
-The fluid simulation engine, was originally started to simulate under water scenarios with robots operating. Though faced with unsolved mathematical and physical problems, turbulence for example, the engine still provides predictions of an operation without really sending robots down there. 
+The VR Room, from a technological perspective, can be separated as several different parts:
+\begin{itemize}
+\item Advanced Realtime Tracking system
+\item VR ready GPUs
+\end{itemize}
 
-Currently we are still seeking to duplicate the result of paper \href{https://www.math.ucla.edu/~jteran/papers/PGKFTJM17.pdf}{\emph{multi species simulation of porous sand and water mixture}}.
+
+
+\section{Fluid Simulation}
+\label{sec:orgheadline8}
+The fluid simulation engine, was originally started to simulate under water scenarios with robots operating. Though faced with unsolved mathematical and physical problems, turbulence for example, the engine still provides predictions of an operation without really sending robots down there. The simulation engine is supposed to help defining scenes, testing and predicting the effect of environmental conditions(e.g., water flow) on robots. Since the models are involved are based on finite element methods, it is also possible to predict haptic sensors signals on a robot hand.
+
+Particl-in-cell(PIC) method is the first method developed and used primarily for fluid mechanics.  Currently we are still seeking to duplicate the result of paper \href{https://www.math.ucla.edu/~jteran/papers/PGKFTJM17.pdf}{\emph{Multi Species Simulation of Porous Sand and Water Mixture}}. The simulation is based on \texttt{material point method} (MPM). MPM is one of the latest developments in PIC. Our project contains implementations both for PIC and MPM. The implementation is heavily based on the \href{https://github.com/doyubkim/fluid-engine-dev}{\texttt{fluid-engine-dev}}. 
+
+\subsection{Models}
+\label{sec:orgheadline7}
 \end{document}

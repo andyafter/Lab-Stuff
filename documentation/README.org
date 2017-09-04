@@ -77,6 +77,15 @@ There are several ways to manipulate the robot hand with programming. Easiest wa
 To simply control the hand with MATLAB programs, refer to the ~initialization.m~ in ~iLimb~ repository.
 
 
+* VR Room 
+The VR Room, from a technological perspective, can be separated as several different parts:
+- Advanced Realtime Tracking system
+- VR ready GPUs
+- Peripheral devices(Flysticsk, Haptic Gloves, etc.)
+
+In order to connect the VR room to UR10 robot arms, you need a 30 meters long network cable.
+
+
 * Fluid Simulation
 The fluid simulation engine, was originally started to simulate under water scenarios with robots operating. Though faced with unsolved mathematical and physical problems, turbulence for example, the engine still provides predictions of an operation without really sending robots down there. The simulation engine is supposed to help defining scenes, testing and predicting the effect of environmental conditions(e.g., water flow) on robots. Since the models are involved are based on finite element methods, it is also possible to predict haptic sensors signals on a robot hand.
 
