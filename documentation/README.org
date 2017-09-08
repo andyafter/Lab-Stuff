@@ -91,5 +91,4 @@ The fluid simulation engine, was originally started to simulate under water scen
 
 Particl-in-cell(PIC) method is the first method developed and used primarily for fluid mechanics.  Currently we are still seeking to duplicate the result of paper [[https://www.math.ucla.edu/~jteran/papers/PGKFTJM17.pdf][/Multi Species Simulation of Porous Sand and Water Mixture/]]. The simulation is based on ~material point method~ (MPM). MPM is one of the latest developments in PIC. Our project contains implementations both for PIC and MPM. The implementation is heavily based on the [[https://github.com/doyubkim/fluid-engine-dev][~fluid-engine-dev~]]. 
 
-** Models
 

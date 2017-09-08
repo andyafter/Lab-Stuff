@@ -1,0 +1,25 @@
+#+TITLE: Fluid Simulation
+
+* Introduction
+The fluid simulation engine, was originally started to simulate under water scenarios with robots operating. Though faced with unsolved mathematical and physical problems, turbulence for example, the engine still provides predictions of an operation without really sending robots down there. The simulation engine is supposed to help defining scenes, testing and predicting the effect of environmental conditions(e.g., water flow) on robots. Since the models are involved are based on finite element methods, it is also possible to predict haptic sensors signals on a robot hand.
+
+* Requirements and Running
+The fluid simulation is by far based only on CPU. It would be much more powerful if integrated with GPU later.
+- VS 2013 or 2015
+- cmake
+- Mitsuba Renderer
+
+Open ~command line~ under windows and navigate to the project folder of fluid simulations. 
+#+BEGIN_SRC shell
+mkdir build
+cd build
+cmake ..
+#+END_SRC
+
+This should have created a visual studio solution for you in the ~build~ folder. Open solution file with the visual studio you installed, navigate in the project explorer to the level_sim_mpm, right click on it and choose "Set as startup project".
+
+Build and run the project, after it finishes calculation, navigate to ~build/src/examples/level_sim_mpm~ folder, there will be a folder which contains simulated object frames. 
+
+In the mitsuba folder there is a windows batch processing script ~anim.bat~ for you to render the simulated frames. You can double click to run it. 
+
+If you wish to change the parameters for rendering, lighting, color, etc., you might want to proceed to the xml files in mitsuba folder. 
