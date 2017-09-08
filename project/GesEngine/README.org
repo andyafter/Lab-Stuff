@@ -1,0 +1,43 @@
+* Gesture Engine
+Gesture engine is for handling the communication of all the devices and peripherals in the VR room. This project contains pipelines for gesture recognition. 
+
+** Requirements 
+This project is mainly powered by C++ under QT. Libraries required in this project will require manually installation so far:
+- googletest(Follow [[https://gist.github.com/massenz/41bb2c8375294f4d9927][this link]])
+- QT(Choose according to your operating system)
+
+Currently you do not need to install any of those packages. However if you want to do test driven programming, you can enable google test by installing it on your platform and uncomment the relative code in CMakeLists.txt.
+
+*** Windows
+Under windows you will have to install some version of visual studio:
+- VS 2013 or 2015
+- cmake
+- Cygwin
+
+*** Linux
+- gcc and g++
+- cmake
+  
+*** OSX
+- gcc and g++
+- cmake
+- brew install boost 
+
+** Running and Customization
+- Open project with QT IDE
+- Build and Run project
+- Click "Home" button on the left up corner of the GUI
+- Click "Start Listening"
+
+You need to run the ART tracking software in the main computer of the VR room. This software will automatically get data from the server.
+
+Our system is based on the QT ~Signal Slot~ framework. The basic architecture contains a K-Means algorithm to separate the hand from the VR Stereo glasses. When running this software and the ART tracking software, the ~VRControlling~ will be able to receive data and interact. 
+
+If you wish to add algorithms to the code please go to *artclient.cpp*, The ~features~ function is where you want should start with. 
+
+
+
+
+
+
+

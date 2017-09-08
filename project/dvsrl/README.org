@@ -1,0 +1,16 @@
+#+TITLE: Reinforcement Learning Exploration with DVS
+
+* Introduction
+This project contains Python scripts for visual servoing with DVS. 
+
+* Requirements and Running
+You should have Python installed and jAER downloaded and configured. 
+
+Connect the eDVS 128 camera to to the USB port of a PC. Open jAER and choose the USB port of the camera. Set the baud rate to 12MB/S. Last but not least you should turn on the remote UDP connection in jAER.
+
+** Introduction to Scripts
+1. ~loadaerdat.py~ reads DVS data file and provide formulated dataset
+2. ~raw_udp.py~ reads data from DVS camera and provide actions in real time
+3. ~urcontrol.py~ provides code for the camera to interact with UR10 in real time
+
+

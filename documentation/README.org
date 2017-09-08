@@ -83,7 +83,7 @@ The VR Room, from a technological perspective, can be separated as several diffe
 - VR ready GPUs
 - Peripheral devices(Flysticsk, Haptic Gloves, etc.)
 
-In order to connect the VR room to UR10 robot arms, you need a 30 meters long network cable.
+In order to connect the VR room to UR10 robot arms, you need a 30 meters long network cable, connecting the 
 
 
 * Fluid Simulation

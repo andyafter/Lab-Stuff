@@ -4,7 +4,8 @@ Network back engine is for handling the communication of the unity project. This
 ** Requirements 
 This project is mainly powered by C++ under **cmake**. Libraries required in this project will require manually installation so far:
 - googletest(Follow [[https://gist.github.com/massenz/41bb2c8375294f4d9927][this link]])
-- boost 
+- boost
+- QT(Choose according to your operating system)
 
 Currently you do not need to install any of those packages. However if you want to do test driven programming, you can enable google test by installing it on your platform and uncomment the relative code in CMakeLists.txt.
 
@@ -26,15 +27,7 @@ However, installing and using boost.asio library would be difficult for windows,
 - brew install boost 
 
 ** Gathering Testing Data
-Testing data can be gathered from the ART tracking system with [[https://github.com/schMarXman/cShART][cShART]]. The framework is based on the paper *A Design Framework for 3D Spatial Gesture Interfaces*
-** Code Examples
-*ARTClient* handles most events of getting data from UDP packages in the VR room. In this case you only need one instance for real time applications. 
+Testing data can be gathered from the ART tracking system with [[https://github.com/schMarXman/cShART][cShART]]. The framework is based on the paper *A Design Framework for 3D Spatial Gesture Interfaces*.
 
-Here is an example of how to use ARTClient:
-#+NAME: ARTCLIENT_EXAMPLE
-#+BEGIN_SRC C++ :includes "artclient.hpp"
-    ARTClient client(5002);
-    client.run();
-#+END_SRC
+** Running and Training
 
-*ARTDummy* is a class which can generate dummy data for testing. 
